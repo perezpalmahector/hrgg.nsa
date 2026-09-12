@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "title": "Nuestra Señora de los Ángeles",
+    "subtitle": "Parroquia de Nuestra Señora de los Ángeles",
+    "location": "Mineral de la Reforma, Hidalgo",
+    "description": "Un espacio de encuentro, fe y comunidad.",
+    "images": {
+      "desktop": "/images/parish/carrousel1-550.jpg",
+      "mobile": "/images/parish/carrousel1-800.jpg"
+    }
+  },
+  "quotes": [
+    {
+      "text": "La fe mueve montañas.",
+      "reference": "Mateo 17:20"
+    },
+    {
+      "text": "Todo lo puedo en Cristo que me fortalece.",
+      "reference": "Filipenses 4:13"
+    },
+    {
+      "text": "El Señor es mi pastor, nada me falta.",
+      "reference": "Salmo 23:1"
+    },
+    {
+      "text": "Yo soy el camino, la verdad y la vida.",
+      "reference": "Juan 14:6"
+    },
+    {
+      "text": "Permanezcan en mi amor.",
+      "reference": "Juan 15:9"
+    },
+    {
+      "text": "El amor todo lo disculpa, todo lo cree, todo lo espera, todo lo soporta.",
+      "reference": "1 Corintios 13:7"
+    },
+    {
+      "text": "No temas, porque yo estoy contigo.",
+      "reference": "Isaías 41:10"
+    },
+    {
+      "text": "Bienaventurados los que trabajan por la paz.",
+      "reference": "Mateo 5:9"
+    },
+    {
+      "text": "Con Dios todas las cosas son posibles.",
+      "reference": "Mateo 19:26"
+    },
+    {
+      "text": "Alégrense siempre en el Señor.",
+      "reference": "Filipenses 4:4"
+    }
+  ],
+  "song": {
+    "title": "Canto a Nuestra Señora de los Ángeles",
+    "description": "Un canto para acompañar nuestra oración y celebrar nuestra fe.",
+    "audio": ""
+  }
+}

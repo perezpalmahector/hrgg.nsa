@@ -1,0 +1,338 @@
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  /*
+   * Desktop:
+   * top bar  = 36px
+   * navbar   = 80px
+   */
+  height: calc(100dvh - 116px);
+
+  min-height: 0;
+
+  overflow: hidden;
+
+  background: #eaf8fa;
+}
+
+/* ============================================================
+   BACKGROUND
+   ============================================================ */
+
+.hero-background {
+  position: absolute;
+
+  inset: -25px;
+
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: blur(22px) saturate(1.08) brightness(0.7);
+
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   MAIN IMAGE
+   ============================================================ */
+
+.hero-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /*
+   * Desktop uses carrousel1-550.
+   *
+   * The important part is moving the image upward.
+   * This preserves the crown/head instead of cutting it.
+   */
+  object-position: center 8%;
+
+  filter: saturate(1.08) brightness(1.07) contrast(1.03);
+
+  transform: scale(1.01);
+
+  animation: hero-breathe 18s ease-in-out infinite alternate;
+
+  will-change: transform, filter;
+}
+
+/* ============================================================
+   COLOR ATMOSPHERE
+   ============================================================ */
+
+.hero-color {
+  background: linear-gradient(
+    90deg,
+    rgba(36, 198, 226, 0.07) 0%,
+    rgba(36, 198, 226, 0.025) 50%,
+    transparent 80%
+  );
+
+  pointer-events: none;
+}
+
+/* ============================================================
+   READABILITY
+   ============================================================ */
+
+.hero-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(3, 28, 38, 0.58) 0%,
+    rgba(3, 28, 38, 0.26) 38%,
+    rgba(3, 28, 38, 0.05) 70%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+}
+
+/* ============================================================
+   CINEMATIC LIGHT
+   ============================================================ */
+
+.cinematic-light {
+  top: -20%;
+  left: -45%;
+
+  width: 38%;
+  height: 140%;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 20%,
+    rgba(255, 255, 255, 0.22) 46%,
+    rgba(255, 248, 220, 0.32) 52%,
+    rgba(255, 255, 255, 0.08) 65%,
+    transparent 100%
+  );
+
+  filter: blur(18px);
+
+  transform: rotate(7deg) translateX(-100%);
+
+  animation: cinematic-sweep 11s ease-in-out infinite;
+
+  will-change: transform, opacity;
+}
+
+/* ============================================================
+   GOLDEN GLOW
+   ============================================================ */
+
+.hero-glow {
+  right: -100px;
+  top: 10%;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 226, 170, 0.25) 0%,
+    rgba(255, 226, 170, 0.1) 35%,
+    transparent 70%
+  );
+
+  filter: blur(38px);
+
+  animation: glow-breathe 8s ease-in-out infinite alternate;
+
+  pointer-events: none;
+}
+
+/* ============================================================
+   IMAGE BREATHING
+   ============================================================ */
+
+@keyframes hero-breathe {
+  0% {
+    transform: scale(1.01);
+
+    filter: saturate(1.06) brightness(1.05) contrast(1.02);
+  }
+
+  100% {
+    transform: scale(1.045);
+
+    filter: saturate(1.1) brightness(1.09) contrast(1.05);
+  }
+}
+
+/* ============================================================
+   CINEMATIC LIGHT SWEEP
+   ============================================================ */
+
+@keyframes cinematic-sweep {
+  0% {
+    transform: rotate(7deg) translateX(-100%);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.35;
+  }
+
+  40% {
+    opacity: 0.85;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: rotate(7deg) translateX(430%);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   GOLDEN GLOW ANIMATION
+   ============================================================ */
+
+@keyframes glow-breathe {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 639px) {
+  /*
+   * Mobile only has the navbar because HeaderTopBar
+   * is hidden by Tailwind's md:block.
+   */
+  .hero {
+    height: calc(100dvh - 80px);
+
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  /*
+   * MOBILE USES carrousel1-800.
+   *
+   * This image is horizontal.
+   *
+   * We use contain so the complete composition is preserved.
+   * The blurred background fills the remaining space.
+   */
+  .hero-image {
+    object-fit: contain;
+
+    object-position: center center;
+
+    transform: none;
+
+    animation: none;
+
+    filter: saturate(1.06) brightness(1.05) contrast(1.02);
+  }
+
+  .hero-background {
+    object-position: center center;
+
+    filter: blur(24px) saturate(1.08) brightness(0.72);
+
+    transform: scale(1.12);
+  }
+
+  /*
+   * Vertical readability on mobile.
+   */
+  .hero-gradient {
+    background: linear-gradient(
+      180deg,
+      transparent 20%,
+      rgba(3, 28, 38, 0.03) 42%,
+      rgba(3, 28, 38, 0.28) 68%,
+      rgba(3, 28, 38, 0.76) 100%
+    );
+  }
+
+  .hero-color {
+    background: linear-gradient(
+      180deg,
+      rgba(36, 198, 226, 0.02),
+      rgba(36, 198, 226, 0.06)
+    );
+  }
+
+  .cinematic-light {
+    width: 60%;
+
+    animation-duration: 12s;
+  }
+
+  .hero-glow {
+    right: -120px;
+    top: 12%;
+
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 639px) and (max-height: 700px) {
+  .hero {
+    height: calc(100dvh - 80px);
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero p {
+    line-height: 1.35;
+  }
+
+  .hero .mt-7 {
+    margin-top: 1rem;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image,
+  .cinematic-light,
+  .hero-glow {
+    animation: none;
+  }
+}

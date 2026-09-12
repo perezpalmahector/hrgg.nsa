@@ -1,0 +1,15 @@
+:root {
+  --color-primary: #24c6e2;
+  --color-primary-dark: #1599b8;
+  --color-primary-light: #67d9ea;
+
+  --color-gold: #c9a44c;
+  --color-gold-light: #e3cc82;
+  --color-gold-dark: #9f7d2f;
+
+  --color-ivory: #f8f5ed;
+  --color-white: #ffffff;
+
+  --color-text: #1f2933;
+  --color-text-muted: #667085;
+}
