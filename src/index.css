@@ -40,23 +40,19 @@
 
 html {
   scroll-behavior: smooth;
-
   scroll-padding-top: 78px;
 }
 
 body {
   margin: 0;
-
   min-width: 320px;
 
   background: var(--color-background);
-
   color: var(--color-text);
 
   font-family: "Inter", sans-serif;
 
   -webkit-font-smoothing: antialiased;
-
   text-rendering: optimizeLegibility;
 }
 
@@ -75,9 +71,7 @@ button {
 
 .site-header {
   position: sticky;
-
   top: 0;
-
   z-index: 100;
 
   width: 100%;
@@ -95,11 +89,14 @@ button {
 
 .navbar {
   width: 100%;
-
   height: 78px;
 
   background: var(--color-brand);
 }
+
+/* ============================================================
+   MARCA DE LA PARROQUIA
+   ============================================================ */
 
 .navbar-brand {
   display: flex;
@@ -108,12 +105,30 @@ button {
 
   gap: 13px;
 
-  min-width: 0;
+  /*
+   * IMPORTANTE:
+   * La marca tiene un ancho reservado.
+   * No permitimos que Flexbox la comprima.
+   */
+  flex: 0 0 390px;
+
+  width: 390px;
+  min-width: 390px;
+
+  /*
+   * Evita que el texto invada visualmente
+   * el área del menú.
+   */
+  overflow: hidden;
 
   color: white;
 
   text-decoration: none;
 }
+
+/* ============================================================
+   LOGO
+   ============================================================ */
 
 .navbar-logo-image {
   width: 44px;
@@ -141,7 +156,7 @@ button {
 }
 
 /* ============================================================
-   TITULO DE LA PARROQUIA
+   TEXTO DE LA MARCA
    ============================================================ */
 
 .navbar-brand-text {
@@ -151,20 +166,39 @@ button {
 
   justify-content: center;
 
+  /*
+   * El texto nunca puede crecer fuera
+   * del espacio reservado.
+   */
+  width: 100%;
+  max-width: 100%;
+
   min-width: 0;
+
+  flex: 1;
+
+  overflow: hidden;
 }
 
+/* ============================================================
+   TITULO DE LA PARROQUIA
+   ============================================================ */
+
 .navbar-title {
+  display: -webkit-box;
+
+  width: 100%;
+  max-width: 100%;
+
   margin: 0;
+
+  overflow: hidden;
 
   color: #f4d98b;
 
   font-family: Georgia, "Times New Roman", serif;
 
-  /*
-   * Más grande en desktop.
-   */
-  font-size: 22px;
+  font-size: 20px;
 
   font-weight: 700;
 
@@ -172,25 +206,45 @@ button {
 
   letter-spacing: -0.015em;
 
-  white-space: nowrap;
+  /*
+   * Permitimos que el título ocupe dos líneas
+   * en lugar de empujarlo hacia el menú.
+   */
+  white-space: normal;
+
+  text-overflow: ellipsis;
+
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 2;
 
   text-shadow: 0 1px 5px rgba(70, 50, 15, 0.18);
 }
 
+/* ============================================================
+   SUBTITULO
+   ============================================================ */
+
 .navbar-subtitle {
-  margin: 5px 0 0;
+  margin: 4px 0 0;
+
+  overflow: hidden;
 
   color: rgba(255, 255, 255, 0.9);
 
-  font-size: 10px;
+  font-size: 9px;
 
   font-weight: 700;
 
   line-height: 1;
 
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
 
   text-transform: uppercase;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
 }
 
 /* ============================================================
@@ -210,14 +264,15 @@ button {
 
   padding: 0 13px;
 
+  /*
+   * Los botones del menú tampoco se comprimen.
+   */
+  flex-shrink: 0;
+
   border: 1px solid transparent;
 
   border-radius: 9px;
 
-  /*
-   * Estado normal:
-   * texto crema sobre fondo azul.
-   */
   color: #fff8e7;
 
   background: transparent;
@@ -227,6 +282,8 @@ button {
   font-weight: 650;
 
   text-decoration: none;
+
+  white-space: nowrap;
 
   transition:
     color 180ms ease,
@@ -264,7 +321,6 @@ button {
 
 /* ============================================================
    HOVER
-   Azul + borde blanco + texto blanco
    ============================================================ */
 
 .navbar-link:hover {
@@ -318,16 +374,24 @@ button {
    ============================================================ */
 
 @media (max-width: 1100px) and (min-width: 640px) {
+  .navbar-brand {
+    flex: 0 0 300px;
+
+    width: 300px;
+
+    min-width: 300px;
+  }
+
   .navbar-title {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .navbar-subtitle {
-    font-size: 8px;
+    font-size: 7px;
   }
 
   .navbar-link {
-    padding: 0 9px;
+    padding: 0 8px;
 
     font-size: 11px;
   }
@@ -353,9 +417,19 @@ button {
   }
 
   .navbar-brand {
-    gap: 9px;
+    /*
+     * En móvil sí permitimos que ocupe
+     * solamente el espacio disponible.
+     */
+    flex: 1 1 auto;
+
+    width: auto;
 
     min-width: 0;
+
+    gap: 9px;
+
+    overflow: hidden;
   }
 
   .navbar-logo-image {
@@ -365,20 +439,25 @@ button {
   }
 
   .navbar-brand-text {
+    width: auto;
+
+    max-width: 100%;
+
     min-width: 0;
 
     flex: 1;
+
+    overflow: hidden;
   }
 
-  /*
-   * En móvil permitimos dos líneas.
-   */
   .navbar-title {
     display: -webkit-box;
 
-    overflow: hidden;
+    width: 100%;
 
-    max-width: none;
+    max-width: 100%;
+
+    overflow: hidden;
 
     color: #f4d98b;
 
@@ -392,7 +471,7 @@ button {
 
     white-space: normal;
 
-    text-overflow: initial;
+    text-overflow: ellipsis;
 
     -webkit-box-orient: vertical;
 
@@ -407,6 +486,12 @@ button {
     font-size: 7px;
 
     letter-spacing: 0.1em;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
   }
 }
 
@@ -446,6 +531,8 @@ button {
   display: flex;
 
   align-items: center;
+
+  flex-shrink: 0;
 }
 
 /* ============================================================
@@ -465,6 +552,8 @@ button {
 
   justify-content: center;
 
+  flex-shrink: 0;
+
   border: 1px solid rgba(255, 255, 255, 0.55);
 
   border-radius: 9px;
@@ -481,12 +570,6 @@ button {
     color 180ms ease;
 }
 
-/*
- * Lucide utiliza SVG.
- *
- * El icono de hamburguesa y la X
- * permanecen blancos.
- */
 .mobile-menu-button svg {
   display: block;
 

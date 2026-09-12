@@ -10,20 +10,21 @@ export function Navbar() {
 
   return (
     <nav className="navbar">
-      <Container className="flex h-full items-center justify-between gap-3">
+      <Container className="flex h-full min-w-0 items-center gap-6">
+        {/* Marca de la parroquia */}
         <Link
           to="/"
-          className="navbar-brand min-w-0 flex-1"
+          className="navbar-brand flex-none lg:w-[330px] xl:w-[390px]"
           aria-label="Ir al inicio"
         >
           <img
             src="/images/parish/nsa_small.jpg"
             alt="Nuestra Señora de los Ángeles"
-            className="navbar-logo-image"
+            className="navbar-logo-image shrink-0"
           />
 
-          <div className="navbar-brand-text">
-            <p className="navbar-title">
+          <div className="navbar-brand-text min-w-0">
+            <p className="navbar-title leading-tight">
               Parroquia de Nuestra Señora de los Ángeles
             </p>
 
@@ -33,20 +34,19 @@ export function Navbar() {
           </div>
         </Link>
 
-        <div className="hidden shrink-0 items-center gap-1 lg:flex">
+        {/* Menú escritorio */}
+        <div className="hidden min-w-0 flex-1 items-center justify-end gap-0.5 lg:flex">
           {navigation.map((item) => {
             const isActive =
               location.pathname === item.href ||
-              (
-                item.href !== "/" &&
-                location.pathname.startsWith(`${item.href}/`)
-              );
+              (item.href !== "/" &&
+                location.pathname.startsWith(`${item.href}/`));
 
             return (
               <Link
                 key={item.href}
                 to={item.href}
-                className={`navbar-link ${
+                className={`navbar-link whitespace-nowrap ${
                   isActive ? "navbar-link-active" : ""
                 }`}
               >
@@ -56,7 +56,8 @@ export function Navbar() {
           })}
         </div>
 
-        <div className="shrink-0 lg:hidden">
+        {/* Menú móvil */}
+        <div className="ml-auto shrink-0 lg:hidden">
           <MobileMenu />
         </div>
       </Container>

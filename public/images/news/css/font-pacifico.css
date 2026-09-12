@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Pacifico/Pacifico-normal-400.eot);
+  src: local('Pacifico'), url(../fonts/Pacifico/Pacifico-normal-400.ttf) format('truetype'), url(../fonts/Pacifico/Pacifico-normal-400.woff) format('woff'), url(../fonts/Pacifico/Pacifico-normal-400.eot?#iefix) format('embedded-opentype'), url(../fonts/Pacifico/Pacifico-normal-400.svg#Pacifico) format('svg'), url(../fonts/Pacifico/Pacifico-normal-400.woff2) format('woff2');
+}
+

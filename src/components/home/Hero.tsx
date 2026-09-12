@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import home from "@/data/home.json";
 
 export function Hero() {
   const [quoteIndex, setQuoteIndex] = useState(0);
-
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const nextQuote = useCallback(() => {
     setQuoteIndex((current) => {
@@ -26,49 +24,6 @@ export function Hero() {
       window.clearInterval(timer);
     };
   }, [nextQuote]);
-
-  /*
-   * Intentamos iniciar el canto automáticamente.
-   *
-   * Los navegadores pueden bloquear autoplay con sonido.
-   * Por eso también intentamos reproducirlo cuando el
-   * visitante realiza su primera interacción.
-   */
-  useEffect(() => {
-    const audio = audioRef.current;
-
-    if (!audio) {
-      return;
-    }
-
-    audio.volume = 0.75;
-
-    const startAudio = () => {
-      audio.play().catch(() => {
-        // El navegador puede bloquear autoplay.
-        // El control seguirá disponible para el visitante.
-      });
-    };
-
-    startAudio();
-
-    const handleFirstInteraction = () => {
-      startAudio();
-    };
-
-    window.addEventListener("pointerdown", handleFirstInteraction, {
-      once: true,
-    });
-
-    window.addEventListener("keydown", handleFirstInteraction, {
-      once: true,
-    });
-
-    return () => {
-      window.removeEventListener("pointerdown", handleFirstInteraction);
-      window.removeEventListener("keydown", handleFirstInteraction);
-    };
-  }, []);
 
   const quote = home.quotes[quoteIndex];
 
@@ -195,13 +150,12 @@ export function Hero() {
                   </p>
                 </div>
               </div>
-              {/* preload="auto" */}
+
               <audio
-                ref={audioRef}
                 className="hero-audio"
                 controls
-                autoPlay
                 loop
+                preload="none"
                 aria-label={home.song.title}
               >
                 <source

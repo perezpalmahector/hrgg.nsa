@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Satisfy';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Satisfy/Satisfy-normal-400.eot);
+  src: local('Satisfy'), url(../fonts/Satisfy/Satisfy-normal-400.svg#Satisfy) format('svg'), url(../fonts/Satisfy/Satisfy-normal-400.eot?#iefix) format('embedded-opentype'), url(../fonts/Satisfy/Satisfy-normal-400.woff2) format('woff2'), url(../fonts/Satisfy/Satisfy-normal-400.ttf) format('truetype'), url(../fonts/Satisfy/Satisfy-normal-400.woff) format('woff');
+}
+
