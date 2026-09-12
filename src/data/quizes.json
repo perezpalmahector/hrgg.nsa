@@ -1,0 +1,57 @@
+{
+  "quizes": [
+    {
+      "quizId": 1,
+      "name": "Bautismo",
+      "timeMinutes": 30,
+      "titleApplicant": "Nombre completo de los padrinos",
+      "description": "Queridos Padrinos:<br>Si tienen acceso a este material es porque se ha considerado su situación y sabemos que por motivos de trabajo ó de salud no les es posible asistir a las platicas presenciales y por ello se les ha brindado esta herramienta a fin de que adquieran a través de ella los conocimientos requeridos para cumplir con el sacramento.<br>Esta herramienta no todos estan autorizados a utilizarla, por favor no compartir el link y datos de acceso.<br>Les pedimos sean tan amables de observar con atención el siguiente video las veces que considere necesarias y al finalizar, responda correctamente las preguntas que a continuación se presenten.",
+      "instructions": "El siguiente cuestionario esta pensado para que los padrinos puedan acreditar los conocimientos necesarios para el bautismo de su ahijado(a).<br>Seleccione las respuesta correctas a cada pregunta.",
+      "video": "platicabautismal.mp4",
+      "questions": [
+        {
+          "questionId": 1,
+          "question": "¿Quién es el Espíritu Santo?",
+          "answers": [
+            {
+              "answerId": 1,
+              "answer": "Es la tercera persona de la Santísima Trinidad",
+              "correct": true
+            },
+            {
+              "answerId": 2,
+              "answer": "Es la primera persona de la Santísima Trinidad",
+              "correct": false
+            },
+            {
+              "answerId": 3,
+              "answer": "Es la segunda persona de la Santísima Trinidad",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "questionId": 2,
+          "question": "¿Qué responsabilidades adquiere el padrino con su ahijado?",
+          "answers": [
+            {
+              "answerId": 1,
+              "answer": "Ninguna",
+              "correct": false
+            },
+            {
+              "answerId": 2,
+              "answer": "Apoyar a los padres a criarlo en la fe en Cristo",
+              "correct": true
+            },
+            {
+              "answerId": 3,
+              "answer": "En caso de ausencia de los padres, ser tutores del ahijado(a)",
+              "correct": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "services": [
+    {
+      "serviceId": 1,
+      "serviceName": "Misas Comunitarias",
+      "placeHours": [
+        {
+          "serviceHourId": 1,
+          "placeId": 1,
+          "dayName": "Lunes",
+          "startHour": "06:00 pm",
+          "endHour": "07:00 pm"
+        },
+        {
+          "serviceHourId": 2,
+          "placeId": 1,
+          "dayName": "Viernes",
+          "startHour": "06:00 pm",
+          "endHour": "07:00 pm"
+        },
+        {
+          "serviceHourId": 3,
+          "placeId": 1,
+          "dayName": "Sábado",
+          "startHour": "01:00 pm",
+          "endHour": "02:00 pm"
+        },
+        {
+          "serviceHourId": 8,
+          "placeId": 1,
+          "dayName": "Domingo",
+          "startHour": "10:00 am",
+          "endHour": "11:00 am"
+        },
+        {
+          "serviceHourId": 10,
+          "placeId": 1,
+          "dayName": "Domingo",
+          "startHour": "01:00 pm",
+          "endHour": "02:00 pm"
+        },
+        {
+          "serviceHourId": 11,
+          "placeId": 1,
+          "dayName": "Domingo",
+          "startHour": "06:00 pm",
+          "endHour": "07:00 pm"
+        },
+        {
+          "serviceHourId": 6,
+          "placeId": 3,
+          "dayName": "Domingo",
+          "startHour": "08:00 am",
+          "endHour": "09:00 am"
+        },
+        {
+          "serviceHourId": 7,
+          "placeId": 4,
+          "dayName": "Domingo",
+          "startHour": "09:00 am",
+          "endHour": "10:00 am"
+        },
+        {
+          "serviceHourId": 9,
+          "placeId": 2,
+          "dayName": "Domingo",
+          "startHour": "11:30 am",
+          "endHour": "12:30 pm"
+        }
+      ]
+    },
+    {
+      "serviceId": 3,
+      "serviceName": "Confesiones",
+      "placeHours": [
+        {
+          "serviceHourId": 13,
+          "placeId": 1,
+          "dayName": "Jueves",
+          "startHour": "04:00 pm",
+          "endHour": "Sino no hay nadie a las 04:00 pm el Padre se retira"
+        }
+      ]
+    },
+    {
+      "serviceId": 4,
+      "serviceName": "Hora Santa",
+      "placeHours": [
+        {
+          "serviceHourId": 14,
+          "placeId": 1,
+          "dayName": "Jueves",
+          "startHour": "07:00 pm",
+          "endHour": "08:00 pm"
+        }
+      ]
+    },
+    {
+      "serviceId": 5,
+      "serviceName": "Bautismos Comunitarios",
+      "placeHours": [
+        {
+          "serviceHourId": 15,
+          "placeId": 1,
+          "dayName": "Sábado",
+          "startHour": "12:00 pm",
+          "endHour": "01:00 pm"
+        }
+      ]
+    },
+    {
+      "serviceId": 6,
+      "serviceName": "Atención de trámites (Oficina)",
+      "placeHours": [
+        {
+          "serviceHourId": 16,
+          "placeId": 1,
+          "dayName": "Martes",
+          "startHour": "10:00 am",
+          "endHour": "02:00 pm"
+        },
+        {
+          "serviceHourId": 17,
+          "placeId": 1,
+          "dayName": "Martes",
+          "startHour": "04:00 pm",
+          "endHour": "06:30 pm"
+        },
+        {
+          "serviceHourId": 18,
+          "placeId": 1,
+          "dayName": "Miércoles",
+          "startHour": "10:00 am",
+          "endHour": "02:00 pm"
+        },
+        {
+          "serviceHourId": 19,
+          "placeId": 1,
+          "dayName": "Miércoles",
+          "startHour": "04:00 pm",
+          "endHour": "06:30 pm"
+        },
+        {
+          "serviceHourId": 20,
+          "placeId": 1,
+          "dayName": "Jueves",
+          "startHour": "10:00 am",
+          "endHour": "02:00 pm"
+        },
+        {
+          "serviceHourId": 21,
+          "placeId": 1,
+          "dayName": "Jueves",
+          "startHour": "04:00 pm",
+          "endHour": "06:30 pm"
+        },
+        {
+          "serviceHourId": 22,
+          "placeId": 1,
+          "dayName": "Viernes",
+          "startHour": "10:00 am",
+          "endHour": "02:00 pm"
+        },
+        {
+          "serviceHourId": 23,
+          "placeId": 1,
+          "dayName": "Viernes",
+          "startHour": "04:00 pm",
+          "endHour": "06:30 pm"
+        },
+        {
+          "serviceHourId": 24,
+          "placeId": 1,
+          "dayName": "Sábado",
+          "startHour": "10:00 am",
+          "endHour": "02:00 pm"
+        },
+        {
+          "serviceHourId": 25,
+          "placeId": 1,
+          "dayName": "Sábado",
+          "startHour": "04:00 pm",
+          "endHour": "06:30 pm"
+        },
+        {
+          "serviceHourId": 26,
+          "placeId": 1,
+          "dayName": "Domingo",
+          "startHour": "10:30 am",
+          "endHour": "01:00 pm"
+        }
+      ]
+    }
+  ]
+}

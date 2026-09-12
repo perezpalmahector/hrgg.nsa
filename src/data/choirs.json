@@ -1,0 +1,18 @@
+{
+  "choirs": [
+    {
+      "choirId": 1,
+      "choirName": "Voces del Señor",
+      "choirImage": "Voces_del_Señor.png",
+      "choirDescription": "Creado el 24-Abr-2022 el coro Voces del Señor te invita a embellecer la liturgia con música y oración. Puedes ser parte de nuestro equipo ¡No necesitas ser profesional, solo tener corazón dispuesto! Si estas interesado regalanos un mensaje al 771 110 50 80.",
+      "choirPlaylist": "https://www.youtube.com/playlist?list=PLHVaaLFRl1Jectt7gxuNcXqK8Bh9ZJ9G7"
+    },
+    {
+      "choirId": 2,
+      "choirName": "San Juan Pablo II",
+      "choirImage": "San_Juan_Pablo_II.jpg",
+      "choirDescription": "",
+      "choirPlaylist": ""
+    }
+  ]
+}

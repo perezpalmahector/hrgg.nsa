@@ -1,0 +1,104 @@
+{
+  "songs": [
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "name": "Que alegria es venir",
+      "category": "Entrada",
+      "audio": "que_alegria_1_6.mpeg",
+      "letter": "E. Que alegría es venir, a la casa de Dios\nQue alegría es participar, del pan de Dios.\n\n1. Vengamos todos, a la casa de Dios\nCantar alegres, con un mismo amor.\n\n2. Porque el Señor, con nosotros esta\ny una nueva vida, él nos dará"
+    },
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "category": "Piedad",
+      "name": "Señor Señor",
+      "audio": "piedad_1_6.mpeg",
+      "letter": "E. Señor, Señor, Piedad, Piedad\nSeñor, Señor, Piedad, Piedad\nSeñor, Señor, Señor, Señor\nPiedad, Piedad, Piedad, Señor.\n\n1. Cristo, piedad, piedad\nCristo, piedad, piedad\nCristo, Cristo, Piedad, Piedad\nPiedad Señor."
+    },
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "category": "Gloria",
+      "name": "Gloria, Gloria",
+      "audio": "gloria_1_6.mpeg",
+      "letter": "Alejandro Mejía Pereda (Misa ritmica)\nE. Gloria, gloria a Dios en el cielo\nY en la tierra a los hombres paz (2).\n\n1. Te alabamos y te bendecimos\nTe adoramos y glorificamos\nY nosotros hoy te damos gracias\nPor Tu Grande y eterna gloria.\n\nE….\n\n2. Señor, Dios, nuestro Padre, Padre, Padre\nSeñor Dios hijo,\nPiedad, piedad, piedad Señor.\n\n3. Tu que quitas el pecado del mundo\nEscúchanos, escúchanos\nTu que estas a la derecha del Padre,\nPiedad, piedad, piedad Señor.\n\n4. Solo tu eres Santo, solo Tu Señor\nSolo Tu Altísimo Jesucristo\nCon el Santo Espíritu\nEn la gloria de Dios Padre\nAmen, amen, a a men."
+    },
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "category": "Aleluya",
+      "name": "Aleluya Saleciano",
+      "audio": "aleluya_1_6.mpeg",
+      "letter": "Aleluya, Aleluya, Aleluya, Aleluya"
+    },
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "category": "Ofertorio",
+      "name": "Señor te ofrecemos",
+      "audio": "senor_te_ofrecemos_1_6.mpeg",
+      "letter": "1. Señor te ofrecemos el vino y el pan\nLo presentamos frente tu altar\nLo entregamos con mucho amor\nacéptalo mi gran Señor.\n\n2. Te presentamos el vino y el pan\nFruto del sacrificio de amor.\nLo que somos te damos Señor\nTe lo entregamos de corazón.\n\nE. Te ofrecemos Señor, el trabajo y sudor.\nEs poco lo que ofrezco Señor\nAcepta esta ofrenda mi Dios."
+    },
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "category": "Santo",
+      "name": "Santo (Alfonso Luna)",
+      "audio": "santo_alfonsoluna_1_6.mpeg",
+      "letter": "1. Santo, Santo, Santo es el Señor\nDios del universo.\nLlenos están, el cielo y la tierra\nDe tu gloria Hossana.\n\nE. Hossana, Hossana, Hossana, en el cielo. (2)\n\n2. Bendito el que viene\nEn nombre del Señor.\nHossana en el cielo Hossana."
+    },
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "category": "Cordero",
+      "name": "Cordero",
+      "audio": "cordero_1_6.mpeg",
+      "letter": "Cordero de Dios (2)\nQue quitas el pecado del mundo,\nTen piedad (..) de nosotros (..) (2)\nCordero de Dios (2)\nQue quitas el pecado del mundo, Ten piedad (…) de nosotros (…) (2)\nCordero de Dios (2)\nQue quitas el pecado del mundo, Danos (..) la paz (..) (2)\nDanos la paz."
+    },
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "category": "Comunion",
+      "name": "Estas aqui (Jessed)",
+      "audio": "estas_aqui_1_6.mpeg",
+      "letter": "1. Estás aquí, aunque no te pueda ver\npues escondes tu gloria y majestad.\nEstás aquí revestido solamente del amor\nbajo la forma de un Pan.\n\n2. Con sencillez, te me vienes a entregar\ny en mi interior vas haciendo maravillas,\ncorazón con corazón, en profunda comunión,\nme haces templo de la Santa Trinidad.\n\nVen y cena conmigo,\nven y mora en mi hogar,\nven y nunca me dejes,\npues sin ti me moriría.\nMe has herido con tu amor,\nven y mora en mi interior,\nde ti quiero comulgar Señor (3)."
+    },
+    {
+      "chorusId": 1,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 11,
+      "category": "Salida",
+      "name": "El Refelejo de tu luz",
+      "audio": "reflejo_1_6.mpeg",
+      "letter": "1. Demos gracias al Señor por esta celebración,\npor el vino y por el pan, su palabra y la oración,\nalimento espiritual de nuestra comunidad.\n\nE. Llevaremos tu verdad, viviremos en tu amor,\nvolveremos realidad lo que hemos aprendido.\nTodo el mundo en mi verá, el reflejo de tu luz,\ny mis hechos hablarán de que Tú estás conmigo."
+    },
+    {
+      "chorusId": 2,
+      "liturgicalTime": 2,
+      "serviceId": 1,
+      "serviceHourId": 10,
+      "name": "",
+      "category": "Entrada",
+      "audio": "entrada.mp3",
+      "letter": ""
+    }
+  ]
+}

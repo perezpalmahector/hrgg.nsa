@@ -3,8 +3,8 @@
 @import "tailwindcss";
 
 :root {
-  --color-brand: #24c6e2;
-  --color-brand-dark: #159db8;
+  --color-brand: #00a8c6;
+  --color-brand-dark: #008da9;
   --color-brand-light: #eafaff;
 
   --color-background: #ffffff;
@@ -82,7 +82,7 @@ button {
 
   width: 100%;
 
-  background: #24c6e2;
+  background: var(--color-brand);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 
@@ -98,7 +98,7 @@ button {
 
   height: 78px;
 
-  background: #24c6e2;
+  background: var(--color-brand);
 }
 
 .navbar-brand {
@@ -270,7 +270,7 @@ button {
 .navbar-link:hover {
   color: #ffffff;
 
-  background: #159db8;
+  background: var(--color-brand-dark);
 
   border-color: #ffffff;
 
@@ -288,7 +288,7 @@ button {
    ============================================================ */
 
 .navbar-link-active {
-  color: #159db8;
+  color: var(--color-brand-dark);
 
   background: #ffffff;
 
@@ -306,7 +306,7 @@ button {
 .navbar-link-active:hover {
   color: #ffffff;
 
-  background: #159db8;
+  background: var(--color-brand-dark);
 
   border-color: #ffffff;
 
@@ -577,7 +577,7 @@ button {
 .mobile-menu-link:hover {
   color: #ffffff;
 
-  background: #159db8;
+  background: var(--color-brand-dark);
 
   border-color: #ffffff;
 }

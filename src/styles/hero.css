@@ -43,22 +43,26 @@
   width: 100%;
   height: 100%;
 
+  /*
+   * La imagen horizontal está preparada para:
+   *
+   * - Virgen a la derecha
+   * - espacio libre a la izquierda
+   * - sol/respaldo detrás de la Virgen
+   *
+   * No hacemos zoom ni desplazamiento artificial.
+   */
   object-fit: cover;
 
-  /*
-   * Desktop:
-   * mantenemos visible la parte superior
-   * de la Virgen.
-   */
-  object-position: center 16%;
+  object-position: center center;
 
-  filter: brightness(1.1) saturate(1.08) contrast(1.02);
+  filter: brightness(1.05) saturate(1.04) contrast(1.02);
 
-  transform: scale(1.025);
+  transform: none;
 
-  animation: hero-breathe 18s ease-in-out infinite alternate;
+  animation: none;
 
-  will-change: transform, filter;
+  will-change: auto;
 }
 
 /* ============================================================
@@ -73,35 +77,32 @@
   pointer-events: none;
 
   /*
-   * El lado izquierdo queda un poco más oscuro,
-   * mientras el lado derecho queda más limpio para
-   * colocar el contenido.
+   * Oscurecemos ligeramente el lado izquierdo
+   * para que el texto blanco tenga contraste.
+   *
+   * El lado derecho queda prácticamente limpio
+   * para respetar la imagen de la Virgen.
    */
   background: linear-gradient(
     90deg,
-    rgba(8, 30, 37, 0.56) 0%,
-    rgba(8, 30, 37, 0.32) 30%,
-    rgba(8, 30, 37, 0.12) 58%,
-    rgba(8, 30, 37, 0.08) 100%
+    rgba(8, 30, 37, 0.34) 0%,
+    rgba(8, 30, 37, 0.18) 24%,
+    rgba(8, 30, 37, 0.06) 48%,
+    rgba(8, 30, 37, 0) 72%,
+    rgba(8, 30, 37, 0) 100%
   );
 }
 
+/*
+ * No agregamos otro oscurecimiento fuerte desde abajo.
+ * La propia imagen ya tiene su iluminación.
+ */
 .hero-overlay::after {
-  content: "";
-
-  position: absolute;
-
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  height: 45%;
-
-  background: linear-gradient(to top, rgba(5, 24, 31, 0.44), transparent);
+  display: none;
 }
 
 /* ============================================================
-   LUZ AZUL
+   LUZ
    ============================================================ */
 
 .hero-light {
@@ -111,10 +112,17 @@
 
   pointer-events: none;
 
+  /*
+   * Muy sutil.
+   *
+   * NO crea un nuevo sol.
+   * La luz principal viene del sol/respaldo
+   * que está dentro de la imagen.
+   */
   background: radial-gradient(
-    ellipse at 78% 24%,
-    rgba(36, 198, 226, 0.18),
-    transparent 47%
+    ellipse at 73% 48%,
+    rgba(255, 245, 205, 0.05) 0%,
+    transparent 42%
   );
 }
 
@@ -122,66 +130,26 @@
    BRILLO
    ============================================================ */
 
+/*
+ * Se desactiva porque generaba un segundo círculo
+ * luminoso detrás de la Virgen.
+ */
 .hero-glow {
-  position: absolute;
-
-  width: 430px;
-  height: 430px;
-
-  right: -120px;
-  top: 2%;
-
-  border-radius: 50%;
-
-  pointer-events: none;
-
-  background: radial-gradient(
-    circle,
-    rgba(255, 249, 226, 0.26) 0%,
-    rgba(255, 239, 190, 0.1) 38%,
-    transparent 72%
-  );
-
-  filter: blur(32px);
-
-  animation: hero-glow 7s ease-in-out infinite alternate;
-
-  will-change: transform, opacity;
+  display: none;
 }
 
 /* ============================================================
    CINEMAGRAPH
    ============================================================ */
 
+/*
+ * Se elimina el barrido de luz.
+ *
+ * La imagen religiosa debe conservar una apariencia
+ * limpia y natural.
+ */
 .hero-shimmer {
-  position: absolute;
-
-  top: -20%;
-  left: -35%;
-
-  width: 45%;
-  height: 140%;
-
-  pointer-events: none;
-
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.025) 35%,
-    rgba(255, 250, 220, 0.14) 50%,
-    rgba(255, 255, 255, 0.025) 65%,
-    transparent 100%
-  );
-
-  filter: blur(22px);
-
-  transform: rotate(12deg);
-
-  opacity: 0;
-
-  animation: hero-shimmer-move 12s ease-in-out infinite;
-
-  will-change: left, opacity;
+  display: none;
 }
 
 /* ============================================================
@@ -197,7 +165,11 @@
 
   align-items: center;
 
-  justify-content: flex-end;
+  /*
+   * IMPORTANTE:
+   * El contenido ahora queda a la IZQUIERDA.
+   */
+  justify-content: flex-start;
 
   width: 100%;
   height: 100%;
@@ -209,12 +181,21 @@
   padding: 40px 48px;
 }
 
+/*
+ * El texto ocupa solamente el espacio izquierdo.
+ *
+ * La Virgen queda visualmente separada al lado derecho.
+ */
 .hero-copy {
-  width: min(100%, 600px);
+  width: min(100%, 520px);
 
-  max-width: 600px;
+  max-width: 520px;
 
-  margin-left: auto;
+  margin-left: 0;
+
+  margin-right: auto;
+
+  text-align: left;
 }
 
 /* ============================================================
@@ -224,7 +205,7 @@
 .hero-location {
   margin: 0 0 12px;
 
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.92);
 
   font-size: 12px;
 
@@ -234,7 +215,7 @@
 
   text-transform: uppercase;
 
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 /* ============================================================
@@ -248,10 +229,6 @@
 
   font-family: Georgia, "Times New Roman", serif;
 
-  /*
-   * Un poco más pequeño en desktop para permitir
-   * que la frase crezca sin romper el hero.
-   */
   font-size: clamp(42px, 4.5vw, 64px);
 
   font-weight: 700;
@@ -260,7 +237,7 @@
 
   letter-spacing: -0.045em;
 
-  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.42);
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.45);
 }
 
 /* ============================================================
@@ -270,13 +247,13 @@
 .hero-description {
   margin-top: 20px;
 
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.94);
 
   font-size: 18px;
 
   line-height: 1.5;
 
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42);
 }
 
 /* ============================================================
@@ -330,6 +307,10 @@
   transform: translateX(2px);
 }
 
+/* ============================================================
+   TEXTO DE LA FRASE
+   ============================================================ */
+
 .hero-quote-text {
   display: block;
 
@@ -337,9 +318,6 @@
 
   color: white;
 
-  /*
-   * Ligeramente más contenido que antes.
-   */
   font-size: clamp(19px, 2vw, 27px);
 
   font-weight: 500;
@@ -349,12 +327,16 @@
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
 }
 
+/* ============================================================
+   REFERENCIA
+   ============================================================ */
+
 .hero-quote-reference {
   display: block;
 
   margin-top: 8px;
 
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(255, 255, 255, 0.78);
 
   font-size: 12px;
 
@@ -365,12 +347,16 @@
   text-transform: uppercase;
 }
 
+/* ============================================================
+   AYUDA DE FRASE
+   ============================================================ */
+
 .hero-quote-hint {
   display: block;
 
   margin-top: 9px;
 
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.48);
 
   font-size: 9px;
 
@@ -432,6 +418,10 @@
   transform: translateY(-2px);
 }
 
+/* ============================================================
+   BOTON PRINCIPAL
+   ============================================================ */
+
 .hero-button-primary {
   background: white;
 
@@ -443,6 +433,10 @@
 .hero-button-primary:hover {
   background: #f5fdff;
 }
+
+/* ============================================================
+   BOTON SECUNDARIO
+   ============================================================ */
 
 .hero-button-secondary {
   border: 1px solid rgba(255, 255, 255, 0.58);
@@ -485,9 +479,9 @@
 
   background: rgba(20, 47, 56, 0.34);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
 
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .hero-song-info {
@@ -554,22 +548,27 @@
 @media (min-width: 1200px) {
   .hero-content {
     padding-left: 60px;
+
     padding-right: 70px;
   }
 
   .hero-copy {
-    width: min(100%, 590px);
+    width: min(100%, 520px);
 
-    max-width: 590px;
+    max-width: 520px;
+
+    margin-left: 0;
+
+    margin-right: auto;
   }
 
   .hero h1 {
-    font-size: clamp(48px, 4vw, 64px);
+    font-size: clamp(42px, 3.35vw, 54px);
   }
 }
 
 /* ============================================================
-   TABLET / DESKTOP MEDIO
+   TABLET
    ============================================================ */
 
 @media (max-width: 1100px) and (min-width: 640px) {
@@ -578,13 +577,17 @@
   }
 
   .hero-copy {
-    width: min(100%, 520px);
+    width: min(100%, 480px);
 
-    max-width: 520px;
+    max-width: 480px;
+
+    margin-left: 0;
+
+    margin-right: auto;
   }
 
   .hero h1 {
-    font-size: clamp(40px, 5vw, 56px);
+    font-size: clamp(36px, 4.5vw, 48px);
   }
 
   .hero-description {
@@ -618,60 +621,39 @@
    ANIMACIONES
    ============================================================ */
 
+/*
+ * Se mantienen definidas por compatibilidad,
+ * pero el hero ya no las utiliza.
+ */
+
 @keyframes hero-breathe {
   from {
-    transform: scale(1.025);
+    transform: scale(1);
   }
 
   to {
-    transform: scale(1.045);
+    transform: scale(1.01);
   }
 }
 
 @keyframes hero-glow {
   from {
-    transform: scale(0.9);
-
-    opacity: 0.45;
+    opacity: 0;
   }
 
   to {
-    transform: scale(1.1);
-
-    opacity: 0.85;
+    opacity: 0;
   }
 }
 
 @keyframes hero-shimmer-move {
   0% {
     left: -40%;
-
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  35% {
-    opacity: 0.7;
-  }
-
-  55% {
-    left: 55%;
-
-    opacity: 0.45;
-  }
-
-  70% {
-    left: 85%;
-
     opacity: 0;
   }
 
   100% {
     left: 100%;
-
     opacity: 0;
   }
 }
@@ -688,33 +670,33 @@
   }
 
   /*
-   * Hero.tsx entrega:
-   *
-   * carrousel1-550.jpg
-   *
-   * mediante <source media="(max-width: 639px)">
+   * En móvil utilizamos la imagen móvil.
    */
   .hero-photo {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
+    /*
+     * En móvil centramos la composición.
+     */
     object-position: center center;
 
     transform: none;
 
     animation: none;
 
-    filter: brightness(1.08) saturate(1.06) contrast(1.01);
+    filter: brightness(1.06) saturate(1.04) contrast(1.01);
   }
 
   .hero-overlay {
     background: linear-gradient(
       180deg,
-      rgba(8, 30, 37, 0) 8%,
-      rgba(8, 30, 37, 0.05) 38%,
-      rgba(8, 30, 37, 0.76) 100%
+      rgba(8, 30, 37, 0) 5%,
+      rgba(8, 30, 37, 0.08) 38%,
+      rgba(8, 30, 37, 0.64) 100%
     );
   }
 
@@ -724,32 +706,21 @@
 
   .hero-light {
     background: radial-gradient(
-      ellipse at 72% 30%,
-      rgba(36, 198, 226, 0.12),
+      ellipse at 72% 35%,
+      rgba(255, 245, 205, 0.04),
       transparent 52%
     );
   }
 
-  .hero-glow {
-    width: 280px;
-    height: 280px;
-
-    right: -110px;
-    top: 3%;
-
-    filter: blur(30px);
-  }
-
+  .hero-glow,
   .hero-shimmer {
-    width: 65%;
-
-    left: -60%;
-
-    filter: blur(28px);
-
-    animation-duration: 15s;
+    display: none;
   }
 
+  /*
+   * En móvil el contenido vuelve a ocupar
+   * todo el ancho porque la composición cambia.
+   */
   .hero-content {
     align-items: flex-end;
 
@@ -764,6 +735,8 @@
     max-width: 100%;
 
     margin-left: 0;
+
+    margin-right: 0;
   }
 
   .hero-location {

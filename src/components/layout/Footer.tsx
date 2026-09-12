@@ -13,9 +13,11 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand text-sm font-bold">
-                NSA
-              </div>
+          <img
+            src="/images/parish/nsa_small.jpg"
+            alt="Nuestra Señora de los Ángeles"
+            className="navbar-logo-image"
+          />
 
               <div>
                 <p className="font-semibold">

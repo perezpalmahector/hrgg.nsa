@@ -1,0 +1,210 @@
+{
+  "priests": [
+    {
+      "nameComplete": "Pbro. Roberto Ramírez Vázquez",
+      "order": 5,
+      "period": "2015-Actualidad",
+      "photo": "padre5.jpg",
+      "description": "",
+      "message": "<i class=\"fa fa-quote-left\"></i>&nbsp;Queridos hermanos y hermanas en Cristo, <br /> En estos tiempos de cambio y desafío, recuerdo con cariño las palabras de nuestro Señor: 'No tengan miedo'. En nuestra fe encontramos una fuente inagotable de fortaleza y esperanza. Cada uno de ustedes es una luz brillante en nuestra comunidad, reflejando el amor y la compasión de Cristo en cada acto de bondad y solidaridad.&nbsp;<i class=\"fa fa-quote-right\"></i>",
+      "dateBirth": "1969-06-07",
+      "datePlaceBirth": "7 de Junio de 1969, en Tulancingo, Hidalgo",
+      "onomastic": "7 de Junio",
+      "baptism": "18 de Octubre de 1969 en la Parroquia de nuestra Señora de los Angeles, Tulancingo, Hidalgo",
+      "confirmation": "19 de Octubre de 1969 en el Sagrario Catedral, Tulancingo, Hidalgo",
+      "diaconate": "27 de Noviembre de 1998 en Santa María Guadalupe y San Nicolás Tolentino, el Paredón, Puebla",
+      "presbyterate": "5 de Noviembre de 1999 en Santa María Guadalupe y San Nicolás Tolentino, el Paredón, Puebla",
+      "parishAssigment": [
+        {
+          "numberParish": 1,
+          "nameParish": "Parroquía de San José en Zacualpan Veracruz, Vicario Parroquial",
+          "dateParish": "5 de Noviembre de 1999 al 5 de Noviembre del 2002"
+        },
+        {
+          "numberParish": 2,
+          "nameParish": "Parroquía de el Espíritu Santo, Pachuca, Hidalgo, Vicario Parroquial",
+          "dateParish": "20 de Diciembre de 2004 al 14 de Marzo del 2009"
+        },
+        {
+          "numberParish": 3,
+          "nameParish": "Vicaria Fija de San Lorenzo Diácono, San Lorenzo, Hidalgo",
+          "dateParish": "14 de Marzo de 2009 al 22 de Junio de 2015"
+        },
+        {
+          "numberParish": 4,
+          "nameParish": "Parroquía de Nuestra Señora de los Angeles, Mineral de la Reforma, Hidalgo",
+          "dateParish": "23 de Junio de 2015 a la fecha"
+        }
+      ]
+    },
+    {
+      "nameComplete": "Pbro. José Ascención Barajas Monjaraz",
+      "order": 4,
+      "period": "2010-2015",
+      "photo": "padre4.jpg",
+      "description": "",
+      "dateBirth": "1950-05-04",
+      "datePlaceBirth": "4 de Mayo de 1950, en Dolores Hidalgo, Guanajuato",
+      "onomastic": "El día de Ascención del Señor",
+      "baptism": "18 de Mayo de 1950 en la Parroquía de Nuestra Señora de Dolores, Dolores Hidalgo, Guanajuato",
+      "confirmation": "30 de Enero de 1951",
+      "diaconate": "17 de Febrero de 1980",
+      "presbyterate": "29 de Mayo de 1980 en Chignahuapan, Puebla",
+      "parishAssigment": [
+        {
+          "numberParish": 1,
+          "nameParish": "Parroquía de Santiago Apóstol, Chignahuapan, Puebla",
+          "dateParish": "29 de Mayo de 1980"
+        },
+        {
+          "numberParish": 2,
+          "nameParish": "Parroquía de San José en Zacualpan, Veracruz",
+          "dateParish": "29 de Octubre de 1982"
+        },
+        {
+          "numberParish": 3,
+          "nameParish": "San Juan Evangelista, Aquixtla, Puebla",
+          "dateParish": "20 de Julio de 1989"
+        },
+        {
+          "numberParish": 4,
+          "nameParish": "Parroquía de San Agustín de Hipona, Atotonilco el Grande, Hidalgo",
+          "dateParish": "2 de Octubre de 1992"
+        },
+        {
+          "numberParish": 5,
+          "nameParish": "Parroquía de Nuestra Señora de los Angeles, Mineral de la Reforma, Hidalgo",
+          "dateParish": "22 de Octubre de 2010"
+        },
+        {
+          "numberParish": 6,
+          "nameParish": "Parroquía de San Cayetano, Pachuca, Hidalgo",
+          "dateParish": "5 de Febrero de 2016"
+        }
+      ]
+    },
+    {
+      "nameComplete": "Pbro. Marcos Monzalvo Godínez",
+      "order": 3,
+      "period": "2006-2010",
+      "photo": "padre3.jpg",
+      "description": "",
+      "dateBirth": "1972-03-25",
+      "datePlaceBirth": "25 de Marzo de 1972 en Pachuca, Hidalgo",
+      "onomastic": "25 de Abril",
+      "baptism": "30 de Abril de 1972 en la Parroquía de la Nuestra Señora de Guadalupe, Pachuca, Hidalgo",
+      "confirmation": "21 de Febrero de 1974 en la Parroquía de San Francico, Pachuca, Hidalgo",
+      "diaconate": "16 de marzo de 1998 en la Catedral de Tulancingo, Hidalgo",
+      "presbyterate": "21 de Agosto de 1998 en la Catedral de Tulancingo, Hidalgo",
+      "parishAssigment": [
+        {
+          "numberParish": 1,
+          "nameParish": "Parroquía de Nuestra Señora de los Angeles, Pachuca, Hidalgo",
+          "dateParish": "17 de Septiembre de 2006"
+        },
+        {
+          "numberParish": 2,
+          "nameParish": "San Pedro Apostol, Villa de Tezontepec, Hidalgo",
+          "dateParish": "22 de Septiembre de 2010"
+        }
+      ]
+    },
+    {
+      "nameComplete": "Pbro. Zeferino Manzano Lazo",
+      "order": 2,
+      "period": "1996-2006",
+      "photo": "padre2.jpg",
+      "description": "",
+      "deceased": true,
+      "dateBirth": "1935-08-26",
+      "datePlaceBirth": "26 de Agosto de 1935 en Pachuca, Hidalgo",
+      "onomastic": "26 de Agosto",
+      "baptism": "9 de Febrero de 1936 en la Parroquía de la Asunción de Santa María Santísima, Pachuca, Hidalgo",
+      "confirmation": "No hay datos",
+      "diaconate": "2 de Junio de 1960",
+      "presbyterate": "29 de Junio de 1960 en la Catedral de Tulancingo, Hidalgo",
+      "parishAssigment": [
+        {
+          "numberParish": 1,
+          "nameParish": "Vicario Fijo en la Parroquía de Santa María de Guadalupe y San Nicolás de Tolentino, el Paredón, Puebla",
+          "dateParish": "7 de Noviembre de 1974"
+        },
+        {
+          "numberParish": 2,
+          "nameParish": "San Nicolás Tolentin, Ahuazotepec, Puebla",
+          "dateParish": "2 de Agosto de 1976"
+        },
+        {
+          "numberParish": 3,
+          "nameParish": "San Nicolás Tolentin, Actopan, Hidalgo",
+          "dateParish": "2 de Agosto de 1982"
+        },
+        {
+          "numberParish": 4,
+          "nameParish": "Parroquía de Nuestra Señora de los Angeles, Pachuca, Hidalgo",
+          "dateParish": "2 de Agosto de 1996"
+        },
+        {
+          "numberParish": 5,
+          "nameParish": "El Buen Pastor, Pachuca, Hidalgo",
+          "dateParish": "15 de Octubre de 2006"
+        }
+      ],
+      "death": "18 de Septiembre de 2023",
+      "retirement": "2014"
+    },
+    {
+      "nameComplete": "Pbro. Adolfo Valdez Mendez (Fito)",
+      "order": 1,
+      "period": "1986-1996",
+      "photo": "padre1.jpg",
+      "description": "",
+      "deceased": true,
+      "dateBirth": "1928-02-22",
+      "datePlaceBirth": "22 de Febrero de 1928 en Tangancíacuaro, Michoacán",
+      "onomastic": "27 de Septiembre",
+      "baptism": "8 de Diciembre de 1928 en la Parroquía de Nuestra Señora de la Asunción, Tangancíacuaro, Michoacán",
+      "confirmation": "No hay datos",
+      "diaconate": "No hay datos",
+      "presbyterate": "23 de Julio de 1953 en el Sagrario de Catedral, Tulancingo, Hidalgo",
+      "parishAssigment": [
+        {
+          "numberParish": 1,
+          "nameParish": "La Inmaculada Concepción, Mineral del Chico, Hidalgo",
+          "dateParish": "19 de Agosto de 1967"
+        },
+        {
+          "numberParish": 2,
+          "nameParish": "Santa María de Guadalupe, Agua Fría, Puebla",
+          "dateParish": "15 de Diciembre de 1970"
+        },
+        {
+          "numberParish": 3,
+          "nameParish": "Nuestra Señora del Rosario, Real del Monte, Hidalgo",
+          "dateParish": "8 de Noviembre de 1974"
+        },
+        {
+          "numberParish": 4,
+          "nameParish": "San Pedro Apostol, Villa de Tezontepec, Hidalgo",
+          "dateParish": "8 de Enero de 1978"
+        },
+        {
+          "numberParish": 5,
+          "nameParish": "Parroquía de Nuestra Señora de los Angeles, Pachuca, Hidalgo",
+          "dateParish": "2 de Agosto de 1986"
+        },
+        {
+          "numberParish": 6,
+          "nameParish": "El Buen Pastor, Pachuca, Hidalgo",
+          "dateParish": "11 de Julio de 1996"
+        },
+        {
+          "numberParish": 7,
+          "nameParish": "Templo de la Natividad de María, Comunidad de Santa María Nativitas, Cuatepec, Hidalgo",
+          "dateParish": "No hay datos"
+        }
+      ],
+      "death": "3 de Diciembre de 2009"
+    }
+  ]
+}

@@ -17,7 +17,7 @@ export function Navbar() {
           aria-label="Ir al inicio"
         >
           <img
-            src="/images/parish/nsa_40x40.jpg"
+            src="/images/parish/nsa_small.jpg"
             alt="Nuestra Señora de los Ángeles"
             className="navbar-logo-image"
           />
