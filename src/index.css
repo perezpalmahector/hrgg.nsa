@@ -134,7 +134,7 @@ button {
 }
 
 /* ============================================================
-   TITULO
+   TITULO DE LA PARROQUIA
    ============================================================ */
 
 .navbar-brand-text {
@@ -154,9 +154,6 @@ button {
 
   font-family: Georgia, "Times New Roman", serif;
 
-  /*
-   * Más grande que antes.
-   */
   font-size: 18px;
 
   font-weight: 700;
@@ -187,7 +184,7 @@ button {
 }
 
 /* ============================================================
-   MENU
+   MENU DESKTOP
    ============================================================ */
 
 .navbar-link {
@@ -206,7 +203,8 @@ button {
   border-radius: 9px;
 
   /*
-   * Estado normal: crema.
+   * Estado normal:
+   * texto crema sobre fondo azul.
    */
   color: #fff8e7;
 
@@ -225,9 +223,7 @@ button {
     box-shadow 180ms ease;
 }
 
-/*
- * Línea dorada.
- */
+/* Línea dorada */
 
 .navbar-link::after {
   content: "";
@@ -251,7 +247,7 @@ button {
 
 /* ============================================================
    HOVER
-   Crema de fondo + azul
+   Crema + azul
    ============================================================ */
 
 .navbar-link:hover {
@@ -269,8 +265,8 @@ button {
 }
 
 /* ============================================================
-   SELECCIONADO
-   Blanco de fondo + azul
+   MENU ACTIVO
+   Blanco + azul
    ============================================================ */
 
 .navbar-link-active {
@@ -335,6 +331,8 @@ button {
 
   .navbar-brand {
     gap: 9px;
+
+    min-width: 0;
   }
 
   .navbar-logo-image {
@@ -342,20 +340,45 @@ button {
     height: 40px;
   }
 
+  .navbar-brand-text {
+    min-width: 0;
+
+    flex: 1;
+  }
+
+  /*
+   * En móvil permitimos dos líneas.
+   * Ya no se corta con "..."
+   */
   .navbar-title {
-    max-width: 220px;
+    display: -webkit-box;
 
     overflow: hidden;
 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    max-width: none;
+
+    color: #f4d98b;
+
     font-size: 13px;
 
-    line-height: 1.08;
+    font-weight: 700;
 
-    text-overflow: ellipsis;
+    line-height: 1.12;
+
+    letter-spacing: -0.01em;
+
+    white-space: normal;
+
+    text-overflow: initial;
   }
 
   .navbar-subtitle {
-    margin-top: 4px;
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.92);
 
     font-size: 7px;
 
@@ -364,7 +387,161 @@ button {
 }
 
 /* ============================================================
-   MOVIMIENTO REDUCIDO
+   TELEFONOS MUY PEQUEÑOS
+   ============================================================ */
+
+@media (max-width: 380px) {
+  .navbar {
+    height: 74px;
+  }
+
+  .navbar-logo-image {
+    width: 37px;
+    height: 37px;
+  }
+
+  .navbar-title {
+    font-size: 11px;
+
+    line-height: 1.1;
+  }
+
+  .navbar-subtitle {
+    font-size: 6.5px;
+  }
+}
+
+/* ============================================================
+   BOTON MENU MOBILE
+   ============================================================ */
+
+.mobile-menu-button {
+  display: flex;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+/*
+ * LAS TRES LINEAS SON BLANCAS
+ */
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 21px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    background-color 180ms ease;
+}
+
+.mobile-menu-button:hover {
+  background: #ffffff;
+
+  border-color: #ffffff;
+}
+
+.mobile-menu-button:hover span {
+  background: #159db8;
+}
+
+/* ============================================================
+   PANEL MENU MOBILE
+   ============================================================ */
+
+.mobile-menu-panel {
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  right: 0;
+
+  z-index: 200;
+
+  display: flex;
+
+  min-width: 220px;
+
+  flex-direction: column;
+
+  padding: 8px;
+
+  border: 1px solid #e4edef;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow: 0 12px 35px rgba(20, 80, 95, 0.18);
+}
+
+.mobile-menu-link {
+  display: block;
+
+  padding: 12px 14px;
+
+  border-radius: 8px;
+
+  color: #45616a;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.mobile-menu-link:hover {
+  color: #159db8;
+
+  background: #f7f3ea;
+}
+
+/* ============================================================
+   SOLO MOBILE
+   ============================================================ */
+
+@media (min-width: 640px) {
+  .mobile-menu-button,
+  .mobile-menu-panel {
+    display: none;
+  }
+}
+
+/* ============================================================
+   ACCESIBILIDAD
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {

@@ -10,10 +10,10 @@ export function Navbar() {
 
   return (
     <nav className="navbar">
-      <Container className="flex h-full items-center justify-between">
+      <Container className="flex h-full items-center justify-between gap-3">
         <Link
           to="/"
-          className="navbar-brand"
+          className="navbar-brand min-w-0 flex-1"
           aria-label="Ir al inicio"
         >
           <img
@@ -33,7 +33,7 @@ export function Navbar() {
           </div>
         </Link>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden shrink-0 items-center gap-1 lg:flex">
           {navigation.map((item) => {
             const isActive =
               location.pathname === item.href ||
@@ -46,11 +46,9 @@ export function Navbar() {
               <Link
                 key={item.href}
                 to={item.href}
-                className={
-                  `navbar-link ${
-                    isActive ? "navbar-link-active" : ""
-                  }`
-                }
+                className={`navbar-link ${
+                  isActive ? "navbar-link-active" : ""
+                }`}
               >
                 {item.label}
               </Link>
@@ -58,7 +56,9 @@ export function Navbar() {
           })}
         </div>
 
-        <MobileMenu />
+        <div className="shrink-0 lg:hidden">
+          <MobileMenu />
+        </div>
       </Container>
     </nav>
   );

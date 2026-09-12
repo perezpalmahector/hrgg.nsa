@@ -83,16 +83,16 @@ export function Hero() {
 
       <div className="hero-media">
         <picture>
-          <source
+        <source
             media="(max-width: 639px)"
-            srcSet={home.hero.images.mobile}
-          />
+            srcSet="/images/parish/carrousel1-550.jpg"
+        />
 
-          <img
-            src={home.hero.images.desktop}
+        <img
+            src="/images/parish/carrousel1-800.jpg"
             alt="Nuestra Señora de los Ángeles"
             className="hero-photo"
-          />
+        />
         </picture>
 
         {/* Capas utilizadas para el efecto cinematográfico */}
