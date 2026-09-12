@@ -46,9 +46,8 @@
   object-fit: cover;
 
   /*
-   * Desktop.
-   *
-   * Mantiene más visible la parte superior
+   * Desktop:
+   * mantenemos visible la parte superior
    * de la Virgen.
    */
   object-position: center 16%;
@@ -73,11 +72,16 @@
 
   pointer-events: none;
 
+  /*
+   * El lado izquierdo queda un poco más oscuro,
+   * mientras el lado derecho queda más limpio para
+   * colocar el contenido.
+   */
   background: linear-gradient(
     90deg,
-    rgba(8, 30, 37, 0.6) 0%,
-    rgba(8, 30, 37, 0.38) 28%,
-    rgba(8, 30, 37, 0.13) 62%,
+    rgba(8, 30, 37, 0.56) 0%,
+    rgba(8, 30, 37, 0.32) 30%,
+    rgba(8, 30, 37, 0.12) 58%,
     rgba(8, 30, 37, 0.08) 100%
   );
 }
@@ -193,20 +197,24 @@
 
   align-items: center;
 
+  justify-content: flex-end;
+
   width: 100%;
   height: 100%;
 
-  max-width: 1280px;
+  max-width: 1400px;
 
   margin: 0 auto;
 
-  padding: 40px 32px;
+  padding: 40px 48px;
 }
 
 .hero-copy {
-  width: 100%;
+  width: min(100%, 600px);
 
-  max-width: 590px;
+  max-width: 600px;
+
+  margin-left: auto;
 }
 
 /* ============================================================
@@ -240,7 +248,11 @@
 
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: clamp(44px, 5.5vw, 76px);
+  /*
+   * Un poco más pequeño en desktop para permitir
+   * que la frase crezca sin romper el hero.
+   */
+  font-size: clamp(42px, 4.5vw, 64px);
 
   font-weight: 700;
 
@@ -325,11 +337,14 @@
 
   color: white;
 
-  font-size: clamp(20px, 2.3vw, 29px);
+  /*
+   * Ligeramente más contenido que antes.
+   */
+  font-size: clamp(19px, 2vw, 27px);
 
   font-weight: 500;
 
-  line-height: 1.35;
+  line-height: 1.32;
 
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
 }
@@ -533,6 +548,73 @@
 }
 
 /* ============================================================
+   DESKTOP GRANDE
+   ============================================================ */
+
+@media (min-width: 1200px) {
+  .hero-content {
+    padding-left: 60px;
+    padding-right: 70px;
+  }
+
+  .hero-copy {
+    width: min(100%, 590px);
+
+    max-width: 590px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 4vw, 64px);
+  }
+}
+
+/* ============================================================
+   TABLET / DESKTOP MEDIO
+   ============================================================ */
+
+@media (max-width: 1100px) and (min-width: 640px) {
+  .hero-content {
+    padding: 32px 32px;
+  }
+
+  .hero-copy {
+    width: min(100%, 520px);
+
+    max-width: 520px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 5vw, 56px);
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-quote {
+    margin-top: 18px;
+
+    padding: 13px 16px;
+  }
+
+  .hero-quote-text {
+    font-size: clamp(18px, 2.4vw, 24px);
+  }
+
+  .hero-actions {
+    margin-top: 18px;
+  }
+
+  .hero-song {
+    gap: 12px;
+  }
+
+  .hero-audio {
+    width: 180px;
+  }
+}
+
+/* ============================================================
    ANIMACIONES
    ============================================================ */
 
@@ -563,6 +645,7 @@
 @keyframes hero-shimmer-move {
   0% {
     left: -40%;
+
     opacity: 0;
   }
 
@@ -576,16 +659,19 @@
 
   55% {
     left: 55%;
+
     opacity: 0.45;
   }
 
   70% {
     left: 85%;
+
     opacity: 0;
   }
 
   100% {
     left: 100%;
+
     opacity: 0;
   }
 }
@@ -602,9 +688,7 @@
   }
 
   /*
-   * IMPORTANTE:
-   *
-   * Hero.tsx debe entregar aquí:
+   * Hero.tsx entrega:
    *
    * carrousel1-550.jpg
    *
@@ -669,11 +753,17 @@
   .hero-content {
     align-items: flex-end;
 
+    justify-content: flex-start;
+
     padding: 20px 18px 20px;
   }
 
   .hero-copy {
+    width: 100%;
+
     max-width: 100%;
+
+    margin-left: 0;
   }
 
   .hero-location {
@@ -809,6 +899,7 @@
 @media (max-height: 700px) and (min-width: 640px) {
   .hero-content {
     padding-top: 20px;
+
     padding-bottom: 20px;
   }
 
