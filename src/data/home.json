@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "Nuestra Señora de los Ángeles",
+    "title": "Parroquia de Nuestra Señora de los Ángeles",
     "subtitle": "Parroquia de Nuestra Señora de los Ángeles",
     "location": "Mineral de la Reforma, Hidalgo",
     "description": "Un espacio de encuentro, fe y comunidad.",
@@ -54,6 +54,6 @@
   "song": {
     "title": "Canto a Nuestra Señora de los Ángeles",
     "description": "Un canto para acompañar nuestra oración y celebrar nuestra fe.",
-    "audio": ""
+    "audio": "start.mp3"
   }
 }
