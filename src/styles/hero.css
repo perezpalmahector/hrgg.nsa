@@ -249,7 +249,7 @@
 
   color: rgba(255, 255, 255, 0.94);
 
-  font-size: 18px;
+  font-size: 14px;
 
   line-height: 1.5;
 
@@ -318,11 +318,11 @@
 
   color: white;
 
-  font-size: clamp(19px, 2vw, 27px);
+  font-size: clamp(19px, 2vw, 20px);
 
   font-weight: 500;
 
-  line-height: 1.32;
+  line-height: 1.2;
 
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
 }

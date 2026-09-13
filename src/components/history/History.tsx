@@ -14,9 +14,8 @@ export function History() {
                     </h2>
 
                     <p className="history-description">
-                        El siguiente video habla acerca de los orígenes de
-                        Nuestra Señora de los Ángeles, de nuestra parroquia y
-                        de la parroquia de Tulancingo. Te invitamos a conocer
+                        El siguiente video habla acerca de los orígenes de la
+                        Parroquia de Nuestra Señora de los Ángeles. Te invitamos a conocer
                         nuestra historia.
                     </p>
                 </header>

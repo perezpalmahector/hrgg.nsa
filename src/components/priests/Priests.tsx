@@ -1,5 +1,11 @@
 import { useMemo, useState } from "react";
-import { CalendarDays, ChevronDown, ChevronUp, Heart, X } from "lucide-react";
+import {
+    CalendarDays,
+    ChevronDown,
+    ChevronUp,
+    Heart,
+    X,
+} from "lucide-react";
 
 import { parishData } from "@/services/parishData";
 
@@ -34,8 +40,9 @@ type Priest = {
 export function Priests() {
     const priests = parishData.priests as Priest[];
 
+    // Más reciente → más antiguo
     const sortedPriests = useMemo(() => {
-        return [...priests].sort((a, b) => a.order - b.order);
+        return [...priests].sort((a, b) => b.order - a.order);
     }, [priests]);
 
     const [selectedPriest, setSelectedPriest] = useState<Priest | null>(null);
@@ -45,6 +52,34 @@ export function Priests() {
         setExpandedPriest((current) =>
             current === order ? null : order
         );
+    };
+
+    // Calcula los años que estuvo como párroco.
+    // Ejemplos:
+    // "2018 - 2024"     → 6 años
+    // "2020 - Actualidad" → años transcurridos hasta el año actual
+    const getYearsServed = (period: string) => {
+        const years = period.match(/\d{4}/g);
+
+        if (!years || years.length === 0) {
+            return null;
+        }
+
+        const start = Number(years[0]);
+
+        // Párroco actual
+        if (/actualidad/i.test(period)) {
+            const currentYear = new Date().getFullYear();
+            return currentYear - start;
+        }
+
+        // Párroco que ya terminó su periodo
+        if (years.length >= 2) {
+            const end = Number(years[1]);
+            return end - start;
+        }
+
+        return null;
     };
 
     return (
@@ -70,12 +105,19 @@ export function Priests() {
                     <div className="priests-list">
                         {sortedPriests.map((priest) => {
                             const isCurrent = priest.order === 5;
-                            const isExpanded = expandedPriest === priest.order;
+                            const isExpanded =
+                                expandedPriest === priest.order;
+
+                            const yearsServed = getYearsServed(
+                                priest.period
+                            );
 
                             return (
                                 <article
                                     key={priest.order}
-                                    className={`priest-card ${isCurrent ? "priest-card-current" : ""
+                                    className={`priest-card ${isCurrent
+                                            ? "priest-card-current"
+                                            : ""
                                         }`}
                                 >
                                     <div className="priest-card-main">
@@ -107,9 +149,21 @@ export function Priests() {
                                                     </h3>
 
                                                     <p className="priest-period">
-                                                        <CalendarDays size={16} />
+                                                        <CalendarDays
+                                                            size={16}
+                                                        />
                                                         {priest.period}
                                                     </p>
+
+                                                    {yearsServed !== null && (
+                                                        <p className="priest-years">
+                                                            {yearsServed}{" "}
+                                                            {yearsServed === 1
+                                                                ? "año"
+                                                                : "años"}{" "}
+                                                            de servicio
+                                                        </p>
+                                                    )}
                                                 </div>
                                             </div>
 
@@ -118,7 +172,9 @@ export function Priests() {
                                                     type="button"
                                                     className="priest-details-button"
                                                     onClick={() =>
-                                                        setSelectedPriest(priest)
+                                                        setSelectedPriest(
+                                                            priest
+                                                        )
                                                     }
                                                 >
                                                     Ver información
@@ -128,19 +184,25 @@ export function Priests() {
                                                     type="button"
                                                     className="priest-expand-button"
                                                     onClick={() =>
-                                                        toggleExpanded(priest.order)
+                                                        toggleExpanded(
+                                                            priest.order
+                                                        )
                                                     }
                                                     aria-expanded={isExpanded}
                                                 >
                                                     {isExpanded ? (
                                                         <>
                                                             Ocultar trayectoria
-                                                            <ChevronUp size={18} />
+                                                            <ChevronUp
+                                                                size={18}
+                                                            />
                                                         </>
                                                     ) : (
                                                         <>
                                                             Ver trayectoria
-                                                            <ChevronDown size={18} />
+                                                            <ChevronDown
+                                                                size={18}
+                                                            />
                                                         </>
                                                     )}
                                                 </button>
@@ -159,19 +221,27 @@ export function Priests() {
                                                     (assignment) => (
                                                         <div
                                                             className="priest-timeline-item"
-                                                            key={assignment.numberParish}
+                                                            key={
+                                                                assignment.numberParish
+                                                            }
                                                         >
                                                             <div className="priest-timeline-number">
-                                                                {assignment.numberParish}
+                                                                {
+                                                                    assignment.numberParish
+                                                                }
                                                             </div>
 
                                                             <div className="priest-timeline-content">
                                                                 <strong>
-                                                                    {assignment.nameParish}
+                                                                    {
+                                                                        assignment.nameParish
+                                                                    }
                                                                 </strong>
 
                                                                 <span>
-                                                                    {assignment.dateParish}
+                                                                    {
+                                                                        assignment.dateParish
+                                                                    }
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -229,6 +299,22 @@ export function Priests() {
                                 <p>
                                     {selectedPriest.period}
                                 </p>
+
+                                {getYearsServed(
+                                    selectedPriest.period
+                                ) !== null && (
+                                        <span className="priest-years">
+                                            {getYearsServed(
+                                                selectedPriest.period
+                                            )}{" "}
+                                            {getYearsServed(
+                                                selectedPriest.period
+                                            ) === 1
+                                                ? "año"
+                                                : "años"}{" "}
+                                            de servicio
+                                        </span>
+                                    )}
                             </div>
                         </div>
 
@@ -305,6 +391,7 @@ export function Priests() {
 
                         <div className="priest-modal-footer">
                             <Heart size={18} />
+
                             <span>
                                 Agradecemos el servicio y entrega de quienes
                                 han acompañado a nuestra comunidad.

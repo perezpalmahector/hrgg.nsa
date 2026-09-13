@@ -35,10 +35,7 @@ export function Pastoral() {
                         </h2>
 
                         <p className="pastoral-subtitle">
-                            Conoce los grupos y ministerios que forman parte
-                            de nuestra comunidad parroquial y que, desde
-                            diferentes servicios, colaboran en la misión de
-                            anunciar y vivir el Evangelio.
+                            Somos una comunidad llamada a caminar unida, servir con alegría y anunciar el Evangelio. Conoce los grupos y ministerios de nuestra parroquia que, desde sus diferentes carismas y servicios, hacen vida la misión de Cristo y contribuyen a construir una comunidad de fe, esperanza y amor.
                         </p>
                     </header>
 
