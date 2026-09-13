@@ -1,0 +1,556 @@
+.priests-section {
+  width: 100%;
+  padding: 6rem 1.5rem;
+  background: var(--color-surface, #f8fafb);
+  scroll-margin-top: 90px;
+}
+
+.priests-container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.priests-header {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.priests-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  color: var(--color-brand, #00a8c6);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.priests-title {
+  margin: 0;
+  color: var(--color-text, #1f2937);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.priests-subtitle {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   LISTA DE PÁRROCOS
+========================= */
+
+.priests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.priest-card {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.06),
+    0 2px 6px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.priest-card:hover {
+  border-color: rgba(0, 168, 198, 0.25);
+  box-shadow:
+    0 14px 32px rgba(15, 23, 42, 0.09),
+    0 4px 10px rgba(15, 23, 42, 0.05);
+}
+
+.priest-card-current {
+  border-color: rgba(0, 168, 198, 0.35);
+  box-shadow:
+    0 14px 35px rgba(0, 168, 198, 0.1),
+    0 4px 10px rgba(15, 23, 42, 0.05);
+}
+
+.priest-card-main {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.priest-photo-wrapper {
+  flex: 0 0 150px;
+  width: 150px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f1f5f9;
+}
+
+.priest-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.priest-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.priest-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.priest-current-badge,
+.priest-deceased-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.priest-current-badge {
+  background: var(--color-brand-light, #eafaff);
+  color: var(--color-brand-dark, #008da9);
+}
+
+.priest-deceased-badge {
+  margin-left: 0.4rem;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.priest-name {
+  margin: 0;
+  color: var(--color-text, #1f2937);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.priest-period {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.65rem 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.priest-period svg {
+  flex: 0 0 auto;
+  color: var(--color-brand, #00a8c6);
+}
+
+.priest-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+.priest-details-button,
+.priest-expand-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 40px;
+  padding: 0.65rem 0.95rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.priest-details-button {
+  border: 1px solid var(--color-brand, #00a8c6);
+  background: var(--color-brand, #00a8c6);
+  color: #ffffff;
+}
+
+.priest-details-button:hover {
+  background: var(--color-brand-dark, #008da9);
+  border-color: var(--color-brand-dark, #008da9);
+  transform: translateY(-1px);
+}
+
+.priest-expand-button {
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+}
+
+.priest-expand-button:hover {
+  border-color: rgba(0, 168, 198, 0.35);
+  background: var(--color-brand-light, #eafaff);
+  color: var(--color-brand-dark, #008da9);
+}
+
+/* =========================
+   TRAYECTORIA
+========================= */
+
+.priest-assignments {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.priest-assignments h4 {
+  margin: 1.5rem 0 1.25rem;
+  color: var(--color-text, #1f2937);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.priest-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 0.5rem;
+}
+
+.priest-timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.priest-timeline-number {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-brand-light, #eafaff);
+  color: var(--color-brand-dark, #008da9);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.priest-timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 0.15rem;
+}
+
+.priest-timeline-content strong {
+  color: #334155;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.priest-timeline-content span {
+  color: #64748b;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.priest-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(7px);
+}
+
+.priest-modal-content {
+  position: relative;
+  width: min(850px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+}
+
+.priest-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #475569;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.priest-modal-close:hover {
+  background: var(--color-brand-light, #eafaff);
+  color: var(--color-brand-dark, #008da9);
+}
+
+.priest-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-right: 3rem;
+}
+
+.priest-modal-photo {
+  flex: 0 0 110px;
+  width: 110px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 16px;
+  object-fit: cover;
+  background: #f1f5f9;
+}
+
+.priest-modal-header h3 {
+  margin: 0;
+  color: var(--color-text, #1f2937);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.priest-modal-header p {
+  margin: 0.5rem 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.priest-message {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--color-brand, #00a8c6);
+  border-radius: 0 12px 12px 0;
+  background: var(--color-brand-light, #eafaff);
+  color: #475569;
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.priest-data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.priest-data-grid > div {
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.priest-data-grid span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.priest-data-grid strong {
+  display: block;
+  color: #475569;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.priest-modal-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.priest-modal-footer svg {
+  flex: 0 0 auto;
+  margin-top: 0.1rem;
+  color: var(--color-brand, #00a8c6);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .priests-section {
+    padding: 4.5rem 1rem;
+  }
+
+  .priest-card-main {
+    align-items: flex-start;
+  }
+
+  .priest-photo-wrapper {
+    flex-basis: 120px;
+    width: 120px;
+    height: 150px;
+  }
+
+  .priest-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .priest-details-button,
+  .priest-expand-button {
+    width: 100%;
+  }
+}
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 560px) {
+  .priests-header {
+    margin-bottom: 2rem;
+  }
+
+  .priests-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .priest-card {
+    border-radius: 18px;
+  }
+
+  .priest-card-main {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .priest-photo-wrapper {
+    flex: 0 0 auto;
+    width: 140px;
+    height: 170px;
+  }
+
+  .priest-info {
+    width: 100%;
+  }
+
+  .priest-current-badge,
+  .priest-deceased-badge {
+    margin-right: 0.2rem;
+    margin-left: 0.2rem;
+  }
+
+  .priest-period {
+    justify-content: center;
+  }
+
+  .priest-actions {
+    margin-top: 1.1rem;
+  }
+
+  .priest-assignments {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .priest-timeline {
+    padding-left: 0;
+  }
+
+  .priest-timeline-item {
+    gap: 0.75rem;
+  }
+
+  .priest-timeline-content strong {
+    font-size: 0.82rem;
+  }
+
+  .priest-timeline-content span {
+    font-size: 0.76rem;
+  }
+
+  .priest-modal {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .priest-modal-content {
+    max-height: 94vh;
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+
+  .priest-modal-header {
+    flex-direction: column;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .priest-modal-photo {
+    width: 120px;
+    height: 145px;
+  }
+
+  .priest-data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .priest-message {
+    padding: 1rem;
+    font-size: 0.86rem;
+  }
+}

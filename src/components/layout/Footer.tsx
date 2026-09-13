@@ -13,11 +13,11 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3">
-          <img
-            src="/images/parish/nsa_small.jpg"
-            alt="Nuestra Señora de los Ángeles"
-            className="navbar-logo-image"
-          />
+              <img
+                src="/images/parish/nsa_small.jpg"
+                alt="Nuestra Señora de los Ángeles"
+                className="navbar-logo-image"
+              />
 
               <div>
                 <p className="font-semibold">
@@ -62,6 +62,8 @@ export function Footer() {
             </h2>
 
             <address className="mt-4 not-italic text-sm leading-6 text-gray-400">
+              <p>Monumentos Coloniales No. 5,</p>
+              <p>Sahop Chacón</p>
               <p>Mineral de la Reforma</p>
               <p>Hidalgo, México</p>
             </address>

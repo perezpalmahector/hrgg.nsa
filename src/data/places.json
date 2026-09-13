@@ -5,28 +5,32 @@
       "placeName": "Parroquia de Nuestra Señora de los Ángeles",
       "category": "Parroquia",
       "colonies": "Sahop-Chacón, Pri-Chacón, San Cristóbal Chacón",
-      "map": "cuFF6RHbi4sSAok58"
+      "map": "cuFF6RHbi4sSAok58",
+      "image":"pnsa.png"
     },
     {
       "placeId": 2,
       "placeName": "Capilla San Juan Pablo II",
       "category": "Capilla",
       "colonies": "Colonia",
-      "map": "qLVzRkmUTZHonAzt8"
+      "map": "qLVzRkmUTZHonAzt8",
+      "image":"sjp2.png"
     },
     {
       "placeId": 3,
       "placeName": "Capilla San Isidro Labrador",
       "category": "Capilla",
       "colonies": "Colonia",
-      "map": "6teF7p1wpMXwHFQc8"
+      "map": "6teF7p1wpMXwHFQc8",
+      "image":"sil.png"
     },
     {
       "placeId": 4,
       "placeName": "Capilla Sagrado Corazón de Jesús",
       "category": "Capilla",
       "colonies": "Colonia",
-      "map": "KKpw4E7cVtgw1Fgn7"
+      "map": "KKpw4E7cVtgw1Fgn7",
+      "image":"scj.png"
     }
   ]
 }
