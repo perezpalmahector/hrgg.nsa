@@ -70,7 +70,7 @@ export function Hero() {
 
           {/* Lugar */}
           <p className="hero-location">
-            Mineral de la Reforma · Hidalgo
+            Mineral de la Reforma · Hidalgo · México
           </p>
 
           {/* Título */}
@@ -80,7 +80,7 @@ export function Hero() {
 
           {/* Texto */}
           <p className="hero-description">
-            La Casa de Dios, en Mineral de la Reforma, Hidalgo, es mucho más que un espacio de oración: es un lugar de encuentro, fe y comunidad, donde vivimos y celebramos nuestra fe católica. Aquí nos reunimos como hermanos para encontrarnos con Cristo, participar en la vida de la Iglesia, recibir los sacramentos, fortalecer nuestra fe y servir con amor, siguiendo el camino del Evangelio.
+            La Casa de Dios, en Mineral de la Reforma, Hidalgo, México,
           </p>
 
           {/* ==================================================

@@ -10,6 +10,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { Hero } from "@/components/home/Hero";
 import Services from "@/components/services/Services";
 import ConfessionGuide from "@/components/services/ConfessionGuide";
+import ChoirSongs from "@/components/choir/ChoirSongs";
 import { News } from "@/components/news/News";
 import Gallery from "@/components/gallery/Gallery";
 import History from "@/components/history/History";
@@ -17,6 +18,22 @@ import Priests from "@/components/priests/Priests";
 import Pastoral from "@/components/pastoral/Pastoral";
 import Places from "@/components/places/Places";
 import Contact from "@/components/contact/Contact";
+
+function HomeContent() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <News />
+      <Gallery />
+      <History />
+      <Priests />
+      <Pastoral />
+      <Places />
+      <Contact />
+    </>
+  );
+}
 
 function HomePage() {
   useEffect(() => {
@@ -26,51 +43,20 @@ function HomePage() {
     });
   }, []);
 
-  return (
-    <>
-      <Hero />
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
+  return <HomeContent />;
 }
 
-function ServicesPage() {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "auto",
-    });
-  }, []);
-
-  return (
-    <>
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
-}
-
-function NewsPage() {
+function SectionPage({
+  sectionId,
+}: {
+  sectionId: string;
+}) {
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      const newsSection =
-        document.getElementById("noticias");
+      const section = document.getElementById(sectionId);
 
-      if (newsSection) {
-        newsSection.scrollIntoView({
+      if (section) {
+        section.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
@@ -78,213 +64,9 @@ function NewsPage() {
     }, 150);
 
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [sectionId]);
 
-  return (
-    <>
-      <Hero />
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
-}
-
-function GalleryPage() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const gallerySection =
-        document.getElementById("galeria");
-
-      if (gallerySection) {
-        gallerySection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 150);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      <Hero />
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
-}
-
-function HistoryPage() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const historySection =
-        document.getElementById("historia");
-
-      if (historySection) {
-        historySection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 150);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      <Hero />
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
-}
-
-function PriestsPage() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const priestsSection =
-        document.getElementById("parrocos");
-
-      if (priestsSection) {
-        priestsSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 150);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      <Hero />
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
-}
-
-function PastoralPage() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const pastoralSection =
-        document.getElementById("pastoral");
-
-      if (pastoralSection) {
-        pastoralSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 150);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      <Hero />
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
-}
-
-function PlacesPage() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const placesSection =
-        document.getElementById("lugares");
-
-      if (placesSection) {
-        placesSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 150);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      <Hero />
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
-}
-
-function ContactPage() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const contactSection =
-        document.getElementById("contacto");
-
-      if (contactSection) {
-        contactSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 150);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      <Hero />
-      <Services />
-      <News />
-      <Gallery />
-      <History />
-      <Priests />
-      <Pastoral />
-      <Places />
-      <Contact />
-    </>
-  );
+  return <HomeContent />;
 }
 
 function App() {
@@ -292,54 +74,86 @@ function App() {
     <BrowserRouter>
       <MainLayout>
         <Routes>
+          {/* INICIO */}
           <Route
             path="/"
             element={<HomePage />}
           />
 
+          {/* SERVICIOS */}
           <Route
             path="/services"
-            element={<ServicesPage />}
+            element={
+              <SectionPage sectionId="servicios" />
+            }
           />
 
+          {/* GUÍA DE CONFESIÓN */}
           <Route
             path="/services/guide-confession"
             element={<ConfessionGuide />}
           />
 
+          {/* CANTOS DE LA MISA */}
+          <Route
+            path="/choir-songs/:serviceHourId"
+            element={<ChoirSongs />}
+          />
+
+          {/* NOTICIAS */}
           <Route
             path="/news"
-            element={<NewsPage />}
+            element={
+              <SectionPage sectionId="noticias" />
+            }
           />
 
+          {/* GALERÍA */}
           <Route
             path="/gallery"
-            element={<GalleryPage />}
+            element={
+              <SectionPage sectionId="galeria" />
+            }
           />
 
+          {/* HISTORIA */}
           <Route
             path="/history"
-            element={<HistoryPage />}
+            element={
+              <SectionPage sectionId="historia" />
+            }
           />
 
+          {/* PÁRROCOS */}
           <Route
             path="/priests"
-            element={<PriestsPage />}
+            element={
+              <SectionPage sectionId="parrocos" />
+            }
           />
 
+          {/* PASTORAL */}
           <Route
             path="/pastoral"
-            element={<PastoralPage />}
+            element={
+              <SectionPage sectionId="pastoral" />
+            }
           />
 
+          {/* LUGARES */}
           <Route
             path="/places"
-            element={<PlacesPage />}
+            element={
+              <SectionPage sectionId="lugares" />
+            }
           />
 
+          {/* CONTACTO */}
           <Route
             path="/contact"
-            element={<ContactPage />}
+            element={
+              <SectionPage sectionId="contacto" />
+            }
           />
         </Routes>
       </MainLayout>

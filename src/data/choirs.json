@@ -10,9 +10,22 @@
     {
       "choirId": 2,
       "choirName": "San Juan Pablo II",
-      "choirImage": "San_Juan_Pablo_II.jpg",
+      "choirImage": "san_juan_pablo_ii.jpg",
       "choirDescription": "",
       "choirPlaylist": ""
+    },
+    {
+      "choirId": 3,
+      "choirName": "La Búsqueda",
+      "choirDescription": "La Búsqueda",
+      "choirPlaylist": ""
+    },
+    {
+      "choirId": 4,
+      "choirName": "Coro de Manuel",
+      "choirDescription": "Coro de Hora Santa",
+      "choirPlaylist": ""
     }
+
   ]
 }

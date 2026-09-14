@@ -4,6 +4,7 @@
       "groupId": 1,
       "groupName": "Ministros",
       "coordinator": "Martin Sánchez Gómez",
+      "numberImages": 1,      
       "image": "Ministros.jpg",
       "description": "Este grupo reúne a personas comprometidas que se preparan con dedicación para compartir y llevar la Sagrada Comunión, siendo signo de servicio, fe y comunión dentro de la comunidad."
     },
@@ -12,16 +13,52 @@
       "groupName": "Proclamadores de la Palabra (Lectores)",
       "image": "Lectores.png",
       "coordinator": "Plácida Barranco",
-      "description": "Transmitir la palabra de Dios durante la liturgia, especialmente en la misa, haciendo que el mensaje bíblico sea vivo y comprensivo para la asamblea.",
+      "description": "Transmitir la palabra de Dios durante la liturgia, especialmente en la misa, haciendo que el mensaje bíblico sea vivo y comprensible para la asamblea.",
       "numberImages": 7,
+      "gallery": [],
       "message": "<div class=\"group-message\"><h2>Ministerio de los Proclamadores de la Palabra</h2><p>Los <b>proclamadores de la palabra</b>, también llamados <b>lectores</b>, son ministros laicos en la Iglesia Católica.</p><div class=\"calendar-cards\"><div class=\"calendar-card\"><div class=\"activity-title\"><h3>Labor</h3></div><div class=\"activity-details\">No solo es leer, sino <b>proclamar con convicción y reverencia</b>, siendo instrumento para llevar luz y esperanza. Requiere una profunda <b>preparación espiritual y técnica</b>.</div></div><div class=\"calendar-card\"><div class=\"activity-title\"><h3>Funciones principales</h3></div><div class=\"activity-details\"><ul><li>Proclamar las lecturas bíblicas de la Primera y Segunda lectura durante la Liturgia de la Palabra.</li><li>Leer la Oración de los Fieles en ausencia del diácono.</li><li>Motivar la participación de la comunidad con una amonestación inicial.</li></ul></div></div><div class=\"calendar-card\"><div class=\"activity-title\"><h3>Requisitos y preparación</h3></div><div class=\"activity-details\"><ul><li><b>Fe y vida cristiana:</b> Ser católicos practicantes, con todos los sacramentos recibidos y una vida coherente con el Evangelio.</li><li><b>Conocimiento profundo:</b> Estudiar y meditar el texto bíblico para comprender su contexto y mensaje.</li><li><b>Habilidades de lectura:</b> Voz clara, buena dicción, ritmo adecuado y pausas que faciliten la comprensión.</li><li><b>Preparación espiritual:</b> Orar y reflexionar sobre el pasaje para transmitir no solo palabras, sino el sentido profundo del texto.</li></ul></div></div><div class=\"calendar-card\"><div class=\"activity-title\"><h3>Importancia del ministerio</h3></div><div class=\"activity-details\"><ul><li><b>Una misión divina:</b> Los proclamadores son la voz de Dios para la comunidad, un servicio de gran honor y dignidad.</li><li><b>Conexión eucarística:</b> Su proclamación alimenta la fe de los fieles, preparando el camino para la comunión en la Eucaristía.</li></ul></div></div><div class=\"calendar-card\"><div class=\"activity-title\"><h3>Testimonio de vida</h3></div><div class=\"activity-details\"><p>Deben demostrar una <b>fe madura</b> y un <b>compromiso con las Sagradas Escrituras</b>.<br/>El <b>Concilio Vaticano II</b> impulsó y dio un lugar relevante a los laicos en esta tarea, reconociendo la importancia de que la Palabra de Dios llegue a todos los creyentes.</p></div></div><div class=\"calendar-card\"><div class=\"activity-title\"><h3>Contacto</h3></div><div class=\"activity-details\"><p>Teléfono: <a href=\"tel:+7712027076\">7712027076</a></p></div></div></div></div>"
     },
     {
       "groupId": 3,
-      "groupName": "Musica Sacra",
+      "groupName": "Música Sacra",
       "image": "Musica_Sacra.jpg",
       "description": "Este grupo está compuesto por personas que, con talento y dedicación, se preparan para enriquecer las celebraciones litúrgicas a través del canto y la música, creando un ambiente de reverencia y adoración que eleva el espíritu de la comunidad.",
-      "coordinator": "Fernando Chavez Calderón"
+      "coordinator": "Fernando Chavez Calderón",
+      "gallery": [],
+      "groups": [
+        {
+          "groupId": "3_1",
+          "groupName": "Voces del Señor",
+          "image": "Voces_del_Señor.png",
+          "description": "Coro católico al servicio de la liturgia, que busca unir la música, la oración y la comunidad para alabar a Dios y acompañar las celebraciones de la parroquia.",
+          "numberImages": 5,
+          "gallery": [],
+          "message": "<div class=\"group-message\"><h2>Voces del Señor</h2><p>Creado el <strong>24 de abril de 2022</strong>, el coro <strong>Voces del Señor</strong> te invita a embellecer la liturgia con música y oración.</p><p>Su misión es poner los dones musicales al servicio de Dios y de la comunidad, participando con alegría y disposición en las celebraciones litúrgicas.</p><p><strong>¡Puedes ser parte de nuestro equipo!</strong></p><p>No necesitas ser profesional, solo tener un <strong>corazón dispuesto para servir</strong>, aprender y crecer junto con los demás integrantes.</p><p>Si estás interesado en formar parte del coro, regálanos un mensaje al:</p><p class=\"contact-info\"><strong>📱 771 110 50 80</strong></p></div>",
+          "choirPlaylist": "https://www.youtube.com/playlist?list=PLHVaaLFRl1Jectt7gxuNcXqK8Bh9ZJ9G7"
+        },
+        {
+          "groupId": "3_2",
+          "groupName": "San Juan Pablo II",
+          "image": "San_Juan_Pablo_II.jpg",
+          "description": "",
+          "gallery": [],
+          "message": ""
+        },
+        {
+          "groupId": "3_3",
+          "groupName": "La Búsqueda",
+          "description": "La Búsqueda",
+          "gallery": [],
+          "message": ""
+        },
+        {
+          "groupId": "3_4",
+          "groupName": "Coro de Manuel",
+          "description": "Coro de Hora Santa",
+          "gallery": [],
+          "message": ""
+        }
+      ]
     },
     {
       "groupId": 4,
@@ -29,6 +66,7 @@
       "image": "Culto_Eucaristico.png",
       "description": "Feligreses con devoción y compromiso, que, reconociendo la maravillosa presencia de Cristo en la Eucaristía, organizan y promueven momentos de adoración, alabanza, acción de gracias, reparación y súplica en torno a Jesús Eucaristía, fortaleciendo la fe y la espiritualidad dentro de la comunidad y del mundo.",
       "numberImages": 12,
+      "gallery": [],
       "coordinator": "Rocío Cordero",
       "message": "<div class=\"group-message\"><p>El Señor “sabe que lo necesitamos” y ha querido quedarse con nosotros en una fracción de pan. Nos invita a vivir un pedacito de cielo aquí en la tierra, los jueves a las 7 de la noche en la hora santa, extendiendo la invitación a los 7 días de la semana, de 8 a 12 y de 4 a 6, en la capilla del Santísimo donde nos espera preso de amor.</p><p>Ven y únete.<br><strong>Informes:<br>WhatsApp: 771 202 8719</strong></p></div>"
     },
@@ -37,7 +75,9 @@
       "groupName": "Monaguillos",
       "image": "Monaguillos.png",
       "description": "Este grupo está integrado por niños y jóvenes que, con entusiasmo y dedicación, se preparan para asistir al sacerdote durante las celebraciones litúrgicas, aprendiendo sobre la fe y el servicio en la iglesia mientras fortalecen su compromiso espiritual.",
+      "numberImages": 5,
       "coordinator": "Juan Francisco Peña y Guadalupe Aguilar",
+      "gallery": [],
       "message": "<div class=\"group-message\"><strong>Grupo de Monaguillos</strong><p>Un espacio donde los niños, adolescentes y jóvenes aprenden el valor del servicio, la oración y la fraternidad, sirviendo con alegría en el altar y compartiendo la fe con otros.</p><p>✨ <em>“Servir a Dios con alegría es un honor que transforma el corazón.”</em></p><div class=\"bible-quote\"><em>“Servid al Señor con alegría, venid ante su presencia con júbilo.”</em><br><span class=\"quote-ref\">— Salmo 100:2</span></div><p>📅 <strong>Procesión de Monaguillos</strong><br>Cada 1er domingo de mes<br>⛪ Misa de 1:00 p.m.</p><p>📅 <strong>Hora Santa Vocacional</strong><br>Segundo sábado de cada mes<br>📍 5:00 p.m. en el Santísimo</p><p><strong>Te esperamos con los brazos abiertos.</strong></p></div>"
     },
     {
@@ -47,22 +87,25 @@
       "description": "Es un grupo de matrimonios que brindan dinámicas matrimoniales y llevan reuniones donde buscan fortalecer la célula más importante de la sociedad: la familia",
       "coordinator": "Jerónimo Samperio Soto y Jennyfer Flores Sánchez",
       "numberImages": 18,
+      "gallery": [],
       "message": "<div class=\"message-body\"><div class=\"intro-box\"><p><strong>La Pastoral Familiar</strong> te invita a formar familias fuertes y unidas en la fe, caminando junto a nuestro Señor Jesucristo.<br><br>Ofrecemos <strong>talleres prematrimoniales</strong>, <strong>consejería matrimonial</strong> y <strong>dinámicas matrimoniales</strong> para parejas, ya sea en unión libre o casadas por la Iglesia.<br><br>Para continuar alimentando el amor verdadero en tu matrimonio y fortalecer tu relación con Cristo, contamos con <strong>reuniones todos los martes</strong>.</p></div><div class=\"calendar-section\"><h4>📅 Calendario del servicio</h4><div class=\"calendar-cards\"><div class=\"calendar-card\"><h5>💍 Talleres Prematrimoniales</h5><p>Noviembre 22, 23, 29 y 30.<br><small>(El calendario del año 2026 se actualizará en diciembre)</small></p></div><div class=\"calendar-card\"><h5>🤝🏻 Consejería Matrimonial</h5><p>Miércoles y viernes a las 7:00 p.m.</p></div><div class=\"calendar-card\"><h5>🧑🏽‍🤝‍🧑🏽 Dinámicas Matrimoniales</h5><p>Retiro próximamente.</p></div><div class=\"calendar-card\"><h5>🌱 Crecimiento espiritual y de pareja</h5><p>Martes a las 8:00 p.m.</p></div></div><p class=\"contact-info\"><strong>Teléfonos:</strong><br>771 203 6838 | 771 235 9546</p></div></div>"
     },
     {
       "groupId": 7,
-      "groupName": "Pastoral de Adolescentes y Jóvenes \"Stella Maris\".",
+      "groupName": "Pastoral de Adolescentes y Jóvenes \"Stella Maris\"",
       "coordinator": "Lucia Franco",
-      "numberImages": 11,
+      "numberImages": 10,
+      "gallery": [],
       "image": "Pastoral-jovenes.png",
       "description": "¡Todo a Jesús por María y todo a María para Jesús!. Creado con el objetivo de Impulsar y reavivar el encuentro de adolescentes y jóvenes con Cristo a través de la evangelización permanente para ser testimonio de Cristo Joven en su comunidad.",
       "message": "<div class=\"invite-section\"><p>Creado el 06-Abril-2024</p><p><strong>No camines solo.</strong><br>Ven tal como eres: aquí encontrarás un espacio para compartir la fe y descubrir la alegría auténtica del corazón.</p><blockquote class=\"bible-quote\"><p>\"Nadie te menosprecie por ser joven; al contrario, sé ejemplo para los creyentes en palabra, conducta, amor, fe y pureza.\"</p><footer>— 1 Timoteo 4:12</footer></blockquote><div class=\"contact-info\"><p><strong>Contáctanos</strong></p><p>Teléfono: <a href=\"tel:+7714442863\">7714442863</a></p></div></div>"
     },
     {
       "groupId": 8,
-      "groupName": "Pastoral Profética\".",
+      "groupName": "Pastoral Profética",
       "coordinator": "Yolanda Hernández Cerón",
-      "numberImages": 6,
+      "numberImages": 1,
+      "gallery": [],
       "message": "",
       "image": "Pastoral-Profetica.png",
       "description": "La Pastoral Profética es un espacio de encuentro y compromiso donde, iluminados por la Palabra de Dios y guiados por el Espíritu Santo, buscamos discernir los signos de los tiempos y anunciar con valentía el Evangelio en medio de la realidad que vivimos."

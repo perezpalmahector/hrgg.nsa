@@ -25,16 +25,40 @@ const galleryImages = [
         title: "Cristo crucificado",
     },
     {
-        src: "/images/gallery/carrousel4.png",
+        src: "/images/gallery/carrousel6.png",
         title: "Nuestra Señora de Fátima"
     },
     {
-        src: "/images/gallery/carrousel5.png",
+        src: "/images/gallery/carrousel7.png",
         title: "Nuestra Señora del Carmen"
     },
     {
         src: "/images/gallery/carrousel8.png",
         title: "Santos Óleos",
+    },
+    {
+        src: "/images/gallery/carrousel9.png",
+        title: "Interior de la Parroquia",
+    },
+    {
+        src: "/images/gallery/carrousel10.png",
+        title: "Bautisterio",
+    },
+    {
+        src: "/images/gallery/carrousel11.png",
+        title: "Cristo crucificado, la Virgen Dolorosa y San Juan Evangelista",
+    },
+    {
+        src: "/images/gallery/carrousel12.png",
+        title: "Santa Maria en la advocacion de la Inmaculada Concepcion",
+    },
+    {
+        src: "/images/gallery/carrousel13.png",
+        title: "La Santisima Trinidad",
+    },
+    {
+        src: "/images/gallery/carrousel14.png",
+        title: "San Antonio de Padua",
     },
 ];
 

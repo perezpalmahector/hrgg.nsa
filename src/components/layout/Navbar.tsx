@@ -29,7 +29,7 @@ export function Navbar() {
             </p>
 
             <p className="navbar-subtitle">
-              Mineral de la Reforma · Hidalgo
+              Mineral de la Reforma · Hidalgo · México
             </p>
           </div>
         </Link>
