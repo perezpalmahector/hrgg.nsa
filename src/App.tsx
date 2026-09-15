@@ -16,6 +16,7 @@ import Gallery from "@/components/gallery/Gallery";
 import History from "@/components/history/History";
 import Priests from "@/components/priests/Priests";
 import Pastoral from "@/components/pastoral/Pastoral";
+import PastoralGroupPage from "@/components/pastoral/PastoralGroupPage";
 import Places from "@/components/places/Places";
 import Contact from "@/components/contact/Contact";
 
@@ -138,6 +139,18 @@ function App() {
             element={
               <SectionPage sectionId="pastoral" />
             }
+          />
+
+          {/* GRUPO PASTORAL */}
+          <Route
+            path="/pastoral/:groupSlug"
+            element={<PastoralGroupPage />}
+          />
+
+          {/* SUBGRUPO DE PASTORAL */}
+          <Route
+            path="/pastoral/:categorySlug/:groupSlug"
+            element={<PastoralGroupPage />}
           />
 
           {/* LUGARES */}
