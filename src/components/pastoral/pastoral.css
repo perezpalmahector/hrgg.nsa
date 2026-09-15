@@ -1,54 +1,49 @@
 .pastoral-section {
   width: 100%;
-  padding: 6rem 1.5rem;
+  padding: 4rem 1.5rem;
   background: #ffffff;
-  scroll-margin-top: 90px;
 }
 
 .pastoral-container {
-  width: min(1180px, 100%);
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
-/* =========================
-   ENCABEZADO
-========================= */
-
 .pastoral-header {
-  max-width: 1050px;
-  margin: 0 auto 3rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 
 .pastoral-eyebrow {
   display: inline-block;
-  margin-bottom: 0.6rem;
-  color: var(--color-brand, #00a8c6);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  margin-bottom: 0.5rem;
+  color: #00a8c6;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .pastoral-title {
   margin: 0;
-  color: var(--color-text, #1f2937);
+  color: #26373d;
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.1;
 }
 
 .pastoral-subtitle {
-  max-width: 1050px;
+  max-width: 760px;
   margin: 1rem auto 0;
-  color: #64748b;
+  color: #718086;
   font-size: 1rem;
   line-height: 1.7;
 }
 
-/* =========================
-   GRID
-========================= */
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
 
 .pastoral-grid {
   display: grid;
@@ -56,40 +51,34 @@
   gap: 1.5rem;
 }
 
-/* =========================
-   TARJETA
-========================= */
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
 
 .pastoral-card {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   overflow: hidden;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
   background: #ffffff;
-  box-shadow:
-    0 8px 24px rgba(15, 23, 42, 0.06),
-    0 2px 6px rgba(15, 23, 42, 0.04);
+  border: 1px solid #e4edef;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(38, 55, 61, 0.08);
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    box-shadow 0.25s ease;
 }
 
 .pastoral-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 168, 198, 0.25);
-  box-shadow:
-    0 16px 35px rgba(15, 23, 42, 0.1),
-    0 4px 10px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 14px 32px rgba(38, 55, 61, 0.12);
 }
-
-/* =========================
-   IMAGEN
-========================= */
 
 .pastoral-card-image-wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 220px;
   overflow: hidden;
@@ -101,84 +90,76 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.45s ease;
+  object-position: center;
 }
 
-.pastoral-card:hover .pastoral-card-image {
-  transform: scale(1.04);
-}
-
-.pastoral-card-image-placeholder,
-.pastoral-modal-image-placeholder,
-.pastoral-subgroup-placeholder {
+.pastoral-card-image-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   padding: 1rem;
-  background: #f1f5f9;
-  color: #64748b;
+  color: #718086;
   text-align: center;
-  font-size: 0.9rem;
-  font-weight: 700;
+  background: #f1f5f9;
 }
+
+/* =========================================================
+   LABELS
+   ========================================================= */
 
 .pastoral-image-count,
 .pastoral-subgroup-count {
   position: absolute;
-  bottom: 0.85rem;
-  padding: 0.4rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.75);
+  bottom: 0.75rem;
+  padding: 0.35rem 0.65rem;
   color: #ffffff;
-  font-size: 0.72rem;
+  background: rgba(38, 55, 61, 0.78);
+  border-radius: 999px;
+  font-size: 0.75rem;
   font-weight: 700;
-  backdrop-filter: blur(6px);
+  line-height: 1;
 }
 
 .pastoral-image-count {
-  right: 0.85rem;
+  left: 0.75rem;
 }
 
 .pastoral-subgroup-count {
-  left: 0.85rem;
+  right: 0.75rem;
 }
 
-/* =========================
-   CONTENIDO
-========================= */
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
 
 .pastoral-card-content {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 1.35rem;
+  padding: 1.4rem;
 }
 
 .pastoral-card-title {
   margin: 0;
-  color: var(--color-text, #1f2937);
-  font-size: 1.15rem;
-  font-weight: 800;
+  color: #26373d;
+  font-size: 1.2rem;
+  font-weight: 700;
   line-height: 1.35;
 }
 
 .pastoral-card-coordinator {
-  margin: 0.65rem 0 0;
-  color: #64748b;
-  font-size: 0.78rem;
+  margin: 0.55rem 0 0;
+  color: #718086;
+  font-size: 0.9rem;
   line-height: 1.5;
-}
-
-.pastoral-card-coordinator strong {
-  color: #475569;
 }
 
 .pastoral-card-description {
   margin: 0.9rem 0 0;
-  color: #64748b;
-  font-size: 0.88rem;
+  color: #4f6066;
+  font-size: 0.95rem;
   line-height: 1.65;
 }
 
@@ -186,207 +167,47 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  align-self: flex-start;
-  min-height: 40px;
+  gap: 0.4rem;
+  width: fit-content;
   margin-top: auto;
-  padding: 0.65rem 0.9rem;
-  border: 1px solid var(--color-brand, #00a8c6);
-  border-radius: 10px;
-  background: var(--color-brand, #00a8c6);
-  color: #ffffff;
-  font-size: 0.82rem;
+  padding-top: 1.2rem;
+  color: #00a8c6;
+  font-size: 0.92rem;
   font-weight: 700;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  text-decoration: none;
 }
 
 .pastoral-card-button:hover {
-  background: var(--color-brand-dark, #008da9);
-  border-color: var(--color-brand-dark, #008da9);
-  transform: translateY(-1px);
+  color: #008da9;
 }
 
-/* =========================
-   MODAL
-========================= */
-
-.pastoral-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  background: rgba(15, 23, 42, 0.78);
-  backdrop-filter: blur(7px);
-}
-
-.pastoral-modal-content {
-  position: relative;
-  width: min(950px, 100%);
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 2rem;
-  border-radius: 24px;
-  background: #ffffff;
-  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
-}
-
-.pastoral-modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: #f1f5f9;
-  color: #475569;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.pastoral-modal-close:hover {
-  background: var(--color-brand-light, #eafaff);
-  color: var(--color-brand-dark, #008da9);
-}
-
-.pastoral-modal-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0 0 1.25rem;
-  padding: 0.55rem 0.75rem;
-  border: 0;
-  border-radius: 9px;
-  background: #f1f5f9;
-  color: #475569;
-  font-size: 0.8rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.pastoral-modal-back:hover {
-  background: var(--color-brand-light, #eafaff);
-  color: var(--color-brand-dark, #008da9);
-}
-
-.pastoral-modal-header {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding-right: 3rem;
-}
-
-.pastoral-modal-image {
-  flex: 0 0 120px;
-  width: 120px;
-  height: 100px;
-  border-radius: 14px;
-  object-fit: cover;
-  background: #f1f5f9;
-}
-
-.pastoral-modal-image-placeholder {
-  flex: 0 0 120px;
-  width: 120px;
-  height: 100px;
-  border-radius: 14px;
-}
-
-.pastoral-modal-header h3 {
-  margin: 0;
-  color: var(--color-text, #1f2937);
-  font-size: clamp(1.25rem, 3vw, 1.7rem);
-  font-weight: 800;
-  line-height: 1.3;
-}
-
-.pastoral-modal-header p {
-  margin: 0.5rem 0 0;
-  color: #64748b;
-  font-size: 0.88rem;
-  line-height: 1.5;
-}
-
-/* =========================
-   SUBGRUPOS
-========================= */
+/* =========================================================
+   MINI CARDS EN LA TARJETA PRINCIPAL
+   ========================================================= */
 
 .pastoral-subgroups {
-  margin-top: 1.75rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e2e8f0;
-}
-
-.pastoral-subgroups-heading {
-  margin-bottom: 1rem;
-}
-
-.pastoral-subgroups-heading span {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--color-brand-dark, #008da9);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.pastoral-subgroups-heading h4 {
-  margin: 0;
-  color: var(--color-text, #1f2937);
-  font-size: 1.15rem;
-  font-weight: 800;
-}
-
-.pastoral-subgroups-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.pastoral-subgroup-card {
-  display: flex;
+  gap: 0.65rem;
   width: 100%;
-  padding: 0;
-  overflow: hidden;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  background: #ffffff;
-  text-align: left;
-  cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  margin-top: 1.2rem;
 }
 
-.pastoral-subgroup-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 168, 198, 0.3);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+.pastoral-subgroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  color: inherit;
+  background: #f8fafb;
+  border: 1px solid #e4edef;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 .pastoral-subgroup-image {
-  flex: 0 0 110px;
-  width: 110px;
-  height: 120px;
+  width: 100%;
+  height: 72px;
   overflow: hidden;
   background: #f1f5f9;
 }
@@ -399,248 +220,322 @@
 }
 
 .pastoral-subgroup-content {
+  padding: 0.5rem;
+}
+
+.pastoral-subgroup-title {
+  margin: 0;
+  color: #26373d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* =========================================================
+   PAGINA DE DETALLE
+   ========================================================= */
+
+.pastoral-group-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  padding: 2.5rem 1.5rem 5rem;
+  background: #ffffff;
+}
+
+.pastoral-group-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.pastoral-group-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  color: #00a8c6;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pastoral-group-back:hover {
+  color: #008da9;
+}
+
+/* =========================================================
+   DETALLE PRINCIPAL
+   ========================================================= */
+
+.pastoral-group-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.pastoral-group-image {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f1f5f9;
+}
+
+.pastoral-group-main-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pastoral-group-image-placeholder {
   display: flex;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  color: #718086;
+  text-align: center;
+  background: #f1f5f9;
+}
+
+.pastoral-group-info {
+  min-width: 0;
+}
+
+.pastoral-group-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  color: #00a8c6;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pastoral-group-title {
+  margin: 0;
+  color: #26373d;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.pastoral-group-coordinator {
+  margin: 1rem 0 0;
+  color: #718086;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.pastoral-group-description {
+  margin: 1.2rem 0 0;
+  color: #4f6066;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   SUBGRUPOS DE LA PAGINA DE DETALLE
+   ========================================================= */
+
+.pastoral-subgroups-section {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.pastoral-subgroups-header {
+  margin-bottom: 1.5rem;
+}
+
+.pastoral-subgroups-title {
+  margin: 0;
+  color: #26373d;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/*
+   IMPORTANTE:
+   Esta es la rejilla de los grupos de Música Sacra.
+   No usa pastoral-group-header.
+   No usa columnas gigantes.
+*/
+
+.pastoral-detail-subgroups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.pastoral-detail-subgroup {
+  display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  color: inherit;
+  background: #ffffff;
+  border: 1px solid #e4edef;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 5px 18px rgba(38, 55, 61, 0.07);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pastoral-detail-subgroup:hover {
+  transform: translateY(-3px);
+  border-color: #00a8c6;
+  box-shadow: 0 10px 24px rgba(38, 55, 61, 0.12);
+}
+
+.pastoral-detail-subgroup-image {
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.pastoral-detail-subgroup-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pastoral-detail-subgroup-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+  color: #718086;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.pastoral-detail-subgroup-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 0.9rem;
 }
 
-.pastoral-subgroup-content h5 {
+.pastoral-detail-subgroup-content h3 {
   margin: 0;
-  color: var(--color-text, #1f2937);
+  color: #26373d;
   font-size: 0.95rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.35;
 }
 
-.pastoral-subgroup-content p {
-  display: -webkit-box;
-  overflow: hidden;
+.pastoral-detail-subgroup-content p {
   margin: 0.45rem 0 0;
-  color: #64748b;
-  font-size: 0.76rem;
-  line-height: 1.5;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  color: #718086;
+  font-size: 0.8rem;
+  line-height: 1.45;
 }
 
-.pastoral-subgroup-link {
+.pastoral-detail-subgroup-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.25rem;
   margin-top: auto;
-  padding-top: 0.65rem;
-  color: var(--color-brand-dark, #008da9);
-  font-size: 0.75rem;
-  font-weight: 800;
+  padding-top: 0.75rem;
+  color: #00a8c6;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
-/* =========================
+.pastoral-detail-subgroup:hover .pastoral-detail-subgroup-link {
+  color: #008da9;
+}
+
+/* =========================================================
+   MENSAJE
+   ========================================================= */
+
+.group-message {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fafb;
+  border-left: 4px solid #00a8c6;
+  border-radius: 0 14px 14px 0;
+  color: #4f6066;
+  line-height: 1.75;
+}
+
+.group-message p {
+  margin: 0 0 1rem;
+}
+
+.group-message p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
    PLAYLIST
-========================= */
+   ========================================================= */
 
 .pastoral-playlist {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .pastoral-playlist a {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.7rem 0.9rem;
+  gap: 0.5rem;
+  padding: 0.8rem 1.1rem;
+  color: #ffffff;
+  background: #00a8c6;
   border-radius: 10px;
-  background: var(--color-brand-light, #eafaff);
-  color: var(--color-brand-dark, #008da9);
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-decoration: none;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.pastoral-playlist a:hover {
-  background: #dff7fc;
-  transform: translateY(-1px);
-}
-
-/* =========================
-   MENSAJE
-========================= */
-
-.pastoral-modal-message {
-  margin-top: 1.75rem;
-  color: #475569;
-  font-size: 0.92rem;
-  line-height: 1.7;
-}
-
-.pastoral-modal-message h2 {
-  margin: 0 0 1.25rem;
-  color: var(--color-text, #1f2937);
-  font-size: 1.35rem;
-  font-weight: 800;
-}
-
-.pastoral-modal-message h3 {
-  margin: 0;
-  color: var(--color-text, #1f2937);
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-.pastoral-modal-message h4 {
-  margin: 1.5rem 0 0.85rem;
-  color: var(--color-text, #1f2937);
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-.pastoral-modal-message h5 {
-  margin: 0 0 0.5rem;
-  color: var(--color-text, #1f2937);
   font-size: 0.9rem;
-  font-weight: 800;
-}
-
-.pastoral-modal-message p {
-  margin: 0 0 1rem;
-}
-
-.pastoral-modal-message strong {
-  color: #334155;
-}
-
-.pastoral-modal-message ul {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-.pastoral-modal-message li {
-  margin-bottom: 0.55rem;
-}
-
-.pastoral-modal-message a {
-  color: var(--color-brand-dark, #008da9);
   font-weight: 700;
   text-decoration: none;
 }
 
-.pastoral-modal-message a:hover {
-  text-decoration: underline;
+.pastoral-playlist a:hover {
+  background: #008da9;
 }
 
-.pastoral-modal-message blockquote {
-  margin: 1.25rem 0;
-  padding: 1rem 1.25rem;
-  border-left: 4px solid var(--color-brand, #00a8c6);
-  border-radius: 0 12px 12px 0;
-  background: var(--color-brand-light, #eafaff);
-  color: #475569;
-}
-
-.pastoral-modal-message footer {
-  margin-top: 0.5rem;
-  color: #64748b;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-/* =========================
-   TARJETAS DEL JSON
-========================= */
-
-.pastoral-modal-message .calendar-cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.pastoral-modal-message .calendar-card {
-  padding: 1rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  background: #f8fafc;
-}
-
-.pastoral-modal-message .activity-title {
-  margin-bottom: 0.65rem;
-}
-
-.pastoral-modal-message .activity-details {
-  color: #64748b;
-  font-size: 0.85rem;
-  line-height: 1.65;
-}
-
-.pastoral-modal-message .intro-box,
-.pastoral-modal-message .invite-section,
-.pastoral-modal-message .message-body,
-.pastoral-modal-message .group-message {
-  width: 100%;
-}
-
-.pastoral-modal-message .contact-info {
-  margin-top: 1.25rem;
-  padding: 1rem;
-  border-radius: 12px;
-  background: var(--color-brand-light, #eafaff);
-}
-
-.pastoral-modal-message small {
-  color: #94a3b8;
-}
-
-/* =========================
-   GALERÍA
-========================= */
-
-.pastoral-gallery-section {
-  margin-top: 2rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid #e2e8f0;
-}
-
-.pastoral-gallery-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.pastoral-gallery-header span {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--color-brand-dark, #008da9);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.pastoral-gallery-header h4 {
-  margin: 0;
-  color: var(--color-text, #1f2937);
-  font-size: 1.2rem;
-  font-weight: 800;
-}
-
-.pastoral-gallery-header strong {
-  flex-shrink: 0;
-  color: #64748b;
-  font-size: 0.78rem;
-}
+/* =========================================================
+   GALERIA
+   ========================================================= */
 
 .pastoral-gallery {
+  margin-top: 3rem;
+}
+
+.pastoral-gallery-title {
+  margin: 0 0 1.25rem;
+  color: #26373d;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.pastoral-gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .pastoral-gallery-item {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 12px;
@@ -653,66 +548,116 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-.pastoral-gallery-item video {
-  background: #0f172a;
-}
+/* =========================================================
+   MODAL / LEGACY
+   ========================================================= */
 
-.pastoral-video-badge {
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  display: inline-flex;
+.pastoral-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.3rem 0.5rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.8);
-  color: #ffffff;
-  font-size: 0.68rem;
-  font-weight: 700;
-  pointer-events: none;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.75);
 }
 
-/* =========================
-   TABLET
-========================= */
+.pastoral-modal {
+  position: relative;
+  width: min(1100px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 18px;
+}
 
-@media (max-width: 1000px) {
+.pastoral-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  color: #26373d;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.pastoral-modal-image {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: center;
+  background: #f1f5f9;
+}
+
+.pastoral-modal-content {
+  padding: 1.5rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .pastoral-section {
+    padding: 3.5rem 1.25rem;
+  }
+
   .pastoral-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .pastoral-subgroups-grid {
+  .pastoral-group-header {
     grid-template-columns: 1fr;
+  }
+
+  .pastoral-group-image {
+    height: 360px;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .pastoral-detail-subgroups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pastoral-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* =========================
-   MÓVIL
-========================= */
-
 @media (max-width: 640px) {
   .pastoral-section {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
   }
 
   .pastoral-header {
     margin-bottom: 2rem;
   }
 
+  .pastoral-title {
+    font-size: 2rem;
+  }
+
   .pastoral-subtitle {
-    font-size: 0.92rem;
+    font-size: 0.94rem;
   }
 
   .pastoral-grid {
     grid-template-columns: 1fr;
-    gap: 1.15rem;
-  }
-
-  .pastoral-card {
-    border-radius: 18px;
+    gap: 1.25rem;
   }
 
   .pastoral-card-image-wrapper {
@@ -720,64 +665,91 @@
   }
 
   .pastoral-card-content {
-    padding: 1.15rem;
+    padding: 1.2rem;
   }
 
-  .pastoral-card-title {
-    font-size: 1.05rem;
-  }
-
-  .pastoral-card-description {
-    font-size: 0.85rem;
-  }
-
-  .pastoral-modal {
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  .pastoral-modal-content {
-    max-height: 94vh;
-    padding: 1.25rem;
-    border-radius: 20px;
-  }
-
-  .pastoral-modal-header {
-    flex-direction: column;
-    padding-right: 0;
-    text-align: center;
-  }
-
-  .pastoral-modal-image,
-  .pastoral-modal-image-placeholder {
-    width: 150px;
-    height: 110px;
-  }
-
-  .pastoral-modal-message {
-    font-size: 0.86rem;
-  }
-
-  .pastoral-modal-message .calendar-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .pastoral-subgroup-card {
-    flex-direction: column;
-  }
-
-  .pastoral-subgroup-image {
-    width: 100%;
-    height: 170px;
-  }
-
-  .pastoral-gallery {
+  .pastoral-subgroups {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.6rem;
   }
 
-  .pastoral-gallery-header {
-    align-items: flex-start;
-    flex-direction: column;
+  .pastoral-subgroup-image {
+    height: 80px;
+  }
+
+  .pastoral-subgroup-content {
+    padding: 0.4rem;
+  }
+
+  .pastoral-subgroup-title {
+    font-size: 0.7rem;
+  }
+
+  .pastoral-group-page {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .pastoral-group-header {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .pastoral-group-image {
+    height: 280px;
+    border-radius: 14px;
+  }
+
+  .pastoral-group-title {
+    font-size: 2rem;
+  }
+
+  .pastoral-detail-subgroups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .pastoral-detail-subgroup-image {
+    height: 95px;
+  }
+
+  .pastoral-detail-subgroup-content {
+    padding: 0.7rem;
+  }
+
+  .pastoral-detail-subgroup-content h3 {
+    font-size: 0.8rem;
+  }
+
+  .pastoral-detail-subgroup-content p {
+    font-size: 0.7rem;
+  }
+
+  .pastoral-detail-subgroup-link {
+    font-size: 0.72rem;
+  }
+
+  .pastoral-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pastoral-gallery-item {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pastoral-modal-overlay {
+    padding: 0.5rem;
+  }
+
+  .pastoral-modal {
+    max-height: 94vh;
+    border-radius: 14px;
+  }
+
+  .pastoral-modal-image {
+    max-height: 420px;
+  }
+
+  .pastoral-modal-content {
+    padding: 1.2rem;
   }
 }
