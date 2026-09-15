@@ -1,7 +1,7 @@
 {
   "news": [
     {
-      "newId": 26,
+      "newId": 25,
       "newDate": "2026-08-02T18:00:00",
       "newDates": "2 de Agosto 2026",
       "newShort": "40 Aniversario de la Parroquia de Nuestra Señora de los Angeles",
@@ -11,27 +11,7 @@
       "cropImages": false
     },
     {
-      "newId": 25,
-      "newDate": "2026-05-30T09:30:00",
-      "newDates": "30 y 31 de Mayo 2026",
-      "newShort": "Campamento Vocacional San Juan Hueyapan",
-      "newDescription": "🌄✨ <b>Campamento Vocacional “Te he llamado por tu nombre”</b> ✨🌄<br><br>📍 <b>Lugar:</b> San Juan Hueyapan, Cuactepec de Hinojosa, Hidalgo<br>📅 <b>Fecha:</b> 30 y 31 de mayo<br>⏰ <b>Inicio:</b> Sábado 9:30 AM<br>🏁 <b>Finaliza:</b> Domingo 2:00 PM<br><br>🙋‍♂️🙋‍♀️ Dirigido a jóvenes solteros de <b>16 a 25 años</b><br><br>💬 <i>“Te he llamado por tu nombre”</i> ✨<br><br>💵 <b>Cuota de recuperación:</b> $300 MXN<br><br>🎒 <b>No olvides llevar:</b><br>🛏️ Cobijas<br>🧴 Artículos personales<br>⛺ Casa de campaña (si tienes)<br>📖 Biblia<br><br>📞 <b>Mayores informes:</b><br>Pastoral Vocacional<br>📱 771 104 7597<br><br>🔥 ¡Ven y vive una experiencia única de encuentro, oración y convivencia! 🙌",
-      "groupId": 6,
-      "media": "cv2026.png",
-      "cropImages": false
-    },
-    {
-      "newId": 27,
-      "newDate": "2026-05-23T19:00:00",
-      "newDates": "23 de Mayo 2026",
-      "newShort": "Vigilia de Pentecostés 2026",
-      "newDescription": "🔥🕊️ <b>Vigilia de Pentecostés 2026</b> 🕊️🔥<br><br>🙏 Sean cordialmente invitados todos los niños, jóvenes y papás de <b>Pastoral Profética y Vocacional</b><br><br>📅 <b>Fecha:</b> Sábado 23 de mayo<br>⏰ <b>Horario:</b> 7:00 PM a 8:30 PM<br>📍 <b>Lugar:</b> Parroquia de Nuestra Señora de los Ángeles<br><br>👕 <b>Código de vestimenta:</b><br>🔴 Playera, sudadera o distintivo rojo<br><br>📝 <b>Recuerda llevar:</b><br>✏️ Lapicero<br>🎀 Una banda roja<br><br>✨ <i>Ven y celebremos juntos la fuerza del Espíritu Santo</i> 🙌🔥",
-      "groupId": 6,
-      "media": "veladaes2026.png",
-      "cropImages": false
-    },
-    {
-      "newId": 26,
+      "newId": 24,
       "newDate": "2026-05-31T09:30:00",
       "newDates": "30 y 31 de Mayo 2026",
       "newShort": "Campamento Vocacional San Juan Hueyapan",
@@ -41,7 +21,27 @@
       "cropImages": false
     },
     {
-      "newId": 24,
+      "newId": 23,
+      "newDate": "2026-05-30T09:30:00",
+      "newDates": "30 y 31 de Mayo 2026",
+      "newShort": "Campamento Vocacional San Juan Hueyapan",
+      "newDescription": "🌄✨ <b>Campamento Vocacional “Te he llamado por tu nombre”</b> ✨🌄<br><br>📍 <b>Lugar:</b> San Juan Hueyapan, Cuactepec de Hinojosa, Hidalgo<br>📅 <b>Fecha:</b> 30 y 31 de mayo<br>⏰ <b>Inicio:</b> Sábado 9:30 AM<br>🏁 <b>Finaliza:</b> Domingo 2:00 PM<br><br>🙋‍♂️🙋‍♀️ Dirigido a jóvenes solteros de <b>16 a 25 años</b><br><br>💬 <i>“Te he llamado por tu nombre”</i> ✨<br><br>💵 <b>Cuota de recuperación:</b> $300 MXN<br><br>🎒 <b>No olvides llevar:</b><br>🛏️ Cobijas<br>🧴 Artículos personales<br>⛺ Casa de campaña (si tienes)<br>📖 Biblia<br><br>📞 <b>Mayores informes:</b><br>Pastoral Vocacional<br>📱 771 104 7597<br><br>🔥 ¡Ven y vive una experiencia única de encuentro, oración y convivencia! 🙌",
+      "groupId": 6,
+      "media": "cv2026.png",
+      "cropImages": false
+    },
+    {
+      "newId": 22,
+      "newDate": "2026-05-23T19:00:00",
+      "newDates": "23 de Mayo 2026",
+      "newShort": "Vigilia de Pentecostés 2026",
+      "newDescription": "🔥🕊️ <b>Vigilia de Pentecostés 2026</b> 🕊️🔥<br><br>🙏 Sean cordialmente invitados todos los niños, jóvenes y papás de <b>Pastoral Profética y Vocacional</b><br><br>📅 <b>Fecha:</b> Sábado 23 de mayo<br>⏰ <b>Horario:</b> 7:00 PM a 8:30 PM<br>📍 <b>Lugar:</b> Parroquia de Nuestra Señora de los Ángeles<br><br>👕 <b>Código de vestimenta:</b><br>🔴 Playera, sudadera o distintivo rojo<br><br>📝 <b>Recuerda llevar:</b><br>✏️ Lapicero<br>🎀 Una banda roja<br><br>✨ <i>Ven y celebremos juntos la fuerza del Espíritu Santo</i> 🙌🔥",
+      "groupId": 6,
+      "media": "veladaes2026.png",
+      "cropImages": false
+    },
+    {
+      "newId": 21,
       "newDate": "2026-05-01T17:00:00",
       "newDates": "Mayo-2026",
       "newShort": "Ofrecimiento Flores a nuestra Virgen María",
@@ -51,7 +51,7 @@
       "cropImages": false
     },
     {
-      "newId": 25,
+      "newId": 20,
       "newDate": "2026-05-01T08:00:00",
       "newDates": "01 Mayo al 07 Mayo 2026",
       "newShort": "Ofrecimiento Flores Monaguillos",
@@ -61,7 +61,7 @@
       "cropImages": false
     },
     {
-      "newId": 23,
+      "newId": 19,
       "newDate": "2026-04-25T08:00:00",
       "newDates": "25-Abril-2026",
       "newShort": "Monaguillada",
@@ -71,7 +71,7 @@
       "cropImages": false
     },
     {
-      "newId": 21,
+      "newId": 18,
       "newDate": "2026-04-25T08:00:00",
       "newDates": "25-Abril-2026",
       "newShort": "Monaguillada",
@@ -81,7 +81,7 @@
       "cropImages": false
     },
     {
-      "newId": 20,
+      "newId": 17,
       "newDate": "2026-04-25T08:00:00",
       "newDates": "25-Abril-2026",
       "newShort": "Monaguillada",
@@ -91,109 +91,16 @@
       "cropImages": false
     },
     {
-      "newId": 13,
-      "newDate": "2025-04-13T00:00:00",
-      "newDates": "13-Abril-2025 al 20-Abril-2025",
-      "newShort": "Semana Santa 2025",
-      "newDescription": "La semana mayor de la iglesia católica, donde recordamos la pasión, muerte y resurrección de nuestro Señor Jesucristo.",
-      "media": "SemanaSanta2025.jpg",
+      "newId": 16,
+      "newDate": "2026-02-01T09:00:00",
+      "newDates": "21 y 22 de Febrero de 2026",
+      "newShort": "Dinamica Matromionial",
+      "newDescription": "Retiro para parejas casadas en unión libre",
+      "media": "dm_feb_2026.jpg",
       "cropImages": false
     },
     {
       "newId": 15,
-      "newDate": "2025-06-21T15:00:00",
-      "newDates": "21-Junio-2025 al 22-Junio-2025",
-      "newShort": "Dinámica Matrimonial 2025",
-      "newDescription": "La Pastoral familiar te invita a este retiro para matrimonios y personas en unión libre, vive esta super experiencia en pareja. Construyendo la familia que deseamos. Sábado 21 Junio 3pm-9pm y Domingo 22 Junio 9am-7pm. Cupo Limitado. Informes 771 191 6851.",
-      "media": "retiro_matrimonios_1_2025.jpg",
-      "groupId": 6
-    },
-    {
-      "newId": 16,
-      "newDate": "2025-06-01T00:00:00",
-      "newDates": "1 al 31 de Mayo",
-      "newShort": "Mayo Mes de María",
-      "newDescription": "La Pastoral vocacional te invita al rezo del Santo Rosario y ofrecimiento de flores a la Virgen María.<br/> Todos los días a las 5pm, Parroquia de Nuestra Señora de los Angeles del 1 al 10 de Mayo, Capilla de San Juan Pablo II del 11 al 17 de Mayo, Capilla del Sagrado Corazón de Jesús del 18 al 24 de Mayo y Capilla de San Isidro Labrador del 25 al 31 de Mayo.",
-      "media": "MariaMayo.jpeg",
-      "cropImages": false
-    },
-    {
-      "newId": 17,
-      "newDate": "2025-07-01T00:00:00",
-      "newDates": "1 al 30 de Junio",
-      "newShort": "Junio Mes del Sagrado Corazón de Jesús",
-      "newDescription": "La Pastoral vocacional te invita al rezo del Santo Rosario y ofrecimiento de flores al Sagrado Corazón de Jesús, se llevará a acabo en: <br/> Capilla del Sagrado Corazón de Jesús del 1 al 7 de Junio, domingo 1 junio después de misa, martes 3 de junio 6pm, los demás días a las 5pm.<br/> Capilla de San Juan Pablo II del 8 al 14 de Junio, domingo 8 junio, despues de misa, todos los demás días a las 5pm.<br/> Capilla de San Isidro Labrador del 15 al 21 de Junio a las 5pm. <br/> Parroquia de Nuestra Señora de los Angeles del 22 al 30 de Junio a las 5pm. Niños asistir con camisa o playera blanca y 5 flores.",
-      "media": "sagrado_corazon_jun_2025.jpg",
-      "cropImages": false
-    },
-    {
-      "newId": 18,
-      "newDate": "2025-10-28T18:00:00",
-      "newDates": "28 de Octubre de 2025",
-      "newShort": "Misa en Honor a San Judas Tadeo",
-      "newDescription": "!Celebración a San Judas Tadeo!. <br/>Invitamos con alegría a toda la comunidad a participar en la Santa Misa en honor a San Judas Tadeo, apóstol y fiel intercesor en los momentos difíciles.<br/>📅 Fecha: Lunes 28 de octubre<br/>🕕 Hora: 6:00 p.m.<br/>📍 Lugar: Parroquia Nuestra Señora de los Ángeles<br/>Ven con tu familia a dar gracias, pedir su intercesión y fortalecer tu fe. ¡San Judas Tadeo, ruega por nosotros! 🙏✨",
-      "media": "San_Judas_Tadeo_28_Oct.png",
-      "cropImages": false
-    },
-    {
-      "newId": 19,
-      "newDate": "2025-10-19T18:00:00",
-      "newDates": "2026",
-      "newShort": "Pascua Juvenil 2026",
-      "newDescription": "Proximamente Pascua Juvenil 2026<br/>",
-      "media": "pastoral-joven-retiro-2026.jpg",
-      "groupId": 7,
-      "cropImages": false
-    },
-    {
-      "newId": 20,
-      "newDate": "2025-10-27T19:00:00",
-      "newDates": "Sabado 25 de Octubre de 2025",
-      "newShort": "Rosario Viviente",
-      "newDescription": "Estimada comunidad te invitamos a participar en el Rosario viviente<br/>📅 Fecha: Sabado 25 de octubre<br/>🕖 Hora: 7:00 p.m.<br/>📍 Lugar: Atrio de la Parroquia Nuestra Señora de los Ángeles<br/>¡Te esperamos, no faltes!.<br/>",
-      "media": "rosario_viviente_25_Octubre.png",
-      "cropImages": false
-    },
-    {
-      "newId": 21,
-      "newDate": "2025-11-03T15:00:00",
-      "newDates": "Todos los días de 8am a 12pm y de 4pm a 6pm",
-      "newShort": "Guardia Santísimo",
-      "newDescription": "Estimada comunidad te invitamos a participar en las guardias al Santísimo.<br/>📅 <b>Todos los días</b><br/>🕥 <b>Hora:</b> 8:00 a.m. a 12:00 p.m. y de 4:00 p.m. a 6:00 p.m.<br/>📍 <b>Lugar:</b> Parroquia Nuestra Señora de los Ángeles<br/>¡Te esperamos, no faltes!<br/>",
-      "groupId": 4,
-      "media": "invitacion_santisimo.png",
-      "cropImages": false
-    },
-    {
-      "newId": 22,
-      "newDate": "2025-11-10T15:00:00",
-      "newDates": "10 Noviembre 2025",
-      "newShort": "Nuevos Miembros",
-      "newDescription": "Esta semana Damos gracias a Dios por la respuesta a su llamado de nuestros hermanos:<br/><br/> Ulises Arturo Mendoza López Lilia<br/>Fernanda Espinosa Cruz Yazid <br/>Rayhan Hernández Vivar<br/><br/> Quienes se han incorporado al Servicio como Proclamadores de la Palabra. Dios bendiga su servicio<br/>",
-      "groupId": 2,
-      "media": "nuevos_miembros_lectores.png",
-      "cropImages": false
-    },
-    {
-      "newId": 23,
-      "newDate": "2025-11-23T15:00:00",
-      "newDates": "Domingo 23 Noviembre 2025",
-      "newShort": "Solemnidad de Cristo Rey",
-      "newDescription": "Solemnidad de Cristo Rey",
-      "media": "Cristo_Rey_2025.png",
-      "cropImages": false
-    },
-    {
-      "newId": 24,
-      "newDate": "2025-11-24T15:00:00",
-      "newDates": "30 Noviembre al 24 de Diciembre 2025",
-      "newShort": "Adiviento",
-      "newDescription": "Adviento",
-      "media": "Adviento_2025.png",
-      "cropImages": false
-    },
-    {
-      "newId": 25,
       "newDate": "2025-12-14T16:30:00",
       "newDates": "14 Diciembre 2025",
       "newShort": "Encendido del Nacimiento",
@@ -202,7 +109,34 @@
       "cropImages": false
     },
     {
-      "newId": 27,
+      "newId": 14,
+      "newDate": "2025-12-12T07:10:00",
+      "newDates": "12 de Diciembre 2025",
+      "newShort": "Festividad a la Virgen de Guadalupe",
+      "newDescription": "Festividad a la Virgen Guadalupe<br/>07.10 am, 1:00 pm y 6:00 pm Parroquia<br/>8:00 am San Isidro Labrador <br/>09:00 am Sagrado Corazón de Jesús<br/>11:30 am San Juan Pablo II",
+      "media": "vg_guadalupe_vm_2025.png",
+      "cropImages": false
+    },
+    {
+      "newId": 13,
+      "newDate": "2025-12-03T16:30:00",
+      "newDates": "Del 3 al 11 de Diciembre 2025",
+      "newShort": "Novena a la Virgen de Guadalupe",
+      "newDescription": "Novena Virgen de Guadalupe",
+      "media": "novena_vm_2025.png",
+      "cropImages": false
+    },
+    {
+      "newId": 12,
+      "newDate": "2025-11-24T15:00:00",
+      "newDates": "30 Noviembre al 24 de Diciembre 2025",
+      "newShort": "Adiviento",
+      "newDescription": "Adviento",
+      "media": "Adviento_2025.png",
+      "cropImages": false
+    },
+    {
+      "newId": 11,
       "newDate": "2025-11-23T16:30:00",
       "newDates": "23 Noviembre 2025",
       "newShort": "Cierre retiro Juvenil",
@@ -212,30 +146,96 @@
       "cropImages": false
     },
     {
-      "newId": 28,
-      "newDate": "2025-12-03T16:30:00",
-      "newDates": "Del 3 al 11 de Diciembre 2025",
-      "newShort": "Novena a la Virgen de Guadalupe",
-      "newDescription": "Novena Virgen de Guadalupe",
-      "media": "novena_vm_2025.png",
+      "newId": 10,
+      "newDate": "2025-11-23T15:00:00",
+      "newDates": "Domingo 23 Noviembre 2025",
+      "newShort": "Solemnidad de Cristo Rey",
+      "newDescription": "Solemnidad de Cristo Rey",
+      "media": "Cristo_Rey_2025.png",
       "cropImages": false
     },
     {
-      "newId": 29,
-      "newDate": "2025-12-12T07:10:00",
-      "newDates": "12 de Diciembre 2025",
-      "newShort": "Festividad a la Virgen de Guadalupe",
-      "newDescription": "Festividad a la Virgen Guadalupe<br/>07.10 am, 1:00 pm y 6:00 pm Parroquia<br/>8:00 am San Isidro Labrador <br/>09:00 am Sagrado Corazón de Jesús<br/>11:30 am San Juan Pablo II",
-      "media": "vg_guadalupe_vm_2025.png",
+      "newId": 9,
+      "newDate": "2025-11-10T15:00:00",
+      "newDates": "10 Noviembre 2025",
+      "newShort": "Nuevos Miembros",
+      "newDescription": "Esta semana Damos gracias a Dios por la respuesta a su llamado de nuestros hermanos:<br/><br/> Ulises Arturo Mendoza López Lilia<br/>Fernanda Espinosa Cruz Yazid <br/>Rayhan Hernández Vivar<br/><br/> Quienes se han incorporado al Servicio como Proclamadores de la Palabra. Dios bendiga su servicio<br/>",
+      "groupId": 2,
+      "media": "nuevos_miembros_lectores.png",
       "cropImages": false
     },
     {
-      "newId": 29,
-      "newDate": "2026-02-01T09:00:00",
-      "newDates": "21 y 22 de Febrero de 2026",
-      "newShort": "Dinamica Matromionial",
-      "newDescription": "Retiro para parejas casadas en unión libre",
-      "media": "dm_feb_2026.jpg",
+      "newId": 8,
+      "newDate": "2025-11-03T15:00:00",
+      "newDates": "Todos los días de 8am a 12pm y de 4pm a 6pm",
+      "newShort": "Guardia Santísimo",
+      "newDescription": "Estimada comunidad te invitamos a participar en las guardias al Santísimo.<br/>📅 <b>Todos los días</b><br/>🕥 <b>Hora:</b> 8:00 a.m. a 12:00 p.m. y de 4:00 p.m. a 6:00 p.m.<br/>📍 <b>Lugar:</b> Parroquia Nuestra Señora de los Ángeles<br/>¡Te esperamos, no faltes!<br/>",
+      "groupId": 4,
+      "media": "invitacion_santisimo.png",
+      "cropImages": false
+    },
+    {
+      "newId": 7,
+      "newDate": "2025-10-28T18:00:00",
+      "newDates": "28 de Octubre de 2025",
+      "newShort": "Misa en Honor a San Judas Tadeo",
+      "newDescription": "!Celebración a San Judas Tadeo!. <br/>Invitamos con alegría a toda la comunidad a participar en la Santa Misa en honor a San Judas Tadeo, apóstol y fiel intercesor en los momentos difíciles.<br/>📅 Fecha: Lunes 28 de octubre<br/>🕕 Hora: 6:00 p.m.<br/>📍 Lugar: Parroquia Nuestra Señora de los Ángeles<br/>Ven con tu familia a dar gracias, pedir su intercesión y fortalecer tu fe. ¡San Judas Tadeo, ruega por nosotros! 🙏✨",
+      "media": "San_Judas_Tadeo_28_Oct.png",
+      "cropImages": false
+    },
+    {
+      "newId": 6,
+      "newDate": "2025-10-27T19:00:00",
+      "newDates": "Sabado 25 de Octubre de 2025",
+      "newShort": "Rosario Viviente",
+      "newDescription": "Estimada comunidad te invitamos a participar en el Rosario viviente<br/>📅 Fecha: Sabado 25 de octubre<br/>🕖 Hora: 7:00 p.m.<br/>📍 Lugar: Atrio de la Parroquia Nuestra Señora de los Ángeles<br/>¡Te esperamos, no faltes!.<br/>",
+      "media": "rosario_viviente_25_Octubre.png",
+      "cropImages": false
+    },
+    {
+      "newId": 5,
+      "newDate": "2025-10-19T18:00:00",
+      "newDates": "2026",
+      "newShort": "Pascua Juvenil 2026",
+      "newDescription": "Proximamente Pascua Juvenil 2026<br/>",
+      "media": "pastoral-joven-retiro-2026.jpg",
+      "groupId": 7,
+      "cropImages": false
+    },
+    {
+      "newId": 4,
+      "newDate": "2025-07-01T00:00:00",
+      "newDates": "1 al 30 de Junio",
+      "newShort": "Junio Mes del Sagrado Corazón de Jesús",
+      "newDescription": "La Pastoral vocacional te invita al rezo del Santo Rosario y ofrecimiento de flores al Sagrado Corazón de Jesús, se llevará a acabo en: <br/> Capilla del Sagrado Corazón de Jesús del 1 al 7 de Junio, domingo 1 junio después de misa, martes 3 de junio 6pm, los demás días a las 5pm.<br/> Capilla de San Juan Pablo II del 8 al 14 de Junio, domingo 8 junio, despues de misa, todos los demás días a las 5pm.<br/> Capilla de San Isidro Labrador del 15 al 21 de Junio a las 5pm. <br/> Parroquia de Nuestra Señora de los Angeles del 22 al 30 de Junio a las 5pm. Niños asistir con camisa o playera blanca y 5 flores.",
+      "media": "sagrado_corazon_jun_2025.jpg",
+      "cropImages": false
+    },
+    {
+      "newId": 3,
+      "newDate": "2025-06-21T15:00:00",
+      "newDates": "21-Junio-2025 al 22-Junio-2025",
+      "newShort": "Dinámica Matrimonial 2025",
+      "newDescription": "La Pastoral familiar te invita a este retiro para matrimonios y personas en unión libre, vive esta super experiencia en pareja. Construyendo la familia que deseamos. Sábado 21 Junio 3pm-9pm y Domingo 22 Junio 9am-7pm. Cupo Limitado. Informes 771 191 6851.",
+      "media": "retiro_matrimonios_1_2025.jpg",
+      "groupId": 6
+    },
+    {
+      "newId": 2,
+      "newDate": "2025-06-01T00:00:00",
+      "newDates": "1 al 31 de Mayo",
+      "newShort": "Mayo Mes de María",
+      "newDescription": "La Pastoral vocacional te invita al rezo del Santo Rosario y ofrecimiento de flores a la Virgen María.<br/> Todos los días a las 5pm, Parroquia de Nuestra Señora de los Angeles del 1 al 10 de Mayo, Capilla de San Juan Pablo II del 11 al 17 de Mayo, Capilla del Sagrado Corazón de Jesús del 18 al 24 de Mayo y Capilla de San Isidro Labrador del 25 al 31 de Mayo.",
+      "media": "MariaMayo.jpeg",
+      "cropImages": false
+    },
+    {
+      "newId": 1,
+      "newDate": "2025-04-13T00:00:00",
+      "newDates": "13-Abril-2025 al 20-Abril-2025",
+      "newShort": "Semana Santa 2025",
+      "newDescription": "La semana mayor de la iglesia católica, donde recordamos la pasión, muerte y resurrección de nuestro Señor Jesucristo.",
+      "media": "SemanaSanta2025.jpg",
       "cropImages": false
     }
   ]
