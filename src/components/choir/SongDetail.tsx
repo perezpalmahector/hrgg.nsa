@@ -108,11 +108,29 @@ export function SongDetail({
         );
     }, [song, songs]);
 
-    const hasPrevious = currentIndex > 0;
+    /*
+     * Navegación circular
+     *
+     * Primero -> Anterior -> Último
+     * Último -> Siguiente -> Primero
+     */
+    const hasPrevious =
+        currentIndex >= 0 &&
+        songs.length > 1;
 
     const hasNext =
         currentIndex >= 0 &&
-        currentIndex < songs.length - 1;
+        songs.length > 1;
+
+    const previousIndex =
+        currentIndex === 0
+            ? songs.length - 1
+            : currentIndex - 1;
+
+    const nextIndex =
+        currentIndex === songs.length - 1
+            ? 0
+            : currentIndex + 1;
 
     const filteredSections = useMemo(() => {
         if (!song?.sections) {
@@ -121,15 +139,25 @@ export function SongDetail({
 
         return song.sections
             .map((section) => {
+                /*
+                 * Algunos cantos pueden tener una sección
+                 * sin lines. En ese caso usamos [] para
+                 * evitar que el componente truene.
+                 */
+                const sectionLines =
+                    Array.isArray(section.lines)
+                        ? section.lines
+                        : [];
+
                 const lines =
                     mode === "lyrics"
-                        ? section.lines.filter(
+                        ? sectionLines.filter(
                             (line) =>
                                 line.type
                                     .toUpperCase() ===
                                 "L"
                         )
-                        : section.lines;
+                        : sectionLines;
 
                 return {
                     ...section,
@@ -292,8 +320,15 @@ export function SongDetail({
             return;
         }
 
+        const previousSong =
+            songs[previousIndex];
+
+        if (!previousSong) {
+            return;
+        }
+
         onNavigate(
-            songs[currentIndex - 1],
+            previousSong,
             mode
         );
     };
@@ -306,8 +341,15 @@ export function SongDetail({
             return;
         }
 
+        const nextSong =
+            songs[nextIndex];
+
+        if (!nextSong) {
+            return;
+        }
+
         onNavigate(
-            songs[currentIndex + 1],
+            nextSong,
             mode
         );
     };
@@ -490,8 +532,8 @@ export function SongDetail({
                         <button
                             type="button"
                             className={`choir-song-scroll-play ${isAutoScrolling
-                                    ? "is-running"
-                                    : ""
+                                ? "is-running"
+                                : ""
                                 }`}
                             onClick={
                                 toggleAutoScroll
