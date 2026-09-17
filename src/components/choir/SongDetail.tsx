@@ -709,47 +709,21 @@ export function SongDetail({
                         {filteredSections.map(
                             (section) => (
                                 <section
-                                    key={
-                                        section.id
-                                    }
+                                    key={section.id}
                                     className="choir-song-section"
                                 >
-                                    <div className="choir-song-section-title">
-                                        {mode ===
-                                            "lyrics"
-                                            ? section.type ===
-                                                "chorus"
-                                                ? "Coro"
-                                                : section.number
-                                                    ? `Verso ${section.number - 1}`
-                                                    : "Letra"
-                                            : section.type ===
-                                                "chorus"
-                                                ? "Coro"
-                                                : section.number
-                                                    ? `Verso ${section.number - 1}`
-                                                    : "Sección"}
-                                    </div>
-
                                     <div className="choir-song-lines">
-                                        {section.lines.map(
-                                            (
-                                                line
-                                            ) => (
-                                                <div
-                                                    key={
-                                                        line.id
-                                                    }
-                                                    className={`choir-song-line choir-song-line-${line.type.toLowerCase()}`}
-                                                >
-                                                    {
-                                                        line.text
-                                                    }
-                                                </div>
-                                            )
-                                        )}
+                                        {section.lines.map((line) => (
+                                            <div
+                                                key={line.id}
+                                                className={`choir-song-line choir-song-line-${line.type.toLowerCase()}`}
+                                            >
+                                                {line.text}
+                                            </div>
+                                        ))}
                                     </div>
                                 </section>
+
                             )
                         )}
                     </div>
