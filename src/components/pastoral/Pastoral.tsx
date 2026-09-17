@@ -47,22 +47,39 @@ function getGroups(): Group[] {
     return [];
 }
 
-function getGalleryLabel(group: Group) {
-    const total = group.numberImages ?? 0;
+function getGroupImage(image?: string) {
+    if (!image) return "";
 
-    if (total === 0) {
+    if (
+        image.startsWith("/") ||
+        image.startsWith("http://") ||
+        image.startsWith("https://")
+    ) {
+        return image;
+    }
+
+    return `/images/groups/${image}`;
+}
+
+function getGalleryLabel(group: Group) {
+    if (!group.numberImages) {
         return null;
     }
 
-    return `${total} ${total === 1 ? "elemento" : "elementos"}`;
+    return `${group.numberImages} ${group.numberImages === 1 ? "imagen" : "imágenes"
+        }`;
 }
 
 export function Pastoral() {
     const groups = getGroups();
 
     return (
-        <section className="pastoral-section" id="pastoral">
+        <section
+            id="pastoral"
+            className="pastoral-section"
+        >
             <div className="pastoral-container">
+
                 <header className="pastoral-header">
                     <span className="pastoral-eyebrow">
                         Vida parroquial
@@ -73,20 +90,20 @@ export function Pastoral() {
                     </h2>
 
                     <p className="pastoral-subtitle">
-                        Somos una comunidad llamada a caminar unida, servir
-                        con alegría y anunciar el Evangelio. Conoce los grupos
-                        y ministerios de nuestra parroquia que, desde sus
-                        diferentes carismas y servicios, hacen vida la misión
-                        de Cristo y contribuyen a construir una comunidad de
-                        fe, esperanza y amor.
+                        Somos una comunidad llamada a caminar
+                        unida, servir con alegría y anunciar el
+                        Evangelio. Conoce los grupos y ministerios
+                        de nuestra parroquia que, desde sus
+                        diferentes carismas y servicios, hacen
+                        vida la misión de Cristo.
                     </p>
                 </header>
 
                 <div className="pastoral-grid">
                     {groups.map((group) => {
-                        const groupPath = `/pastoral/${slugify(
-                            group.groupName,
-                        )}`;
+                        const imageSrc = getGroupImage(group.image);
+                        const galleryLabel =
+                            getGalleryLabel(group);
 
                         return (
                             <article
@@ -94,33 +111,38 @@ export function Pastoral() {
                                 className="pastoral-card"
                             >
                                 <div className="pastoral-card-image-wrapper">
-                                    {group.image ? (
+                                    {imageSrc ? (
                                         <img
-                                            src={`/images/groups/${group.image}`}
+                                            src={imageSrc}
                                             alt={group.groupName}
                                             className="pastoral-card-image"
                                         />
                                     ) : (
                                         <div className="pastoral-card-image-placeholder">
-                                            <span>{group.groupName}</span>
+                                            <span>
+                                                {group.groupName}
+                                            </span>
                                         </div>
                                     )}
 
-                                    {getGalleryLabel(group) && (
+                                    {galleryLabel && (
                                         <span className="pastoral-image-count">
-                                            {getGalleryLabel(group)}
+                                            {galleryLabel}
                                         </span>
                                     )}
                                 </div>
 
                                 <div className="pastoral-card-content">
+
                                     <h3 className="pastoral-card-title">
                                         {group.groupName}
                                     </h3>
 
                                     {group.coordinator && (
                                         <p className="pastoral-card-coordinator">
-                                            <strong>Coordinador:</strong>{" "}
+                                            <strong>
+                                                Coordinador:
+                                            </strong>{" "}
                                             {group.coordinator}
                                         </p>
                                     )}
@@ -132,12 +154,15 @@ export function Pastoral() {
                                     )}
 
                                     <Link
-                                        to={groupPath}
+                                        to={`/pastoral/${slugify(
+                                            group.groupName
+                                        )}`}
                                         className="pastoral-card-button"
                                     >
                                         Conocer más
                                         <ChevronRight size={18} />
                                     </Link>
+
                                 </div>
                             </article>
                         );

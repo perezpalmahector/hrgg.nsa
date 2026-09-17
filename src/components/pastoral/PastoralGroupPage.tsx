@@ -39,9 +39,13 @@ function getGroups(): Group[] {
         data &&
         typeof data === "object" &&
         "groups" in data &&
-        Array.isArray((data as { groups?: unknown }).groups)
+        Array.isArray(
+            (data as { groups?: unknown }).groups,
+        )
     ) {
-        return (data as { groups: Group[] }).groups;
+        return (
+            data as { groups: Group[] }
+        ).groups;
     }
 
     return [];
@@ -56,34 +60,46 @@ function findGroup(
     parent?: Group;
 } | null {
     for (const group of groups) {
-        const groupSlugValue = slugify(group.groupName);
+        const parentSlug = slugify(
+            group.groupName,
+        );
 
+        /*
+         * GRUPO PRINCIPAL
+         *
+         * /pastoral/ministros
+         */
         if (
-            groupSlugValue === groupSlug &&
-            !categorySlug
+            !categorySlug &&
+            parentSlug === groupSlug
         ) {
             return {
                 group,
             };
         }
 
-        if (group.groups) {
-            for (const subgroup of group.groups) {
-                const subgroupSlug = slugify(
-                    subgroup.groupName,
-                );
+        /*
+         * SUBGRUPOS
+         *
+         * /pastoral/musica-sacra/voces-del-senor
+         */
+        if (
+            categorySlug &&
+            parentSlug !== categorySlug
+        ) {
+            continue;
+        }
 
-                if (subgroupSlug !== groupSlug) {
-                    continue;
-                }
+        if (!group.groups) {
+            continue;
+        }
 
-                if (
-                    categorySlug &&
-                    groupSlugValue !== categorySlug
-                ) {
-                    continue;
-                }
+        for (const subgroup of group.groups) {
+            const subgroupSlug = slugify(
+                subgroup.groupName,
+            );
 
+            if (subgroupSlug === groupSlug) {
                 return {
                     group: subgroup,
                     parent: group,
@@ -113,10 +129,13 @@ function getGroupPath(
 function getAutomaticGalleryImages(
     group: Group,
 ) {
-    const numberImages = group.numberImages ?? 0;
+    const numberImages =
+        group.numberImages ?? 0;
 
     return Array.from(
-        { length: numberImages },
+        {
+            length: numberImages,
+        },
         (_, index) =>
             `/images/groups/gallery/group-${group.groupId}_${index + 1}.jpg`,
     );
@@ -146,15 +165,9 @@ function getSpecificGalleryImages(
 }
 
 function getGalleryImages(group: Group) {
-    const automaticImages =
-        getAutomaticGalleryImages(group);
-
-    const specificImages =
-        getSpecificGalleryImages(group);
-
     return [
-        ...automaticImages,
-        ...specificImages,
+        ...getAutomaticGalleryImages(group),
+        ...getSpecificGalleryImages(group),
     ];
 }
 
@@ -211,6 +224,7 @@ function GroupGallery({
                             src={source}
                             alt={`${group.groupName} ${index + 1
                                 }`}
+                            loading="lazy"
                         />
                     </div>
                 ))}
@@ -258,6 +272,7 @@ function SubGroups({
                                 <img
                                     src={`/images/groups/${subgroup.image}`}
                                     alt={subgroup.groupName}
+                                    loading="lazy"
                                 />
                             ) : (
                                 <div className="pastoral-detail-subgroup-placeholder">
@@ -272,6 +287,16 @@ function SubGroups({
                             <h3>
                                 {subgroup.groupName}
                             </h3>
+
+                            {subgroup.description && (
+                                <p>
+                                    {subgroup.description}
+                                </p>
+                            )}
+
+                            <span className="pastoral-detail-subgroup-link">
+                                Conocer más
+                            </span>
                         </div>
                     </Link>
                 ))}
@@ -291,6 +316,17 @@ export default function PastoralGroupPage() {
 
     const groups = getGroups();
 
+    /*
+     * /pastoral/musica-sacra
+     *
+     * React Router coloca "musica-sacra"
+     * en groupSlug.
+     *
+     * /pastoral/musica-sacra/voces-del-senor
+     *
+     * categorySlug = musica-sacra
+     * groupSlug = voces-del-senor
+     */
     const currentSlug =
         groupSlug ?? categorySlug ?? "";
 
@@ -307,7 +343,7 @@ export default function PastoralGroupPage() {
             <section className="pastoral-group-page">
                 <div className="pastoral-group-container">
                     <Link
-                        to="/#pastoral"
+                        to="/pastoral"
                         className="pastoral-group-back"
                     >
                         <ChevronLeft size={18} />
@@ -315,7 +351,9 @@ export default function PastoralGroupPage() {
                     </Link>
 
                     <div className="pastoral-group-not-found">
-                        <h1>Grupo no encontrado</h1>
+                        <h1>
+                            Grupo no encontrado
+                        </h1>
 
                         <p>
                             No encontramos la información
@@ -336,7 +374,7 @@ export default function PastoralGroupPage() {
         <section className="pastoral-group-page">
             <div className="pastoral-group-container">
                 <Link
-                    to="/#pastoral"
+                    to="/pastoral"
                     className="pastoral-group-back"
                 >
                     <ChevronLeft size={18} />
@@ -384,7 +422,9 @@ export default function PastoralGroupPage() {
                                     rel="noreferrer"
                                 >
                                     Escuchar repertorio
-                                    <ExternalLink size={16} />
+                                    <ExternalLink
+                                        size={16}
+                                    />
                                 </a>
                             </div>
                         )}

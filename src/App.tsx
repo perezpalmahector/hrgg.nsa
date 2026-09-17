@@ -141,13 +141,13 @@ function App() {
             }
           />
 
-          {/* GRUPO PASTORAL */}
+          {/* PÁGINA DE UN GRUPO PRINCIPAL */}
           <Route
             path="/pastoral/:groupSlug"
             element={<PastoralGroupPage />}
           />
 
-          {/* SUBGRUPO DE PASTORAL */}
+          {/* PÁGINA DE UN SUBGRUPO */}
           <Route
             path="/pastoral/:categorySlug/:groupSlug"
             element={<PastoralGroupPage />}
