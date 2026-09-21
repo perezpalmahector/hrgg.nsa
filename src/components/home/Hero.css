@@ -1,0 +1,830 @@
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+
+  /* El header mide 78px en escritorio */
+  height: calc(100svh - 78px);
+  min-height: calc(100svh - 78px);
+
+  overflow: hidden;
+
+  color: #ffffff;
+  background: #071d23;
+}
+
+/* ============================================================
+   MEDIOS
+   ============================================================ */
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+/* ============================================================
+   IMAGEN DE FALLBACK
+   ============================================================ */
+
+.hero-fallback-image {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+
+  transition: opacity 900ms ease;
+
+  pointer-events: none;
+}
+
+.hero-fallback-image.hero-fallback-hidden {
+  opacity: 0;
+}
+
+.hero-photo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /*
+   * IMPORTANTE:
+   * Antes estaba centrado.
+   * Ahora mostramos más la parte superior.
+   */
+  object-position: center 25%;
+}
+
+/* ============================================================
+   VIDEO
+   ============================================================ */
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /*
+   * Muestra más de la parte superior del video.
+   */
+  object-position: center 25%;
+
+  opacity: 0;
+
+  background: #071d23;
+
+  transition: opacity 1200ms ease;
+}
+
+.hero-video.hero-video-ready {
+  opacity: 1;
+}
+
+/* ============================================================
+   CARGANDO VIDEO
+   ============================================================ */
+
+.hero-video-loading {
+  position: absolute;
+
+  left: 50%;
+  bottom: 30px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.38);
+
+  color: rgba(255, 255, 255, 0.94);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transform: translateX(-50%);
+}
+
+.hero-video-spinner {
+  width: 15px;
+  height: 15px;
+
+  flex: 0 0 15px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: hero-spinner 800ms linear infinite;
+}
+
+@keyframes hero-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-video-error {
+  background: rgba(0, 0, 0, 0.42);
+}
+
+/* ============================================================
+   CAPAS
+   ============================================================ */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 3;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 20, 27, 0.82) 0%,
+    rgba(0, 25, 32, 0.55) 34%,
+    rgba(0, 25, 32, 0.18) 70%,
+    rgba(0, 15, 20, 0.28) 100%
+  );
+
+  pointer-events: none;
+}
+
+.hero-light {
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+
+  background: radial-gradient(
+    circle at 72% 38%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 25%,
+    transparent 58%
+  );
+
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+
+  left: -15%;
+  bottom: -35%;
+
+  z-index: 4;
+
+  width: 65%;
+  height: 75%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 168, 198, 0.18) 0%,
+    rgba(0, 168, 198, 0.05) 38%,
+    transparent 72%
+  );
+
+  filter: blur(18px);
+
+  pointer-events: none;
+}
+
+.hero-shimmer {
+  position: absolute;
+  inset: 0;
+
+  z-index: 5;
+
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 42%,
+    rgba(255, 255, 255, 0.035) 50%,
+    transparent 58%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+}
+
+/* ============================================================
+   CONTENIDO
+   ============================================================ */
+
+.hero-content {
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 40px clamp(24px, 6vw, 100px);
+}
+
+.hero-copy {
+  width: min(650px, 100%);
+}
+
+/* ============================================================
+   UBICACIÓN
+   ============================================================ */
+
+.hero-location {
+  margin: 0 0 12px;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================================
+   TITULO
+   ============================================================ */
+
+.hero h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 5vw, 76px);
+
+  font-weight: 700;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.035em;
+
+  text-wrap: balance;
+
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+}
+
+/* ============================================================
+   DESCRIPCIÓN
+   ============================================================ */
+
+.hero-description {
+  max-width: 570px;
+
+  margin: 20px 0 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+
+/* ============================================================
+   CITA
+   ============================================================ */
+
+.hero-quote {
+  display: flex;
+  flex-direction: column;
+
+  width: min(560px, 100%);
+
+  margin: 22px 0 0;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.hero-quote-text {
+  color: #f4d98b;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(17px, 2vw, 23px);
+
+  font-style: italic;
+
+  line-height: 1.4;
+
+  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.35);
+}
+
+.hero-quote-reference {
+  margin-top: 6px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+}
+
+.hero-quote-hint {
+  margin-top: 5px;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 10px;
+
+  opacity: 0;
+
+  transform: translateY(3px);
+
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-quote:hover .hero-quote-hint,
+.hero-quote:focus-visible .hero-quote-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 26px;
+}
+
+.hero-button {
+  display: inline-flex;
+
+  min-height: 46px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 20px;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+}
+
+.hero-button-primary {
+  color: #ffffff;
+
+  background: var(--color-brand);
+
+  border-color: var(--color-brand);
+
+  box-shadow: 0 8px 22px rgba(0, 80, 95, 0.28);
+}
+
+.hero-button-primary:hover {
+  background: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
+}
+
+.hero-button-secondary {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.62);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.hero-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #ffffff;
+}
+
+/* ============================================================
+   CANCIÓN
+   ============================================================ */
+
+.hero-song-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-top: 18px;
+
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero-song-icon {
+  display: flex;
+
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #f4d98b;
+
+  font-size: 15px;
+}
+
+.hero-song-info p {
+  margin: 0;
+}
+
+.hero-song-title {
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero-song-description {
+  margin-top: 2px !important;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 10px;
+}
+
+/* ============================================================
+   CONTROL DE AUDIO
+   ============================================================ */
+
+.hero-audio-control {
+  position: absolute;
+
+  right: 24px;
+  bottom: 24px;
+
+  z-index: 30;
+}
+
+.hero-audio-button {
+  display: inline-flex;
+
+  min-height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+
+  background: rgba(0, 20, 27, 0.46);
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-audio-button:hover {
+  background: rgba(0, 20, 27, 0.68);
+
+  border-color: rgba(255, 255, 255, 0.72);
+
+  transform: translateY(-1px);
+}
+
+.hero-audio-button:active {
+  transform: translateY(0);
+}
+
+.hero-audio-icon {
+  display: inline-flex;
+
+  min-width: 12px;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #f4d98b;
+
+  font-size: 11px;
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1100px) and (min-width: 640px) {
+  .hero-content {
+    padding: 34px 5vw;
+  }
+
+  .hero-copy {
+    max-width: 600px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 5vw, 64px);
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 639px) {
+  .hero {
+    height: calc(100svh - 76px);
+    min-height: calc(100svh - 76px);
+  }
+
+  /*
+   * En móvil mostramos todavía más la parte superior
+   * de la imagen/video.
+   */
+  .hero-photo,
+  .hero-video {
+    object-position: center 18%;
+  }
+
+  .hero-content {
+    align-items: flex-end;
+
+    padding: 26px 20px 76px;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-location {
+    margin-bottom: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.12em;
+  }
+
+  .hero h1 {
+    font-size: clamp(35px, 11vw, 48px);
+
+    line-height: 1;
+  }
+
+  .hero-description {
+    margin-top: 13px;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+  }
+
+  .hero-quote {
+    margin-top: 15px;
+  }
+
+  .hero-quote-text {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .hero-quote-reference {
+    font-size: 10px;
+  }
+
+  .hero-quote-hint {
+    display: none;
+  }
+
+  .hero-actions {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .hero-button {
+    min-height: 42px;
+
+    padding: 0 14px;
+
+    font-size: 11px;
+  }
+
+  .hero-song-info {
+    margin-top: 12px;
+  }
+
+  .hero-song-icon {
+    width: 27px;
+    height: 27px;
+
+    flex-basis: 27px;
+
+    font-size: 13px;
+  }
+
+  .hero-song-title {
+    font-size: 10px;
+  }
+
+  .hero-song-description {
+    font-size: 9px;
+  }
+
+  .hero-audio-control {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .hero-audio-button {
+    min-height: 38px;
+
+    padding: 0 11px;
+
+    font-size: 10px;
+  }
+
+  .hero-video-loading {
+    bottom: 62px;
+    font-size: 10px;
+  }
+}
+
+/* ============================================================
+   TELÉFONOS PEQUEÑOS
+   ============================================================ */
+
+@media (max-width: 380px) {
+  .hero {
+    height: calc(100svh - 74px);
+    min-height: calc(100svh - 74px);
+  }
+
+  .hero-photo,
+  .hero-video {
+    object-position: center 15%;
+  }
+
+  .hero-content {
+    padding: 22px 16px 68px;
+  }
+
+  .hero-location {
+    font-size: 8px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    margin-top: 15px;
+  }
+
+  .hero-button {
+    min-height: 40px;
+
+    padding: 0 12px;
+
+    font-size: 10px;
+  }
+
+  .hero-song-info {
+    margin-top: 10px;
+  }
+
+  .hero-audio-control {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .hero-audio-button {
+    min-height: 36px;
+    padding: 0 10px;
+  }
+}
+
+/* ============================================================
+   ACCESIBILIDAD
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fallback-image,
+  .hero-video {
+    transition: none;
+  }
+
+  .hero-video-spinner {
+    animation: none;
+  }
+
+  .hero-button,
+  .hero-audio-button,
+  .hero-quote-hint {
+    transition: none;
+  }
+}
