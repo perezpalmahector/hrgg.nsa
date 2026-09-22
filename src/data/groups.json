@@ -53,10 +53,18 @@
         },
         {
           "groupId": "3_4",
-          "groupName": "Coro de Manuel",
-          "description": "Coro de Hora Santa",
+          "groupName": "Sagrado Corazón de Jesús",
+          "description": "Sagrado Corazón de Jesús",
           "gallery": [],
-          "message": ""
+          "message": "Coro católico al servicio de Dios y de nuestra comunidad, llevando el mensaje del Evangelio a través de la música y el canto. Nuestra misión es acompañar cada celebración litúrgica con alegría, fe y devoción, haciendo de nuestras voces una oración que eleve el corazón hacia el Señor. Queremos vivir y compartir nuestra fe, fortaleciendo la unión de nuestra comunidad a través de la música. ¡Cantemos juntos para alabar y glorificar a Dios!"
+        },
+        {
+          "groupId": "3_5",
+          "groupName": "La Sagrada Familia",
+          "image": "Sagrada_Familia.png",
+          "description": "Coro católico al servicio de la liturgia, comprometidos con la evangelización a través del canto. Nuestra misión es unir la música, la oración y la comunidad para alabar a Dios, enriqueciendo y acompañando con devoción cada una de las celebraciones de nuestra parroquia. ¡Acompáñanos a cantar al Señor!",
+          "numberImages": 3,
+          "gallery": []
         }
       ]
     },

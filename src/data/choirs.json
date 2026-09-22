@@ -25,6 +25,13 @@
       "choirName": "Coro de Manuel",
       "choirDescription": "Coro de Hora Santa",
       "choirPlaylist": ""
+    },
+    {
+      "choirId": 5,
+      "choirName": "La Sagrada Familia",
+      "choirImage": "Sagrada_Familia.png",
+      "choirDescription": "Coro La Sagrada Familia",
+      "choirPlaylist": ""
     }
 
   ]

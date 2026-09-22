@@ -58,7 +58,13 @@
           "placeId": 1,
           "dayName": "Domingo",
           "startHour": "10:00 am",
-          "endHour": "11:00 am"
+          "endHour": "11:00 am",
+          "choir": {
+            "choirId": 5,
+            "slugPlayList": "1FDC8F7D3D1B",
+            "exceptions": [
+            ]
+          }
         },
         {
           "serviceHourId": 9,
