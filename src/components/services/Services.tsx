@@ -231,7 +231,8 @@ export default function Services() {
     <main className="min-h-screen bg-slate-50">
       <section
         id="servicios"
-        className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+        className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12"
+      >
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Servicios parroquiales
@@ -259,15 +260,17 @@ export default function Services() {
                 service.schedules as Schedule[]
               );
 
+            const serviceName =
+              service.serviceName.toLowerCase();
+
             const isConfession =
-              service.serviceName
-                .toLowerCase()
-                .includes("confesion");
+              serviceName.includes("confesion");
 
             const isMass =
-              service.serviceName
-                .toLowerCase()
-                .includes("misa");
+              serviceName.includes("misa");
+
+            const isHolyHour =
+              serviceName.includes("hora santa");
 
             const serviceImage =
               getServiceImage(service.serviceName);
@@ -285,8 +288,8 @@ export default function Services() {
               <article
                 key={service.serviceId}
                 className={`min-w-0 overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${isOpen
-                  ? "border-[#00a8c6]/40 shadow-md lg:col-span-3"
-                  : "border-slate-200 shadow-sm hover:-translate-y-0.5 hover:border-[#00a8c6]/30 hover:shadow-md"
+                    ? "border-[#00a8c6]/40 shadow-md lg:col-span-3"
+                    : "border-slate-200 shadow-sm hover:-translate-y-0.5 hover:border-[#00a8c6]/30 hover:shadow-md"
                   }`}
               >
                 {serviceImage && (
@@ -308,8 +311,8 @@ export default function Services() {
                 >
                   <div
                     className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl transition sm:h-14 sm:w-14 sm:text-2xl ${isOpen
-                      ? "bg-[#00a8c6] text-white"
-                      : "bg-[#00a8c6]/10"
+                        ? "bg-[#00a8c6] text-white"
+                        : "bg-[#00a8c6]/10"
                       }`}
                   >
                     {emoji}
@@ -331,8 +334,8 @@ export default function Services() {
 
                   <div
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition sm:h-9 sm:w-9 ${isOpen
-                      ? "bg-[#00a8c6]/10 text-[#00a8c6]"
-                      : "bg-slate-100 text-slate-500"
+                        ? "bg-[#00a8c6]/10 text-[#00a8c6]"
+                        : "bg-slate-100 text-slate-500"
                       }`}
                   >
                     <ChevronDown
@@ -422,12 +425,14 @@ export default function Services() {
                                             </p>
 
                                             {schedule.choir && (
-
                                               <Link
                                                 to={`/choir-songs/${schedule.serviceHourIds[0]}`}
                                                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#00a8c6]/30 bg-[#00a8c6]/5 px-3 py-1.5 text-xs font-semibold text-[#008da5] transition hover:border-[#00a8c6]/50 hover:bg-[#00a8c6]/10"
                                               >
-                                                <Music2 size={15} aria-hidden="true" />
+                                                <Music2
+                                                  size={15}
+                                                  aria-hidden="true"
+                                                />
 
                                                 <span>
                                                   Ver cantos
@@ -492,6 +497,29 @@ export default function Services() {
                                         </>
                                       )}
                                     </p>
+
+                                    {/* ========================= */}
+                                    {/* CANTOS - MISA / HORA SANTA */}
+                                    {/* ========================= */}
+
+                                    {(isMass || isHolyHour) &&
+                                      schedule.choir && (
+                                        <Link
+                                          to={`/choir-songs/${schedule.serviceHourIds[0]}`}
+                                          className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#00a8c6]/30 bg-[#00a8c6]/5 px-3 py-1.5 text-xs font-semibold text-[#008da5] transition hover:border-[#00a8c6]/50 hover:bg-[#00a8c6]/10"
+                                        >
+                                          <Music2
+                                            size={15}
+                                            aria-hidden="true"
+                                          />
+
+                                          <span>
+                                            {isHolyHour
+                                              ? "Ver cantos de la Hora Santa"
+                                              : "Ver cantos de la misa"}
+                                          </span>
+                                        </Link>
+                                      )}
                                   </div>
                                 </div>
                               );
