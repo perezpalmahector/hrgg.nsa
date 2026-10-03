@@ -530,6 +530,23 @@ export default function Services() {
                     </div>
 
                     {/* ========================= */}
+                    {/* NOTA DE CONFESIÓN          */}
+                    {/* ========================= */}
+
+                    {isConfession && (
+                      <div className="border-t border-amber-200 bg-amber-50 px-4 py-4 sm:px-6">
+                        <p className="text-sm font-semibold leading-6 text-amber-900">
+                          Nota importante: Las personas que
+                          deseen recibir el Sacramento de la
+                          Reconciliación deberán llegar antes de
+                          la hora indicada. El Padre confesará
+                          únicamente a las personas que hayan
+                          llegado antes de la hora señalada.
+                        </p>
+                      </div>
+                    )}
+
+                    {/* ========================= */}
                     {/* GUÍA DE CONFESIÓN          */}
                     {/* ========================= */}
 
