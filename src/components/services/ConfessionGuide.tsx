@@ -13,70 +13,200 @@ type Section = {
 
 const examinationSections: Section[] = [
   {
-    title: "Fe",
+    title: "1° Amarás al Señor tu Dios con todo tu corazón, con toda tu alma y fuerzas",
     questions: [
       {
         id: "fe1",
-        text: "¿He tomado el nombre del Señor en vano?",
+        text: "¿He dudado de mi Fe Católica?",
       },
       {
         id: "fe2",
-        text: "¿He faltado a Misa un domingo o en días santos?",
+        text: "¿He murmurado contra el Señor cuando he tenido alguna desgracia?",
       },
       {
         id: "fe3",
-        text: "¿He dejado de orar?",
+        text: "¿He olvidado mi oración personal con Dios todos los días?",
+      },
+      {
+        id: "fe4",
+        text: "¿He practicado la superstición o espiritismo, o magia o hechicería?",
+      },
+      {
+        id: "fe5",
+        text: "¿He puesto mi fe en amuletos, limpias, supersticiones, horóscopos, etc.?",
+      },
+      {
+        id: "fe6",
+        text: "¿He dudado del Amor de Dios?",
       },
     ],
   },
   {
-    title: "Sobriedad",
+    title: "2° No tomarás en falso el nombre del Señor tu Dios",
     questions: [
       {
-        id: "so1",
-        text: "¿Me he emborrachado?",
+        id: "nombre1",
+        text: "¿He hecho algún juramento o promesa a Dios y no lo he cumplido?",
       },
       {
-        id: "so2",
-        text: "¿He consumido drogas?",
+        id: "nombre2",
+        text: "¿He pronunciado el nombre de Dios sin respeto o poco reverente?",
       },
       {
-        id: "so3",
-        text: "¿He gastado dinero frívolamente?",
+        id: "nombre3",
+        text: "¿He injuriado y abusado contra la Iglesia, y los hombres de Dios, la Virgen María, los Santos?",
       },
     ],
   },
   {
-    title: "Castidad",
+    title: "3° Santificar el día del Señor y las fiestas de guardar",
     questions: [
       {
-        id: "ca1",
-        text: "¿He mirado imágenes o contenido impuro?",
+        id: "misa1",
+        text: "¿He faltado a Misa los domingos o fiestas de guardar?",
       },
       {
-        id: "ca2",
-        text: "¿He tenido pensamientos impuros?",
+        id: "misa2",
+        text: "¿He venido a Misa por cumplir, sin ganas y distrayéndome?",
+      },
+    ],
+  },
+  {
+    title: "4° Honrarás a tu padre y a tu madre",
+    questions: [
+      {
+        id: "padres1",
+        text: "¿He desobedecido a mis padres o superiores?",
       },
       {
-        id: "ca3",
+        id: "padres2",
+        text: "¿Obedezco de mala gana?",
+      },
+      {
+        id: "padres3",
+        text: "¿He entristecido con mi conducta a mis padres o superiores?",
+      },
+      {
+        id: "padres4",
+        text: "¿He amenazado o maltratado de palabra o de obra, o les he deseado algún mal?",
+      },
+      {
+        id: "padres5",
+        text: "¿He dejado de ayudarles en sus necesidades espirituales o materiales?",
+      },
+      {
+        id: "padres6",
+        text: "¿He sido altanero o ingrato con mis padres, abuelos o hermanos?",
+      },
+    ],
+  },
+  {
+    title: "5° No matarás",
+    questions: [
+      {
+        id: "mataras1",
+        text: "¿Tengo enemistad, odio o rencor hacia alguien? ¿He negado la reconciliación?",
+      },
+      {
+        id: "mataras2",
+        text: "¿He deseado un mal grave al prójimo? ¿Me he alegrado de los males ajenos?",
+      },
+      {
+        id: "mataras3",
+        text: "¿Me he dejado dominar por la envidia?",
+      },
+      {
+        id: "mataras4",
+        text: "¿Me he dejado llevar por la ira? ¿He causado con ello daño a otras personas?",
+      },
+      {
+        id: "mataras5",
+        text: "¿Me he burlado, criticado, molestado o ridiculizado a otros?",
+      },
+    ],
+  },
+  {
+    title: "6° No cometerás actos impuros",
+    questions: [
+      {
+        id: "impureza1",
+        text: "¿Me he visto de modo inapropiado, induciendo a otros a la impureza?",
+      },
+      {
+        id: "impureza2",
+        text: "¿Me he entretenido con miradas, sensaciones y pensamientos impuros?",
+      },
+      {
+        id: "impureza3",
+        text: "¿He visto pornografía y la he promovido? ¿He realizado masturbación?",
+      },
+      {
+        id: "impureza4",
         text: "¿He tenido relaciones sexuales fuera del matrimonio?",
       },
+      {
+        id: "impureza5",
+        text: "¿He violado, es decir, agredir con violencia la intimidad sexual de una persona?",
+      },
     ],
   },
   {
-    title: "Excelencia",
+    title: "7° No robarás",
     questions: [
       {
-        id: "ex1",
-        text: "¿He hecho trampa o mentido?",
+        id: "robaras1",
+        text: "¿He robado algún objeto o dinero? ¿No he regresado lo robado?",
       },
       {
-        id: "ex2",
-        text: "¿He deshonrado a mis padres?",
+        id: "robaras2",
+        text: "¿He cooperado con otros en algún robo o hurto?",
       },
       {
-        id: "ex3",
-        text: "¿He robado o lastimado a alguien?",
+        id: "robaras3",
+        text: "¿He engañado cobrando más de lo debido?",
+      },
+      {
+        id: "robaras4",
+        text: "¿He sido perezoso en el cumplimiento de mis deberes?",
+      },
+    ],
+  },
+  {
+    title: "8° No levantarás falsos testimonios",
+    questions: [
+      {
+        id: "testimonio1",
+        text: "¿He dicho mentiras? ¿He reparado el daño que haya podido seguirse?",
+      },
+      {
+        id: "testimonio2",
+        text: "¿He participado en chismes, críticas o difamaciones? ¿He revelado secretos?",
+      },
+    ],
+  },
+  {
+    title: "9° No consentirás pensamientos ni deseos impuros",
+    questions: [
+      {
+        id: "deseos1",
+        text: "¿He degradado el amor humano confundiéndolo con el egoísmo y con el placer?",
+      },
+      {
+        id: "deseos2",
+        text: "¿He sido infiel? ¿He usado preservativos o anticonceptivos?",
+      },
+    ],
+  },
+  {
+    title: "10° No codiciarás los bienes ajenos",
+    questions: [
+      {
+        id: "codicia1",
+        text: "¿He codiciado los bienes ajenos? ¿Tengo envidia de los demás?",
+      },
+      {
+        id: "codicia2",
+        text: "¿Deseo el fracaso a los demás? ¿No me gusta prestar, ni ayudar?",
       },
     ],
   },
