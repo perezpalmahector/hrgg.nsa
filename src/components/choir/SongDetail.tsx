@@ -57,6 +57,15 @@ export type Song = {
     slug: string;
     name: string;
     tonality?: string;
+
+    /*
+     * Capotraste opcional.
+     *
+     * Si una canción no tiene este campo,
+     * todo sigue funcionando normalmente.
+     */
+    capotraste?: number;
+
     songlinks?: SongLink[];
     authors?: SongAuthor[];
     performers?: SongPerformer[];
@@ -75,6 +84,174 @@ type SongDetailProps = {
     ) => void;
 };
 
+/*
+ * ============================================================
+ * TRANSPOSICIÓN MUSICAL
+ * ============================================================
+ */
+
+const CHROMATIC_NOTES = [
+    "C",
+    "C#",
+    "D",
+    "D#",
+    "E",
+    "F",
+    "F#",
+    "G",
+    "G#",
+    "A",
+    "A#",
+    "B",
+];
+
+const FLAT_TO_SHARP: Record<string, string> = {
+    Db: "C#",
+    Eb: "D#",
+    Gb: "F#",
+    Ab: "G#",
+    Bb: "A#",
+};
+
+const normalizeNote = (
+    note: string
+): string => {
+    return (
+        FLAT_TO_SHARP[note] ??
+        note
+    );
+};
+
+export const transposeNote = (
+    note: string,
+    semitones: number
+): string => {
+    const normalized =
+        normalizeNote(note);
+
+    const index =
+        CHROMATIC_NOTES.indexOf(
+            normalized
+        );
+
+    if (index === -1) {
+        return note;
+    }
+
+    const newIndex =
+        ((index + semitones) % 12 + 12) %
+        12;
+
+    return CHROMATIC_NOTES[
+        newIndex
+    ];
+};
+
+export const transposeChord = (
+    chord: string,
+    semitones: number
+): string => {
+    const match = chord.match(
+        /^([A-G](?:#|b)?)(.*?)(?:\/([A-G](?:#|b)?))?$/
+    );
+
+    if (!match) {
+        return chord;
+    }
+
+    const root = match[1];
+    const suffix = match[2];
+    const bass = match[3];
+
+    const transposedRoot =
+        transposeNote(
+            root,
+            semitones
+        );
+
+    const transposedBass = bass
+        ? `/${transposeNote(
+            bass,
+            semitones
+        )}`
+        : "";
+
+    return `${transposedRoot}${suffix}${transposedBass}`;
+};
+
+const isMusicalToken = (
+    token: string
+): boolean => {
+    return /^([A-G](?:#|b)?)(?:m|min|maj|maj7|m7|dim|aug|sus|add)?[0-9]*(?:\/[A-G](?:#|b)?)?$/.test(
+        token
+    );
+};
+
+export const transposeText = (
+    text: string,
+    semitones: number
+): string => {
+    if (
+        !text ||
+        semitones === 0
+    ) {
+        return text;
+    }
+
+    return text.replace(
+        /\S+/g,
+        (token) => {
+            if (
+                !isMusicalToken(
+                    token
+                )
+            ) {
+                return token;
+            }
+
+            return transposeChord(
+                token,
+                semitones
+            );
+        }
+    );
+};
+
+export const transposeTonality = (
+    tonality: string,
+    semitones: number
+): string => {
+    if (
+        !tonality ||
+        semitones === 0
+    ) {
+        return tonality;
+    }
+
+    const match =
+        tonality.match(
+            /^([A-G](?:#|b)?)(.*)$/
+        );
+
+    if (!match) {
+        return tonality;
+    }
+
+    const note = match[1];
+    const suffix = match[2];
+
+    return `${transposeNote(
+        note,
+        semitones
+    )}${suffix}`;
+};
+
+/*
+ * ============================================================
+ * COMPONENTE
+ * ============================================================
+ */
+
 export function SongDetail({
     song,
     songs = [],
@@ -83,7 +260,9 @@ export function SongDetail({
     onNavigate,
 }: SongDetailProps) {
     const scrollRef =
-        useRef<HTMLDivElement | null>(null);
+        useRef<HTMLDivElement | null>(
+            null
+        );
 
     const animationRef =
         useRef<number | null>(null);
@@ -94,7 +273,16 @@ export function SongDetail({
     const [isAutoScrolling, setIsAutoScrolling] =
         useState(false);
 
-    const [speed, setSpeed] = useState(20);
+    const [speed, setSpeed] =
+        useState(20);
+
+    /*
+     * 0  = tonalidad original
+     * +1 = medio tono arriba
+     * -1 = medio tono abajo
+     */
+    const [transpose, setTranspose] =
+        useState(0);
 
     const currentIndex = useMemo(() => {
         if (!song) {
@@ -132,6 +320,80 @@ export function SongDetail({
             ? 0
             : currentIndex + 1;
 
+    /*
+     * ========================================================
+     * CAPOTRASTE
+     * ========================================================
+     *
+     * Se mantiene separado de transpose.
+     *
+     * Ejemplo:
+     *
+     * Tonalidad: C
+     * Capo: 2
+     * Transposición: +1
+     *
+     * Acordes mostrados:
+     * C#
+     *
+     * Capo:
+     * 2
+     *
+     * Sonido:
+     * D#
+     */
+
+    const capo =
+        typeof song?.capotraste === "number" &&
+            Number.isFinite(
+                song.capotraste
+            )
+            ? Math.max(
+                0,
+                Math.round(
+                    song.capotraste
+                )
+            )
+            : null;
+
+    /*
+     * Tonalidad que debe ver el músico.
+     *
+     * El capotraste NO se suma aquí.
+     */
+    const displayedTonality =
+        song?.tonality
+            ? transposeTonality(
+                song.tonality,
+                transpose
+            )
+            : undefined;
+
+    /*
+     * Tonalidad sonora real.
+     *
+     * Aquí sí consideramos el capo.
+     *
+     * C + capo 2 = D
+     * C + capo 2 + transpose 1 = D#
+     */
+    const soundingTonality =
+        song?.tonality
+            ? transposeTonality(
+                song.tonality,
+                transpose +
+                (capo ?? 0)
+            )
+            : undefined;
+
+    /*
+     * Cada canción comienza nuevamente
+     * en su tonalidad original.
+     */
+    useEffect(() => {
+        setTranspose(0);
+    }, [song?.id]);
+
     const filteredSections = useMemo(() => {
         if (!song?.sections) {
             return [];
@@ -139,13 +401,10 @@ export function SongDetail({
 
         return song.sections
             .map((section) => {
-                /*
-                 * Algunos cantos pueden tener una sección
-                 * sin lines. En ese caso usamos [] para
-                 * evitar que el componente truene.
-                 */
                 const sectionLines =
-                    Array.isArray(section.lines)
+                    Array.isArray(
+                        section.lines
+                    )
                         ? section.lines
                         : [];
 
@@ -166,12 +425,14 @@ export function SongDetail({
             })
             .filter(
                 (section) =>
-                    section.lines.length > 0
+                    section.lines.length >
+                    0
             );
     }, [song, mode]);
 
     const estimatedMinutes = useMemo(() => {
-        const element = scrollRef.current;
+        const element =
+            scrollRef.current;
 
         if (!element) {
             return 0;
@@ -202,10 +463,12 @@ export function SongDetail({
     ]);
 
     useEffect(() => {
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow =
+            "hidden";
 
         return () => {
-            document.body.style.overflow = "";
+            document.body.style.overflow =
+                "";
         };
     }, []);
 
@@ -213,7 +476,9 @@ export function SongDetail({
         setIsAutoScrolling(false);
         lastTimeRef.current = null;
 
-        if (animationRef.current !== null) {
+        if (
+            animationRef.current !== null
+        ) {
             cancelAnimationFrame(
                 animationRef.current
             );
@@ -229,7 +494,8 @@ export function SongDetail({
     useEffect(() => {
         if (!isAutoScrolling) {
             if (
-                animationRef.current !== null
+                animationRef.current !==
+                null
             ) {
                 cancelAnimationFrame(
                     animationRef.current
@@ -239,6 +505,7 @@ export function SongDetail({
             }
 
             lastTimeRef.current = null;
+
             return;
         }
 
@@ -253,7 +520,8 @@ export function SongDetail({
             }
 
             if (
-                lastTimeRef.current === null
+                lastTimeRef.current ===
+                null
             ) {
                 lastTimeRef.current =
                     timestamp;
@@ -278,9 +546,13 @@ export function SongDetail({
 
             if (reachedBottom) {
                 setIsAutoScrolling(false);
+
                 lastTimeRef.current =
                     null;
-                animationRef.current = null;
+
+                animationRef.current =
+                    null;
+
                 return;
             }
 
@@ -295,7 +567,8 @@ export function SongDetail({
 
         return () => {
             if (
-                animationRef.current !== null
+                animationRef.current !==
+                null
             ) {
                 cancelAnimationFrame(
                     animationRef.current
@@ -308,6 +581,14 @@ export function SongDetail({
         };
     }, [isAutoScrolling, speed]);
 
+    /*
+     * ========================================================
+     * IMPORTANTE
+     * ========================================================
+     *
+     * Dejamos esta validación ANTES de usar song
+     * en el JSX.
+     */
     if (!song) {
         return null;
     }
@@ -401,6 +682,28 @@ export function SongDetail({
         setIsAutoScrolling(
             (value) => !value
         );
+    };
+
+    /*
+     * ========================================================
+     * CONTROLES DE TRANSPOSICIÓN
+     * ========================================================
+     */
+
+    const handleTransposeUp = () => {
+        setTranspose(
+            (value) => value + 1
+        );
+    };
+
+    const handleTransposeDown = () => {
+        setTranspose(
+            (value) => value - 1
+        );
+    };
+
+    const handleTransposeReset = () => {
+        setTranspose(0);
     };
 
     return (
@@ -532,8 +835,8 @@ export function SongDetail({
                         <button
                             type="button"
                             className={`choir-song-scroll-play ${isAutoScrolling
-                                ? "is-running"
-                                : ""
+                                    ? "is-running"
+                                    : ""
                                 }`}
                             onClick={
                                 toggleAutoScroll
@@ -563,6 +866,51 @@ export function SongDetail({
                                 </>
                             )}
                         </button>
+
+                        {mode === "full" && (
+                            <div
+                                className="choir-song-transpose"
+                                aria-label="Transposición"
+                            >
+                                <button
+                                    type="button"
+                                    className="choir-song-transpose-button"
+                                    onClick={
+                                        handleTransposeDown
+                                    }
+                                    title="Bajar medio tono"
+                                    aria-label="Bajar medio tono"
+                                >
+                                    −
+                                </button>
+
+                                <button
+                                    type="button"
+                                    className="choir-song-transpose-value"
+                                    onClick={
+                                        handleTransposeReset
+                                    }
+                                    title="Restablecer tonalidad original"
+                                    aria-label="Restablecer tonalidad original"
+                                >
+                                    {transpose > 0
+                                        ? `+${transpose}`
+                                        : transpose}
+                                </button>
+
+                                <button
+                                    type="button"
+                                    className="choir-song-transpose-button"
+                                    onClick={
+                                        handleTransposeUp
+                                    }
+                                    title="Subir medio tono"
+                                    aria-label="Subir medio tono"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        )}
 
                         <div className="choir-song-speed">
                             <FastForward
@@ -612,8 +960,20 @@ export function SongDetail({
 
                                         <strong>
                                             {
-                                                song.tonality
+                                                displayedTonality
                                             }
+                                        </strong>
+                                    </div>
+                                )}
+
+                                {capo !== null && (
+                                    <div className="choir-song-meta-item">
+                                        <span>
+                                            Capotraste
+                                        </span>
+
+                                        <strong>
+                                            {capo}
                                         </strong>
                                     </div>
                                 )}
@@ -641,6 +1001,22 @@ export function SongDetail({
                                         </div>
                                     )}
                             </div>
+
+                            {capo !== null &&
+                                song.tonality && (
+                                    <div className="choir-song-capo-info">
+                                        <span>
+                                            Sonido con
+                                            capotraste
+                                        </span>
+
+                                        <strong>
+                                            {
+                                                soundingTonality
+                                            }
+                                        </strong>
+                                    </div>
+                                )}
 
                             {song.categories &&
                                 song.categories.length >
@@ -713,17 +1089,49 @@ export function SongDetail({
                                     className="choir-song-section"
                                 >
                                     <div className="choir-song-lines">
-                                        {section.lines.map((line) => (
-                                            <div
-                                                key={line.id}
-                                                className={`choir-song-line choir-song-line-${line.type.toLowerCase()}`}
-                                            >
-                                                {line.text}
-                                            </div>
-                                        ))}
+                                        {section.lines.map(
+                                            (
+                                                line
+                                            ) => {
+                                                /*
+                                                 * Las líneas L
+                                                 * son letra.
+                                                 *
+                                                 * Nunca se modifican.
+                                                 */
+                                                const isLyricsLine =
+                                                    line.type.toUpperCase() ===
+                                                    "L";
+
+                                                /*
+                                                 * Armonía y
+                                                 * melodía sí
+                                                 * se transponen.
+                                                 */
+                                                const displayedText =
+                                                    isLyricsLine
+                                                        ? line.text
+                                                        : transposeText(
+                                                            line.text,
+                                                            transpose
+                                                        );
+
+                                                return (
+                                                    <div
+                                                        key={
+                                                            line.id
+                                                        }
+                                                        className={`choir-song-line choir-song-line-${line.type.toLowerCase()}`}
+                                                    >
+                                                        {
+                                                            displayedText
+                                                        }
+                                                    </div>
+                                                );
+                                            }
+                                        )}
                                     </div>
                                 </section>
-
                             )
                         )}
                     </div>
