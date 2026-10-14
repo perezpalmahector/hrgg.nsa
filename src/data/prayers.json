@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nombre": "Padre Nuestro",
+    "categoria": "Oraciones Básicas",
+    "texto": "Padre nuestro que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu Reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén."
+  },
+  {
+    "id": 2,
+    "nombre": "Ave María",
+    "categoria": "Marianas",
+    "texto": "Dios te salve, María, llena eres de gracia; el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén."
+  },
+  {
+    "id": 3,
+    "nombre": "Gloria al Padre",
+    "categoria": "Oraciones Básicas",
+    "texto": "Gloria al Padre, y al Hijo, y al Espíritu Santo. Como era en el principio, ahora y siempre, por los siglos de los siglos. Amén."
+  },
+  {
+    "id": 4,
+    "nombre": "Credo de los Apóstoles",
+    "categoria": "Oraciones Básicas",
+    "texto": "Creo en Dios, Padre Todopoderoso, Creador del cielo y de la tierra. Creo en Jesucristo, su único Hijo, nuestro Señor, que fue concebido por obra y gracia del Espíritu Santo, nació de santa María Virgen, padeció bajo el poder de Poncio Pilato, fue crucificado, muerto y sepultado, descendió a los infiernos, al tercer día resucitó de entre los muertos, subió a los cielos y está sentado a la derecha de Dios, Padre Todopoderoso. Desde allí ha de venir a juzgar a vivos y muertos. Creo en el Espíritu Santo, la santa Iglesia Católica, la comunión de los santos, el perdón de los pecados, la resurrección de la carne y la vida eterna. Amén."
+  },
+  {
+    "id": 5,
+    "nombre": "La Salve",
+    "categoria": "Marianas",
+    "texto": "Dios te salve, Reina y Madre de misericordia, vida, dulzura y esperanza nuestra; Dios te salve. A ti llamamos los desterrados hijos de Eva; a ti suspiramos, gimiendo y llorando, en este valle de lágrimas. Ea, pues, Señora, abogada nuestra, vuelve a nosotros esos tus ojos misericordiosos; y después de este destierro muéstranos a Jesús, fruto bendito de tu vientre. ¡Oh clementísima, oh piadosa, oh dulce siempre Virgen María! Ruega por nosotros, Santa Madre de Dios, para que seamos dignos de alcanzar las promesas de Nuestro Señor Jesucristo. Amén."
+  },
+  {
+    "id": 6,
+    "nombre": "Acto de Contrición (Señor Mío Jesucristo)",
+    "categoria": "Penitenciales",
+    "texto": "Señor mío Jesucristo, Dios y Hombre verdadero, Creador, Padre y Redentor mío; por ser vos quien sois, bondad infinita, y porque os amo sobre todas las cosas, me pesa de todo corazón de haberos ofendido; también me pesa porque podéis castigarme con las penas del infierno. Propongo firmemente nunca más pecar, confesarme y cumplir la penitencia que me fuere impuesta. Amén."
+  },
+  {
+    "id": 7,
+    "nombre": "Ángel de mi Guarda",
+    "categoria": "Protección",
+    "texto": "Ángel de mi guarda, dulce compañía, no me desampares ni de noche ni de día. No me dejes solo que me perdería. Hasta que me pongas en paz y alegría con todos los santos, Jesús, José y María. Amén."
+  },
+  {
+    "id": 8,
+    "nombre": "Oración a San Miguel Arcángel",
+    "categoria": "Protección",
+    "texto": "San Miguel Arcángel, defiéndenos en la lucha. Sé nuestro amparo contra la perversidad y acechanzas del demonio. Que Dios manifieste sobre él su poder, es nuestra humilde súplica. Y tú, oh Príncipe de la Milicia Celestial, con el poder que Dios te ha conferido, arroja al infierno a Satanás, y a los demás espíritus malignos que vagan por el mundo para la perdición de las almas. Amén."
+  },
+  {
+    "id": 9,
+    "nombre": "Bajo tu Amparo",
+    "categoria": "Marianas",
+    "texto": "Bajo tu amparo nos acogemos, santa Madre de Dios; no deseches las súplicas que te dirigimos en nuestras necesidades, antes bien, líbranos de todo peligro, oh Virgen siempre gloriosa y bendita. Amén."
+  },
+  {
+    "id": 10,
+    "nombre": "Oración por la Paz (San Francisco de Asís)",
+    "categoria": "Petición",
+    "texto": "Señor, hazme un instrumento de tu paz. Donde haya odio, siembre yo amor; donde haya injuria, perdón; donde haya duda, fe; donde haya desesperación, esperanza; donde haya tinieblas, luz; donde haya tristeza, alegría. Oh Maestro, haced que yo no busque tanto ser consolado, sino consolar; ser comprendido, sino comprender; ser amado, sino amar. Porque es dando que se recibe; es perdonando que se es perdonado; y es muriendo que se resucita a la vida eterna. Amén."
+  },
+  {
+    "id": 11,
+    "nombre": "Alma de Cristo (Anima Christi)",
+    "categoria": "Eucarísticas",
+    "texto": "Alma de Cristo, santifícame. Cuerpo de Cristo, sálvame. Sangre de Cristo, embriágame. Agua del costado de Cristo, lávame. Pasión de Cristo, confórtame. ¡Oh, buen Jesús!, óyeme. Dentro de tus llagas, escóndeme. No permitas que me aparte de ti. Del maligno enemigo, defiéndeme. En la hora de mi muerte, llámame. Y mándame ir a ti, para que con tus santos te alabe, por los siglos de los siglos. Amén."
+  },
+  {
+    "id": 12,
+    "nombre": "Magnificat",
+    "categoria": "Marianas",
+    "texto": "Proclama mi alma la grandeza del Señor, se alegra mi espíritu en Dios, mi Salvador; porque ha mirado la humillación de su esclava. Desde ahora me felicitarán todas las generaciones, porque el Poderoso ha hecho obras grandes por mí: su nombre es santo, y su misericordia llega a sus fieles de generación en generación. Él hace proezas con su brazo: dispersa a los soberbios de corazón, derriba del trono a los poderosos y enaltece a los humildes, a los hambrientos los colma de bienes y a los ricos los despide vacíos. Auxilia a Israel, su siervo, acordándose de la misericordia como lo había prometido a nuestros padres, en favor de Abrahán y su descendencia por siempre. Amén."
+  },
+  {
+    "id": 13,
+    "nombre": "Oración a San José",
+    "categoria": "Devocionales",
+    "texto": "A ti, bienaventurado San José, acudimos en nuestra tribulación. Por el sagrado vínculo de caridad que te unió con la Inmaculada Virgen María, Madre de Dios, y por el amor paterno con que abrazaste al Niño Jesús, te suplicamos que vuelvas los ojos a la herencia que Jesucristo conquistó con su sangre, y nos socorras con tu poder en nuestras necesidades. Protege, oh providente custodio de la divina Familia, la escogida descendencia de Jesucristo. Amén."
+  },
+  {
+    "id": 14,
+    "nombre": "Oración al Espíritu Santo",
+    "categoria": "Oraciones Básicas",
+    "texto": "Ven, Espíritu Santo, llena los corazones de tus fieles y enciende en ellos el fuego de tu amor. Envía tu Espíritu y todo será creado, y renovarás la faz de la tierra. Oh Dios, que has iluminado los corazones de tus hijos con la luz del Espíritu Santo, haznos dóciles a sus inspiraciones para gustar siempre del bien y gozar de su consuelo. Por Jesucristo Nuestro Señor. Amén."
+  },
+  {
+    "id": 15,
+    "nombre": "Acordaos (Memorare)",
+    "categoria": "Marianas",
+    "texto": "Acuérdate, oh piadosísima Virgen María, que jamás se ha oído decir que ninguno de los que han acudido a tu protección, implorado tu asistencia o reclamado tu socorro, haya sido abandonado de ti. Animado por esta confianza, a ti también acudo, oh Madre, Virgen de las vírgenes, y gimiendo bajo el peso de mis pecados, me atrevo a comparecer ante ti. Oh Madre del Verbo divino, no desprecies mis súplicas, antes bien, escúchalas y acógelas benignamente. Amén."
+  },
+  {
+    "id": 16,
+    "nombre": "Bendición de los Alimentos",
+    "categoria": "Cotidianas",
+    "texto": "Bendice, Señor, estos alimentos que por tu bondad vamos a tomar. Bendice también a las manos que los prepararon, da pan a los que tienen hambre y hambre de ti a los que tienen pan. Te lo pedimos por Cristo nuestro Señor. Amén."
+  },
+  {
+    "id": 17,
+    "nombre": "Oración al Empezar el Día",
+    "categoria": "Cotidianas",
+    "texto": "Señor, en el silencio de este día que nace, vengo a pedirte paz, sabiduría y fortaleza. Hoy quiero mirar al mundo con ojos llenos de amor; ser paciente, comprensivo, humilde y bueno. Cierra mis oídos a toda calumnia, guarda mi lengua de toda maldad. Que solo los pensamientos que bendigan permanezcan en mí. Revísteme de tu belleza, Señor, y que a lo largo de este día yo te irradie. Amén."
+  },
+  {
+    "id": 18,
+    "nombre": "Oración al Terminar la Noche",
+    "categoria": "Cotidianas",
+    "texto": "Señor, gracias por este día que termina. Te ofrezco mis esfuerzos, mis alegrías y también mis tropiezos. Perdona mis faltas de hoy y concédeme un descanso tranquilo bajo tu protección. Cuida a mis seres queridos y danos la gracia de despertar mañana con un corazón dispuesto a servirte. En tus manos encomiendo mi espíritu. Amén."
+  },
+  {
+    "id": 19,
+    "nombre": "Oración por los Difuntos",
+    "categoria": "Petición",
+    "texto": "Dale, Señor, el descanso eterno, y brille para ellos la luz perpetua. Que las almas de todos los fieles difuntos, por la misericordia de Dios, descansen en paz. Amén."
+  },
+  {
+    "id": 20,
+    "nombre": "Oración a Nuestra Señora de los Ángeles",
+    "categoria": "Patronal",
+    "texto": "Oh María, Reina de los Ángeles, Madre pura y llena de gracia, tú que eres la guía y protectora de nuestra comunidad parroquial en Mineral de la Reforma, te pedimos que extiendas tu manto celestial sobre nuestras familias. Alcánzanos de tu divino Hijo la fe, la esperanza y la caridad necesarias para caminar unidos en comunidad, y condúcenos un día a gozar de la gloria eterna. Nuestra Señora de los Ángeles, ruega por nosotros. Amén."
+  }
+]

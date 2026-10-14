@@ -20,6 +20,16 @@ import PastoralGroupPage from "@/components/pastoral/PastoralGroupPage";
 import Places from "@/components/places/Places";
 import Contact from "@/components/contact/Contact";
 
+// ============================================================
+// BUSCADOR DE CANTOS
+// ============================================================
+
+import SongFinder from "@/components/admin/SongFinder";
+
+// ============================================================
+// CONTENIDO PRINCIPAL
+// ============================================================
+
 function HomeContent() {
   return (
     <>
@@ -36,6 +46,10 @@ function HomeContent() {
   );
 }
 
+// ============================================================
+// PÁGINA DE INICIO
+// ============================================================
+
 function HomePage() {
   useEffect(() => {
     window.scrollTo({
@@ -47,6 +61,10 @@ function HomePage() {
   return <HomeContent />;
 }
 
+// ============================================================
+// PÁGINAS QUE APUNTAN A UNA SECCIÓN DEL HOME
+// ============================================================
+
 function SectionPage({
   sectionId,
 }: {
@@ -54,7 +72,8 @@ function SectionPage({
 }) {
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      const section = document.getElementById(sectionId);
+      const section =
+        document.getElementById(sectionId);
 
       if (section) {
         section.scrollIntoView({
@@ -64,110 +83,196 @@ function SectionPage({
       }
     }, 150);
 
-    return () => window.clearTimeout(timer);
+    return () =>
+      window.clearTimeout(timer);
   }, [sectionId]);
 
   return <HomeContent />;
 }
+
+// ============================================================
+// APP
+// ============================================================
 
 function App() {
   return (
     <BrowserRouter>
       <MainLayout>
         <Routes>
-          {/* INICIO */}
+
+          {/* ==================================================
+              INICIO
+          ================================================== */}
+
           <Route
             path="/"
             element={<HomePage />}
           />
 
-          {/* SERVICIOS */}
+          {/* ==================================================
+              SERVICIOS
+          ================================================== */}
+
           <Route
             path="/services"
             element={
-              <SectionPage sectionId="servicios" />
+              <SectionPage
+                sectionId="servicios"
+              />
             }
           />
 
-          {/* GUÍA DE CONFESIÓN */}
+          {/* ==================================================
+              GUÍA DE CONFESIÓN
+          ================================================== */}
+
           <Route
             path="/services/guide-confession"
             element={<ConfessionGuide />}
           />
 
-          {/* CANTOS DE LA MISA */}
+          {/* ==================================================
+              CANTOS DE LA MISA
+          ================================================== */}
+
           <Route
             path="/choir-songs/:serviceHourId"
             element={<ChoirSongs />}
           />
 
-          {/* NOTICIAS */}
+          {/* ==================================================
+              NOTICIAS
+          ================================================== */}
+
           <Route
             path="/news"
             element={
-              <SectionPage sectionId="noticias" />
+              <SectionPage
+                sectionId="noticias"
+              />
             }
           />
 
-          {/* GALERÍA */}
+          {/* ==================================================
+              GALERÍA
+          ================================================== */}
+
           <Route
             path="/gallery"
             element={
-              <SectionPage sectionId="galeria" />
+              <SectionPage
+                sectionId="galeria"
+              />
             }
           />
 
-          {/* HISTORIA */}
+          {/* ==================================================
+              HISTORIA
+          ================================================== */}
+
           <Route
             path="/history"
             element={
-              <SectionPage sectionId="historia" />
+              <SectionPage
+                sectionId="historia"
+              />
             }
           />
 
-          {/* PÁRROCOS */}
+          {/* ==================================================
+              PÁRROCOS
+          ================================================== */}
+
           <Route
             path="/priests"
             element={
-              <SectionPage sectionId="parrocos" />
+              <SectionPage
+                sectionId="parrocos"
+              />
             }
           />
 
-          {/* PASTORAL */}
+          {/* ==================================================
+              PASTORAL
+          ================================================== */}
+
           <Route
             path="/pastoral"
             element={
-              <SectionPage sectionId="pastoral" />
+              <SectionPage
+                sectionId="pastoral"
+              />
             }
           />
 
-          {/* PÁGINA DE UN GRUPO PRINCIPAL */}
+          {/* ==================================================
+              PÁGINA DE UN GRUPO PRINCIPAL
+          ================================================== */}
+
           <Route
             path="/pastoral/:groupSlug"
-            element={<PastoralGroupPage />}
+            element={
+              <PastoralGroupPage />
+            }
           />
 
-          {/* PÁGINA DE UN SUBGRUPO */}
+          {/* ==================================================
+              PÁGINA DE UN SUBGRUPO
+          ================================================== */}
+
           <Route
             path="/pastoral/:categorySlug/:groupSlug"
-            element={<PastoralGroupPage />}
+            element={
+              <PastoralGroupPage />
+            }
           />
 
-          {/* LUGARES */}
+          {/* ==================================================
+              LUGARES
+          ================================================== */}
+
           <Route
             path="/places"
             element={
-              <SectionPage sectionId="lugares" />
+              <SectionPage
+                sectionId="lugares"
+              />
             }
           />
 
-          {/* CONTACTO */}
+          {/* ==================================================
+              CONTACTO
+          ================================================== */}
+
           <Route
             path="/contact"
             element={
-              <SectionPage sectionId="contacto" />
+              <SectionPage
+                sectionId="contacto"
+              />
             }
           />
+
+          {/* ==================================================
+              BUSCADOR DE CANTOS
+              
+              Esta ruta NO necesita aparecer en el menú.
+              
+              Se accede directamente mediante:
+              
+              /song-finder
+              
+              Ejemplo:
+              
+              http://localhost:5173/song-finder
+              
+              ================================================== */}
+
+          {/* <Route
+            path="/song-finder"
+            element={<SongFinder />}
+          /> */}
+
         </Routes>
       </MainLayout>
     </BrowserRouter>
