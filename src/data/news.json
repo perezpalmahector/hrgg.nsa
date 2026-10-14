@@ -1,6 +1,26 @@
 {
   "news": [
     {
+      "newId": 26,
+      "newDate": "2026-09-26T18:00:00",
+      "newDates": "26 y 27 de Octubre 2026",
+      "newShort": "Jornada de Oración en torno a San Judas Tadeo, Patrono de las causas difíciles",
+      "newDescription": "<div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'><p style='font-style: italic; color: #555; background: #f4faf6; padding: 10px; border-left: 4px solid #0b6623; margin-top: 5px;'>\"Que la fe en Dios y la intercesión de San Judas Tadeo, el santo de las causas difíciles y desesperadas, llenen tu hogar de paz, salud y esperanza inquebrantable.\"</p><h4 style='color: #0b6623; margin-bottom: 5px;'>📅 Horarios de Celebraci&oacute;n:</h4><ul style='list-style-type: none; padding-left: 0;'><li style='margin-bottom: 8px;'>🙏 <b>Lunes 26 y Martes 27 de Octubre, 2026:</b></li><li style='style-type: none; padding-left: 15px;'>⛪ <b>6:00 PM</b> - Santa Misa y Jornada de Oraci&oacute;n</li></ul><p style='margin-top: 15px; font-weight: bold; color: #0b6623; text-align: center; font-size: 1.1em;'>👨‍👩‍👧‍👦 &iexcl;Ven con tu familia, te esperamos para compartir en comunidad!</p></div>",
+      "groupId": 0,
+      "media": "jsj2026.jpeg",
+      "cropImages": false
+    },
+    {
+      "newId": 25,
+      "newDate": "2026-09-22T18:00:00",
+      "newDates": "22 de Octubre 2026 al 25 de Octubre 2026",
+      "newShort": "Fiesta Patronal Capilla de San Juan Pablo II",
+      "newDescription": "<div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'><p style='font-style: italic; color: #555; background: #f9f9f9; padding: 10px; border-left: 4px solid #1a5f7a; margin-top: 5px;'>\"La Familia es la base de la sociedad y el lugar donde las personas aprenden a vivir los valores que les gu&iacute;an por toda su vida.\"</p><h4 style='color: #1a5f7a; margin-bottom: 5px;'>📅 Cronograma de Actividades:</h4><ul style='list-style-type: none; padding-left: 0;'><li style='margin-bottom: 5px;'>🙏 <b>13 al 21 de Octubre:</b> Novena 5pm</li><li style='margin-bottom: 5px;'>🔔 <b>22 de Octubre:</b><ul style='list-style-type: none; padding-left: 15px;'><li>🌅 6:00 AM - Ma&ntilde;anitas</li><li>⛪ 7:00 AM - Misa</li><li>⛪ 7:00 PM - Misa Solemne</li><li>🤝 8:00 PM - Convivencia en comunidad</li></ul></li><li style='margin-bottom: 5px;'>🎵 <b>23 de Octubre:</b> 6:00 PM - Encuentro de coros</li><li style='margin-bottom: 5px;'>🕊️ <b>S&aacute;bado 24 de Octubre:</b> 5:00 PM - Hora Santa</li><li style='margin-bottom: 5px;'>⛪ <b>Domingo 25 de Octubre:</b> 11:30 AM - Misa</li></ul></div>",
+      "groupId": 0,
+      "media": "fpsj22026.jpeg",
+      "cropImages": false
+    },
+    {
       "newId": 25,
       "newDate": "2026-08-02T18:00:00",
       "newDates": "2 de Agosto 2026",
