@@ -194,7 +194,21 @@ button {
 
   overflow: hidden;
 
-  color: #f4d98b;
+  /* Dorado brillante y uniforme */
+  background: linear-gradient(
+    180deg,
+    #fff5c4 0%,
+    #ffe89a 20%,
+    #f5d36b 40%,
+    #e8bd4a 60%,
+    #f8df89 80%,
+    #ffefb0 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f5d36b;
 
   font-family: Georgia, "Times New Roman", serif;
 
@@ -693,4 +707,11 @@ button {
 
     transition-duration: 0.01ms !important;
   }
+}
+
+.mobile-menu-link-active {
+  color: var(--prayer-green, #244c3b);
+  font-weight: 700;
+  background-color: #f4f0e5;
+  border-radius: 8px;
 }

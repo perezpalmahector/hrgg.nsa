@@ -89,27 +89,27 @@
     "categoria": "Marianas",
     "texto": "Acuérdate, oh piadosísima Virgen María, que jamás se ha oído decir que ninguno de los que han acudido a tu protección, implorado tu asistencia o reclamado tu socorro, haya sido abandonado de ti. Animado por esta confianza, a ti también acudo, oh Madre, Virgen de las vírgenes, y gimiendo bajo el peso de mis pecados, me atrevo a comparecer ante ti. Oh Madre del Verbo divino, no desprecies mis súplicas, antes bien, escúchalas y acógelas benignamente. Amén."
   },
-  {
+ {
     "id": 16,
-    "nombre": "Bendición de los Alimentos",
-    "categoria": "Cotidianas",
+    "nombre": "Bendición de los Alimentos (Acción de Gracias)",
+    "categoria": "Oraciones Cotidianas",
     "texto": "Bendice, Señor, estos alimentos que por tu bondad vamos a tomar. Bendice también a las manos que los prepararon, da pan a los que tienen hambre y hambre de ti a los que tienen pan. Te lo pedimos por Cristo nuestro Señor. Amén."
   },
   {
     "id": 17,
-    "nombre": "Oración al Empezar el Día",
-    "categoria": "Cotidianas",
-    "texto": "Señor, en el silencio de este día que nace, vengo a pedirte paz, sabiduría y fortaleza. Hoy quiero mirar al mundo con ojos llenos de amor; ser paciente, comprensivo, humilde y bueno. Cierra mis oídos a toda calumnia, guarda mi lengua de toda maldad. Que solo los pensamientos que bendigan permanezcan en mí. Revísteme de tu belleza, Señor, y que a lo largo de este día yo te irradie. Amén."
+    "nombre": "Ofrecimiento del Día",
+    "categoria": "Oraciones Cotidianas",
+    "texto": "¡Oh Jesús mío! Por medio del Corazón Inmaculado de María, te ofrezco mis oraciones, obras, alegrías y sufrimientos de este día, por todas las intenciones de tu Sagrado Corazón, en unión con el Santo Sacrificio de la Misa en todo el mundo, por la salvación de las almas, la reparación de los pecados y la unión de todos los cristianos. Amén."
   },
   {
     "id": 18,
-    "nombre": "Oración al Terminar la Noche",
-    "categoria": "Cotidianas",
-    "texto": "Señor, gracias por este día que termina. Te ofrezco mis esfuerzos, mis alegrías y también mis tropiezos. Perdona mis faltas de hoy y concédeme un descanso tranquilo bajo tu protección. Cuida a mis seres queridos y danos la gracia de despertar mañana con un corazón dispuesto a servirte. En tus manos encomiendo mi espíritu. Amén."
+    "nombre": "Oración de la Noche",
+    "categoria": "Oraciones Cotidianas",
+    "texto": "Señor mío y Dios mío, al terminar este día te agradezco de todo corazón todas las gracias que me has concedido. Me pesa de todo corazón de haberte ofendido en este día y te pido perdón. Protégeme a mí y a todos mis seres queridos durante esta noche, y concédenos despertar mañana listos para servirte. Amén."
   },
   {
     "id": 19,
-    "nombre": "Oración por los Difuntos",
+    "nombre": "Oración por los Fieles Difuntos",
     "categoria": "Petición",
     "texto": "Dale, Señor, el descanso eterno, y brille para ellos la luz perpetua. Que las almas de todos los fieles difuntos, por la misericordia de Dios, descansen en paz. Amén."
   },
@@ -117,6 +117,66 @@
     "id": 20,
     "nombre": "Oración a Nuestra Señora de los Ángeles",
     "categoria": "Patronal",
-    "texto": "Oh María, Reina de los Ángeles, Madre pura y llena de gracia, tú que eres la guía y protectora de nuestra comunidad parroquial en Mineral de la Reforma, te pedimos que extiendas tu manto celestial sobre nuestras familias. Alcánzanos de tu divino Hijo la fe, la esperanza y la caridad necesarias para caminar unidos en comunidad, y condúcenos un día a gozar de la gloria eterna. Nuestra Señora de los Ángeles, ruega por nosotros. Amén."
+    "texto": "Oh María, Reina de los Ángeles, Madre pura y llena de gracia, tú que eres la guía y protectora de nuestra comunidad parroquial, te pedimos que extiendas tu manto celestial sobre nuestras familias. Alcánzanos de tu divino Hijo la fe, la esperanza y la caridad necesarias para caminar unidos en comunidad, y condúcenos un día a gozar de la gloria eterna. Nuestra Señora de los Ángeles, ruega por nosotros. Amén."
+  },
+  {
+    "id": 21,
+    "nombre": "El Ángelus",
+    "categoria": "Marianas",
+    "texto": "El Ángel del Señor anunció a María, y concibió por obra del Espíritu Santo. He aquí la esclava del Señor, hágase en mí según tu palabra. Y el Verbo se hizo carne, y habitó entre nosotros. Ruega por nosotros, Santa Madre de Dios, para que seamos dignos de alcanzar las promesas de Nuestro Señor Jesucristo. Amén."
+  },
+  {
+    "id": 22,
+    "nombre": "Oración Final de la Coronilla de la Divina Mercy",
+    "categoria": "Devocionales",
+    "texto": "Oh Dios eterno, en quien la misericordia es infinita y el tesoro de compasión inagotable, vuelve a nosotros tu mirada bondadosa y aumenta tu misericordia en nosotros, para que en los momentos difíciles no nos desesperemos ni nos desalentemos, sino que, con gran confianza, nos sometamos a tu santa voluntad, que es el Amor y la Misericordia mismos. Amén."
+  },
+  {
+    "id": 23,
+    "nombre": "Oración de Fátima (Oración de la Década)",
+    "categoria": "Oraciones del Rosario",
+    "texto": "Oh Jesús mío, perdona nuestros pecados, líbranos del fuego del infierno, lleva al cielo a todas las almas, especialmente a las más necesitadas de tu misericordia. Amén."
+  },
+  {
+    "id": 24,
+    "nombre": "Oración a San Judas Tadeo",
+    "categoria": "Devocionales",
+    "texto": "San Judas Tadeo, glorioso Apóstol, fiel siervo y amigo de Jesús, patrón de los casos difíciles y desesperados, ruega por mí, que me encuentro tan desamparado y solo. Intercede ante Dios para que me traiga auxilio pronto y visible. Prometo acordarme siempre de este gran favor y honrarte siempre como mi especial y poderoso protector. Amén."
+  },
+  {
+    "id": 25,
+    "nombre": "Acto de Fe",
+    "categoria": "Virtudes Teologales",
+    "texto": "Dios mío, creo firmemente que eres un solo Dios en tres Personas Divinas: Padre, Hijo y Espíritu Santo. Creo que tu divino Hijo se hizo hombre y murió por nuestros pecados, y que vendrá a juzgar a los vivos y a los muertos. Creo estas y todas las verdades que la Santa Iglesia Católica enseña, porque Tú las has revelado, que ni puedes engañarte ni engañarnos. Amén."
+  },
+  {
+    "id": 26,
+    "nombre": "Acto de Esperanza",
+    "categoria": "Virtudes Teologales",
+    "texto": "Dios mío, apoyado en tu infinita bondad y promesas, espero obtener el perdón de mis pecados, la ayuda de tu gracia y la vida eterna, por los méritos de Jesucristo, nuestro Señor y Redentor. Amén."
+  },
+  {
+    "id": 27,
+    "nombre": "Acto de Caridad",
+    "categoria": "Virtudes Teologales",
+    "texto": "Dios mío, te amo sobre todas las cosas con todo mi corazón y toda mi alma, porque eres infinitamente bueno y digno de ser amado. Amo a mi prójimo como a mí mismo por amor a Ti. Perdono a todos los que me han ofendido y pido perdón a todos los que he ofendido. Amén."
+  },
+  {
+    "id": 28,
+    "nombre": "Oración de Santo Tomás de Aquino (Antes de Estudiar)",
+    "categoria": "Devocionales",
+    "texto": "Creador inefable, verdadera fuente de luz y sabiduría, dígnate infundir el rayo de tu claridad sobre las tinieblas de mi inteligencia, removiendo de mí la doble oscuridad en la que he nacido: el pecado y la ignorancia. Conレーdeme agudeza para entender, capacidad para retener, método y facilidad para aprender, y gracia abundante para hablar. Amén."
+  },
+  {
+    "id": 29,
+    "nombre": "Oración por las Vocaciones",
+    "categoria": "Petición",
+    "texto": "Oh Dios, que quieres que todos los hombres se salven y lleguen al conocimiento de la verdad, envía, te rogamos, obreros a tu mies, y concédeles la gracia de anunciar tu palabra con toda valentía, para que tu palabra se difunda y sea glorificada, y todos los pueblos te conozcan a Ti, único Dios verdadero, y a tu enviado, Jesucristo. Amén."
+  },
+  {
+    "id": 30,
+    "nombre": "Oración al Sagrado Corazón de Jesús",
+    "categoria": "Devocionales",
+    "texto": "Sacratísimo Corazón de Jesús, pongo toda mi confianza en Ti. Te consagro mi persona y mi vida, mis acciones, dolores y sufrimientos, para que sirvan solo para honrarte y glorificarte. Sé mi protección en esta vida, mi fortaleza en la debilidad y mi refugio seguro en la hora de la muerte. Amén."
   }
 ]

@@ -25,7 +25,7 @@ export function Navbar() {
 
           <div className="navbar-brand-text min-w-0">
             <p className="navbar-title leading-tight">
-              Parroquia de Nuestra Señora de los Ángeles
+              Parroquia de Nuestra<br /> Señora de los Ángeles
             </p>
 
             <p className="navbar-subtitle">

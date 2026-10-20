@@ -60,6 +60,19 @@ const galleryImages = [
         src: "/images/gallery/carrousel14.png",
         title: "San Antonio de Padua",
     },
+    {
+        src: "/images/gallery/carrousel15.png",
+        title: "Entrada Sagrario de la Parroquia",
+    },
+    {
+        src: "/images/gallery/carrousel16.png",
+        title: "Sagrario de la Parroquia",
+    },
+    {
+        src: "/images/gallery/carrousel17.png",
+        title: "Cristo crucificado, Sagrario de la Parroquia",
+    },
+
 ];
 
 export function Gallery() {

@@ -1,0 +1,537 @@
+.prayers-page {
+  --prayer-green: #244c3b;
+  --prayer-green-dark: #19392c;
+  --prayer-gold: #b59655;
+  --prayer-cream: #faf8f3;
+  --prayer-text: #343a35;
+  --prayer-muted: #777d76;
+  --prayer-border: #e9e5dc;
+
+  min-height: 70vh;
+  padding: 72px 24px 96px;
+  background: var(--prayer-cream);
+  color: var(--prayer-text);
+  scroll-margin-top: 100px;
+}
+
+.prayers-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ENCABEZADO */
+
+.prayers-header {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.prayers-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--prayer-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.prayers-title {
+  margin: 15px 0;
+  color: var(--prayer-green-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.prayers-description {
+  max-width: 570px;
+  margin: 0 auto;
+  color: var(--prayer-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* BUSCADOR */
+
+.prayers-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.prayers-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 480px;
+  min-height: 54px;
+  padding: 0 17px;
+  border: 1px solid var(--prayer-border);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--prayer-muted);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.prayers-search:focus-within {
+  border-color: var(--prayer-gold);
+  box-shadow: 0 0 0 3px rgb(181 150 85 / 12%);
+}
+
+.prayers-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--prayer-text);
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.prayers-search input::placeholder {
+  color: #999e97;
+}
+
+.prayers-clear {
+  display: grid;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--prayer-muted);
+  cursor: pointer;
+}
+
+.prayers-clear:hover {
+  background: var(--prayer-cream);
+}
+
+.prayers-count {
+  flex-shrink: 0;
+  margin: 0;
+  color: var(--prayer-muted);
+  font-size: 0.88rem;
+}
+
+/* CATEGORÍAS */
+
+.prayers-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.prayers-filter {
+  padding: 10px 16px;
+  border: 1px solid var(--prayer-border);
+  border-radius: 30px;
+  background: #fff;
+  color: #5e665f;
+  font-size: 0.86rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.prayers-filter:hover {
+  border-color: var(--prayer-green);
+  color: var(--prayer-green);
+}
+
+.prayers-filter.active {
+  border-color: var(--prayer-green);
+  background: var(--prayer-green);
+  color: #fff;
+}
+
+/* TARJETAS */
+
+.prayers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+  scroll-margin-top: 110px;
+}
+
+.prayer-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 26px;
+  border: 1px solid var(--prayer-border);
+  border-radius: 16px;
+  background: #fff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.prayer-card:hover {
+  transform: translateY(-4px);
+  border-color: #d8c9a8;
+  box-shadow: 0 14px 35px rgb(42 51 43 / 7%);
+}
+
+.prayer-card-selected {
+  border-color: var(--prayer-gold);
+  box-shadow: 0 0 0 1px rgb(181 150 85 / 15%);
+}
+
+.prayer-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.prayer-card-icon,
+.prayer-reading-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 12px;
+  background: #f4f0e5;
+  color: var(--prayer-green);
+}
+
+.prayer-card-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.prayer-card-category,
+.prayer-category-label {
+  color: #8b7445;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.prayer-card h2,
+.prayer-card h3 {
+  margin: 0 0 13px;
+  color: var(--prayer-green-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.prayer-card-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0 0 22px;
+  color: var(--prayer-muted);
+  font-size: 0.94rem;
+  line-height: 1.8;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.prayer-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding: 13px 0 0;
+  border: 0;
+  border-top: 1px solid var(--prayer-border);
+  background: transparent;
+  color: var(--prayer-green);
+  font: inherit;
+  font-size: 0.91rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.prayer-card-button:hover {
+  color: var(--prayer-gold);
+}
+
+/* DETALLE DE LA ORACIÓN */
+
+.prayer-detail-section {
+  width: 100%;
+  margin: 40px auto 0;
+  scroll-margin-top: 110px;
+}
+
+.prayer-reading {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  scroll-margin-top: 110px;
+}
+
+.prayer-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 0;
+  border: 0;
+  background: transparent;
+  color: var(--prayer-green);
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prayer-back:hover {
+  color: var(--prayer-gold);
+}
+
+.prayer-reading-card {
+  margin-top: 20px;
+  padding: clamp(28px, 6vw, 64px);
+  border: 1px solid var(--prayer-border);
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.prayer-reading-icon {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+}
+
+.prayer-category-label {
+  display: block;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.prayer-reading-card h2 {
+  margin: 0;
+  color: var(--prayer-green-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.prayer-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin: 28px auto;
+  color: var(--prayer-gold);
+}
+
+.prayer-ornament span {
+  width: 48px;
+  height: 1px;
+  background: #dfd1b3;
+}
+
+.prayer-reading-text {
+  max-width: 660px;
+  margin: 0 auto;
+  color: #4e554f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 2.1;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.prayer-amen {
+  margin: 25px 0 0;
+  color: var(--prayer-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.prayer-back-bottom {
+  justify-content: center;
+  margin-top: 36px;
+  padding: 13px 20px;
+  border: 1px solid var(--prayer-border);
+  border-radius: 10px;
+}
+
+/* SIN RESULTADOS */
+
+.prayers-empty {
+  padding: 65px 20px;
+  border: 1px dashed #d8d3c8;
+  border-radius: 16px;
+  color: var(--prayer-muted);
+  text-align: center;
+}
+
+.prayers-empty > svg {
+  color: var(--prayer-gold);
+}
+
+.prayers-empty h2,
+.prayers-empty h3 {
+  margin: 18px 0 10px;
+  color: var(--prayer-green-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+}
+
+.prayers-empty p {
+  line-height: 1.7;
+}
+
+.prayers-reset {
+  margin-top: 12px;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--prayer-green);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.prayers-reset:hover {
+  background: var(--prayer-green-dark);
+}
+
+/* ACCESIBILIDAD */
+
+.prayers-page button:focus-visible {
+  outline: 3px solid var(--prayer-gold);
+  outline-offset: 4px;
+}
+
+/* TABLET */
+
+@media (max-width: 960px) {
+  .prayers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .prayers-page {
+    padding-top: 56px;
+  }
+}
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+  .prayers-page {
+    padding: 42px 16px 64px;
+  }
+
+  .prayers-header {
+    margin-bottom: 30px;
+  }
+
+  .prayers-title {
+    font-size: 2.65rem;
+  }
+
+  .prayers-description {
+    font-size: 0.96rem;
+  }
+
+  .prayers-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .prayers-search {
+    max-width: none;
+    min-height: 50px;
+  }
+
+  .prayers-count {
+    font-size: 0.82rem;
+  }
+
+  .prayers-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -16px;
+    padding: 2px 16px 12px 2px;
+    scrollbar-width: thin;
+  }
+
+  .prayers-filter {
+    flex-shrink: 0;
+    padding: 9px 13px;
+    font-size: 0.82rem;
+  }
+
+  .prayers-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .prayer-card {
+    padding: 22px;
+  }
+
+  .prayer-card h2,
+  .prayer-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .prayer-reading-card {
+    padding: 28px 20px;
+  }
+
+  .prayer-reading-text {
+    font-size: 1.08rem;
+    line-height: 2;
+    text-align: left;
+  }
+
+  .prayer-reading-card h2 {
+    font-size: 1.85rem;
+  }
+
+  .prayer-detail-section {
+    margin-top: 28px;
+  }
+}
+
+/* MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+  .prayer-card,
+  .prayer-card-button,
+  .prayers-search {
+    transition: none;
+  }
+
+  .prayer-card:hover {
+    transform: none;
+  }
+}

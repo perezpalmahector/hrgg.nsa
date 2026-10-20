@@ -6,6 +6,7 @@ export const navigation = [
   { label: "Historia", href: "/history" },
   { label: "Párrocos", href: "/priests" },
   { label: "Pastoral", href: "/pastoral" },
+  { label: "Oraciones", href: "/prayers" },
   { label: "Lugares", href: "/places" },
   { label: "Contacto", href: "/contact" },
 ];

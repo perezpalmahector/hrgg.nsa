@@ -19,12 +19,13 @@ import Pastoral from "@/components/pastoral/Pastoral";
 import PastoralGroupPage from "@/components/pastoral/PastoralGroupPage";
 import Places from "@/components/places/Places";
 import Contact from "@/components/contact/Contact";
+import Prayers from "@/components/prayers/Prayers";
 
 // ============================================================
 // BUSCADOR DE CANTOS
 // ============================================================
 
-import SongFinder from "@/components/admin/SongFinder";
+// import SongFinder from "@/components/admin/SongFinder";
 
 // ============================================================
 // CONTENIDO PRINCIPAL
@@ -40,6 +41,7 @@ function HomeContent() {
       <History />
       <Priests />
       <Pastoral />
+      <Prayers />
       <Places />
       <Contact />
     </>
@@ -251,6 +253,15 @@ function App() {
                 sectionId="contacto"
               />
             }
+          />
+
+          {/* ==================================================
+                ORACIONES
+              ================================================== */}
+
+          <Route
+            path="/prayers"
+            element={<SectionPage sectionId="oraciones" />}
           />
 
           {/* ==================================================
