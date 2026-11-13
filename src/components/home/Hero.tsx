@@ -18,7 +18,7 @@ export function Hero() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   /* =========================================================
-     FRASES
+     FRASES (Con reinicio de temporizador al hacer clic)
      ========================================================= */
 
   const nextQuote = useCallback(() => {
@@ -43,7 +43,7 @@ export function Hero() {
     return () => {
       window.clearInterval(timer);
     };
-  }, [nextQuote]);
+  }, [nextQuote, quoteIndex]); // <-- quoteIndex reinicia los 20s en cada cambio
 
   /* =========================================================
      VIDEO
@@ -55,11 +55,6 @@ export function Hero() {
     setVideoError(false);
   };
 
-  /*
-   * IMPORTANTE:
-   * No ocultamos "Cargando video..." aquí.
-   * Esperamos a onCanPlay.
-   */
   const handleVideoLoadedData = () => {
     // El video ya tiene datos, pero esperamos a que pueda reproducirse.
   };
@@ -115,17 +110,12 @@ export function Hero() {
           window.removeEventListener("keydown", startAudio);
         })
         .catch(() => {
-          /*
-           * El navegador puede bloquear autoplay con sonido.
-           * Esperamos al primer click/toque/tecla.
-           */
+          // Esperamos al primer click/toque/tecla.
         });
     };
 
-    // Primer intento automático
     startAudio();
 
-    // Fallback para navegadores que bloquean autoplay
     window.addEventListener("click", startAudio);
     window.addEventListener("touchstart", startAudio);
     window.addEventListener("keydown", startAudio);
@@ -137,7 +127,8 @@ export function Hero() {
     };
   }, []);
 
-  const toggleAudio = () => {
+  const toggleAudio = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation(); // Evita conflictos con el listener global de window
     const audio = audioRef.current;
 
     if (!audio) {
@@ -186,14 +177,8 @@ export function Hero() {
 
   return (
     <section id="inicio" className="hero">
-
-      {/* =====================================================
-          FONDO
-          ===================================================== */}
-
+      {/* FONDO */}
       <div className="hero-media">
-
-        {/* IMAGEN: aparece primero */}
         <picture
           className={`hero-fallback-image ${videoReady ? "hero-fallback-hidden" : ""
             }`}
@@ -210,11 +195,9 @@ export function Hero() {
           />
         </picture>
 
-        {/* VIDEO: aparece encima de la imagen cuando está listo */}
         <video
           ref={videoRef}
-          className={`hero-video ${videoReady ? "hero-video-ready" : ""
-            }`}
+          className={`hero-video ${videoReady ? "hero-video-ready" : ""}`}
           autoPlay
           muted
           loop
@@ -227,29 +210,16 @@ export function Hero() {
           onError={handleVideoError}
           aria-hidden="true"
         >
-          <source
-            src="/images/parish/nsa.mp4"
-            type="video/mp4"
-          />
-
+          <source src="/images/parish/nsa.mp4" type="video/mp4" />
           Tu navegador no soporta video.
         </video>
-
-        {/* =================================================
-            INDICADOR DE CARGA
-            ================================================= */}
 
         {videoLoading && !videoError && !videoReady && (
           <div className="hero-video-loading">
             <span className="hero-video-spinner" />
-
             <span>Cargando video…</span>
           </div>
         )}
-
-        {/* =================================================
-            ERROR
-            ================================================= */}
 
         {videoError && (
           <div className="hero-video-loading hero-video-error">
@@ -257,20 +227,13 @@ export function Hero() {
           </div>
         )}
 
-        {/* =================================================
-            CAPAS VISUALES
-            ================================================= */}
-
         <div className="hero-overlay" />
         <div className="hero-light" />
         <div className="hero-glow" />
         <div className="hero-shimmer" />
       </div>
 
-      {/* =====================================================
-          AUDIO
-          ===================================================== */}
-
+      {/* AUDIO */}
       <audio
         ref={audioRef}
         loop
@@ -279,70 +242,39 @@ export function Hero() {
         onPause={handleAudioPause}
         onEnded={handleAudioEnded}
       >
-        <source
-          src="/images/parish/start.mp3"
-          type="audio/mpeg"
-        />
-
+        <source src="/images/parish/start.mp3" type="audio/mpeg" />
         Tu navegador no soporta audio.
       </audio>
 
-      {/* =====================================================
-          CONTROL DE AUDIO
-          MUY POR ENCIMA DE TODO
-          ===================================================== */}
-
+      {/* CONTROL DE AUDIO FLOTANTE (SOLO ÍCONO) */}
       <div className="hero-audio-control">
         <button
           type="button"
-          className="hero-audio-button"
+          className={`hero-audio-button ${audioPlaying ? "is-playing" : ""}`}
           onClick={toggleAudio}
-          aria-label={
-            audioPlaying
-              ? "Pausar canto"
-              : "Reproducir canto"
-          }
+          aria-label={audioPlaying ? "Pausar canto" : "Reproducir canto"}
+          title={audioPlaying ? "Pausar canto" : "Reproducir canto"}
         >
-          <span
-            className="hero-audio-icon"
-            aria-hidden="true"
-          >
+          <span className="hero-audio-icon" aria-hidden="true">
             {audioPlaying ? "❚❚" : "▶"}
-          </span>
-
-          <span className="hero-audio-label">
-            {audioPlaying
-              ? "Pausar canto"
-              : "Reproducir canto"}
           </span>
         </button>
       </div>
 
-      {/* =====================================================
-          CONTENIDO
-          ===================================================== */}
-
+      {/* CONTENIDO */}
       <div className="hero-content">
-
         <div className="hero-copy">
-
           <p className="hero-location">
             Mineral de la Reforma · Hidalgo · México
           </p>
 
-          <h1>
-            {home.hero.title}
-          </h1>
+          <h1>{home.hero.title}</h1>
 
           <p className="hero-description">
-            La Casa de Dios, en Mineral de la Reforma,
-            Hidalgo, México.
+            La Casa de Dios, en Mineral de la Reforma, Hidalgo, México.
           </p>
 
-          {/* =================================================
-              FRASE
-              ================================================= */}
-
+          {/* FRASE */}
           {quote && (
             <button
               type="button"
@@ -350,13 +282,9 @@ export function Hero() {
               onClick={nextQuote}
               aria-label="Mostrar siguiente frase"
             >
-              <span className="hero-quote-text">
-                “{quote.text}”
-              </span>
+              <span className="hero-quote-text">“{quote.text}”</span>
 
-              <span className="hero-quote-reference">
-                {quote.reference}
-              </span>
+              <span className="hero-quote-reference">{quote.reference}</span>
 
               <span className="hero-quote-hint">
                 Haz clic para leer otra frase
@@ -364,12 +292,8 @@ export function Hero() {
             </button>
           )}
 
-          {/* =================================================
-              BOTONES
-              ================================================= */}
-
+          {/* BOTONES */}
           <div className="hero-actions">
-
             <Link
               to="/services"
               className="hero-button hero-button-primary"
@@ -383,36 +307,24 @@ export function Hero() {
             >
               Contáctanos
             </Link>
-
           </div>
 
-          {/* =================================================
-              INFORMACIÓN DEL CANTO
-              ================================================= */}
-
+          {/* INFORMACIÓN DEL CANTO */}
           {home.song && (
             <div className="hero-song-info">
-
-              <span
-                className="hero-song-icon"
-                aria-hidden="true"
-              >
+              <span className="hero-song-icon" aria-hidden="true">
                 ♪
               </span>
 
               <div>
-                <p className="hero-song-title">
-                  {home.song.title}
-                </p>
+                <p className="hero-song-title">{home.song.title}</p>
 
                 <p className="hero-song-description">
                   {home.song.description}
                 </p>
               </div>
-
             </div>
           )}
-
         </div>
       </div>
     </section>
