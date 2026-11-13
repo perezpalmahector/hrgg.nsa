@@ -97,10 +97,10 @@
             "slugPlayList": "C3993FEDBF90",
             "exceptions": [
               {
-                "validFrom": "2026-08-02",
-                "validTo": "2026-08-02",
+                "validFrom": "2026-11-01",
+                "validTo": "2026-11-01",
                 "choirId": 1,
-                "slugPlayList": "FC8C4CCE0C0F"
+                "slugPlayList": "509DA1E575F1"
               }
             ]
           }
