@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 import prayersData from "@/data/prayers.json";
-import "./prayers.css";
+import "./Prayers.css";
 
 interface Prayer {
     id: number;
