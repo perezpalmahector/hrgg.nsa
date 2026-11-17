@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/services/supabaseClient";
+import { detectActiveMisaPlace } from "@/utils/misaScheduleValidator";
+import { IntencionesModal } from "@/components/services/IntencionesModal";
 import { Link } from "react-router-dom";
 import { ChevronDown, Music2 } from "lucide-react";
-
 import { parishData } from "../../services/parishData";
-
 import "./services.css";
 
 type ChoirException = {
@@ -213,6 +214,9 @@ function formatDays(days: string[]) {
 }
 
 export default function Services() {
+  const [isIntencionModalOpen, setIsIntencionModalOpen] = useState(false);
+  const [mostrarBotonIntenciones, setMostrarBotonIntenciones] = useState(false);
+
   const misaService = parishData.services.find((service) =>
     service.serviceName.toLowerCase().includes("misa")
   );
@@ -220,6 +224,52 @@ export default function Services() {
   const [openService, setOpenService] = useState<number | null>(
     misaService?.serviceId ?? null
   );
+
+  useEffect(() => {
+    let recepcionAbierta = true;
+    let modoPrueba = false;
+
+    const evaluarVisibilidad = () => {
+      const misa = detectActiveMisaPlace(modoPrueba);
+      setMostrarBotonIntenciones(misa.disponible && recepcionAbierta);
+    };
+
+    // 1. Leer configuración inicial desde Supabase
+    supabase
+      .from("configuracion_misa")
+      .select("recepcion_abierta, modo_prueba")
+      .eq("id", 1)
+      .single()
+      .then(({ data }) => {
+        if (data) {
+          recepcionAbierta = data.recepcion_abierta;
+          modoPrueba = data.modo_prueba;
+        }
+        evaluarVisibilidad();
+      });
+
+    // 2. Escuchar cambios en tiempo real desde el panel admin
+    const canal = supabase
+      .channel("config-services-btn")
+      .on(
+        "postgres_changes",
+        { event: "UPDATE", schema: "public", table: "configuracion_misa" },
+        (payload) => {
+          recepcionAbierta = payload.new.recepcion_abierta;
+          modoPrueba = payload.new.modo_prueba;
+          evaluarVisibilidad();
+        }
+      )
+      .subscribe();
+
+    // 3. Revisar cada minuto por si entra o sale del horario de misa
+    const intervalo = window.setInterval(evaluarVisibilidad, 60000);
+
+    return () => {
+      supabase.removeChannel(canal);
+      window.clearInterval(intervalo);
+    };
+  }, []);
 
   function toggleService(serviceId: number) {
     setOpenService((current) =>
@@ -288,8 +338,8 @@ export default function Services() {
               <article
                 key={service.serviceId}
                 className={`min-w-0 overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${isOpen
-                    ? "border-[#00a8c6]/40 shadow-md lg:col-span-3"
-                    : "border-slate-200 shadow-sm hover:-translate-y-0.5 hover:border-[#00a8c6]/30 hover:shadow-md"
+                  ? "border-[#00a8c6]/40 shadow-md lg:col-span-3"
+                  : "border-slate-200 shadow-sm hover:-translate-y-0.5 hover:border-[#00a8c6]/30 hover:shadow-md"
                   }`}
               >
                 {serviceImage && (
@@ -311,8 +361,8 @@ export default function Services() {
                 >
                   <div
                     className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl transition sm:h-14 sm:w-14 sm:text-2xl ${isOpen
-                        ? "bg-[#00a8c6] text-white"
-                        : "bg-[#00a8c6]/10"
+                      ? "bg-[#00a8c6] text-white"
+                      : "bg-[#00a8c6]/10"
                       }`}
                   >
                     {emoji}
@@ -334,8 +384,8 @@ export default function Services() {
 
                   <div
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition sm:h-9 sm:w-9 ${isOpen
-                        ? "bg-[#00a8c6]/10 text-[#00a8c6]"
-                        : "bg-slate-100 text-slate-500"
+                      ? "bg-[#00a8c6]/10 text-[#00a8c6]"
+                      : "bg-slate-100 text-slate-500"
                       }`}
                   >
                     <ChevronDown
@@ -530,6 +580,35 @@ export default function Services() {
                     </div>
 
                     {/* ========================= */}
+                    {/* INTENCIONES DE MISA       */}
+                    {/* ========================= */}
+
+                    {isMass && mostrarBotonIntenciones && (
+                      <div className="border-t border-slate-100 bg-slate-50 px-4 py-5 sm:px-6">
+                        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div className="min-w-0">
+                            <p className="text-sm font-semibold text-slate-800">
+                              ¿Deseas anotar una intención para la Misa?
+                            </p>
+
+                            <p className="mt-1 text-sm leading-5 text-slate-500">
+                              Registra tu intención antes de iniciar la celebración.
+                            </p>
+                          </div>
+
+                          <button
+                            type="button"
+                            onClick={() => setIsIntencionModalOpen(true)}
+                            className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-[#00a8c6] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#008da5] sm:w-auto"
+                          >
+                            Agregar intención
+                            <span aria-hidden="true">+</span>
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* ========================= */}
                     {/* NOTA DE CONFESIÓN          */}
                     {/* ========================= */}
 
@@ -591,6 +670,10 @@ export default function Services() {
           </p>
         </div>
       </section>
+      <IntencionesModal
+        isOpen={isIntencionModalOpen}
+        onClose={() => setIsIntencionModalOpen(false)}
+      />
     </main>
   );
 }

@@ -28,6 +28,12 @@ import Prayers from "@/components/prayers/Prayers";
 // import SongFinder from "@/components/admin/SongFinder";
 
 // ============================================================
+// ADMINISTRACIÓN DE INTENCIONES
+// ============================================================
+
+import AdminIntenciones from "@/components/services/AdminIntenciones";
+
+// ============================================================
 // CONTENIDO PRINCIPAL
 // ============================================================
 
@@ -256,8 +262,8 @@ function App() {
           />
 
           {/* ==================================================
-                ORACIONES
-              ================================================== */}
+              ORACIONES
+          ================================================== */}
 
           <Route
             path="/prayers"
@@ -283,6 +289,26 @@ function App() {
             path="/song-finder"
             element={<SongFinder />}
           /> */}
+
+          {/* ==================================================
+              INTENCIONES DE MISA (ADMIN / SACRISTÍA)
+              
+              Esta ruta NO necesita aparecer en el menú.
+              
+              Se accede directamente mediante:
+              
+              /admin-intenciones
+              
+              Ejemplo:
+              
+              http://localhost:5173/admin-intenciones
+              
+              ================================================== */}
+
+          <Route
+            path="/admin-intenciones"
+            element={<AdminIntenciones />}
+          />
 
         </Routes>
       </MainLayout>
